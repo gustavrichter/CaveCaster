@@ -30,7 +30,7 @@ public class PageScript : MonoBehaviour
         //shuffle transform list
         ShuffleList(m_SpellPositions);
         //shuffle spellvariants
-        ShuffleList(spellVariants);
+        //ShuffleList(spellVariants);
 
         //add most unique
         m_SpellsOnPage[0] = Instantiate(spellVariants[0], m_SpellPositions[0].transform); 
@@ -44,7 +44,10 @@ public class PageScript : MonoBehaviour
             int indexPos = 1;
             int numberOfSpellcards = Random.Range(2, 5);
             int numberOfRunes = Random.Range(2, 3);
+
             int riter = m_SpellsOnPage.GetUpperBound(0);
+            
+
             for (int j = 0; j < numberOfSpellcards; j++)
             {
                 m_SpellsOnPage[riter+j] = Instantiate(spellVariants[i], m_SpellPositions[indexPos].transform);
