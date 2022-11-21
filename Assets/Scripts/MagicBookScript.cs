@@ -50,7 +50,20 @@ public class MagicBookScript : MonoBehaviour
     }
     public void TurnPage()
     {
-        m_PageScript.NextPage();
+        if (!m_bisClosed)
+        {
+            GameObject[] shuffledSpellList = m_Spells;
+            GameObject[] selectedSpellsList = null;
+            m_PageScript.ShuffleList(shuffledSpellList);
+
+            int r = Random.Range(2, 4);
+            for (int i = 0 ; i < r; i++)
+            {
+                selectedSpellsList[i] = shuffledSpellList[i];
+            }
+            m_PageScript.NextPage(selectedSpellsList);
+
+        }
 
     }
 }

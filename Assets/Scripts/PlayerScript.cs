@@ -18,9 +18,15 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             m_MagicBookScript.OpenBook();
         }
+        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            m_MagicBookScript.TurnPage();
+        }
+
     }
 }
