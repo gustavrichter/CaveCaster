@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4230281222498538378}
   - component: {fileID: 6614618322939252102}
   - component: {fileID: 3489544668219025621}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 48993738082035486}
   - component: {fileID: 770893110498818369}
   - component: {fileID: 7039962472447635164}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SpellCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,13 +171,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6139424996481941386}
   - component: {fileID: 1912262035724755721}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: FireSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6139424996481941386
 Transform:
   m_ObjectHideFlags: 0
@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ef2bce3440b345972e84aa237fddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Rune: {fileID: 4592140154230858349, guid: 1f3d066b031ddf047b7b229bf780a198, type: 3}
   m_SpellPositions:
   - {fileID: 6117578864645496590}
   - {fileID: 8256585785867395254}
@@ -216,7 +217,6 @@ MonoBehaviour:
   - {fileID: 7929742429551026188}
   - {fileID: 4620445672789942275}
   - {fileID: 338137222229496446}
-  m_Rune: {fileID: 4592140154230858349, guid: 1f3d066b031ddf047b7b229bf780a198, type: 3}
 --- !u!1 &2598641971408555526
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 8466684853451584353}
   - component: {fileID: 3071903340455455677}
   - component: {fileID: 212283018039659441}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 7336593131643788501}
   - component: {fileID: 2549167684310504677}
   - component: {fileID: 5876960436603481667}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 9107838700571977734}
   - component: {fileID: 4127279319983840450}
   - component: {fileID: 4908834481327892252}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 6062491155966003185}
   - component: {fileID: 1387377134873734236}
   - component: {fileID: 116812048433933839}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 2482459648765598722}
   - component: {fileID: 6695468836305456343}
   - component: {fileID: 853800562389722321}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 5432690855678355691}
   - component: {fileID: 3993622537689326554}
   - component: {fileID: 1342469806408997072}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 103871035850536009}
   - component: {fileID: 4643658684370675991}
   - component: {fileID: 7446953313129793657}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 1494883169852493806}
   - component: {fileID: 5603250923427898731}
   - component: {fileID: 7435667193425723311}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 1031401954815408973}
   - component: {fileID: 2810326139015419313}
   - component: {fileID: 6190481967395456989}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RunePos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

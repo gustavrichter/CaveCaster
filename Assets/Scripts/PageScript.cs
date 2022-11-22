@@ -10,11 +10,10 @@ public class PageScript : MonoBehaviour
     [SerializeField]
     private GameObject[] m_SpellPositions; //size=18
 
-    private GameObject[] m_SpellsOnPage;
+    private List<GameObject> m_SpellsOnPage = new List<GameObject>(); //dynamic size
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,47 +25,61 @@ public class PageScript : MonoBehaviour
     public void NextPage(GameObject[] spellVariants)
     {
         ClearPage();
+        //debug
+        GameObject obj = Instantiate(spellVariants[0]);
+        //obj.transform.SetParent(this.transform);
 
         //shuffle transform list
         ShuffleList(m_SpellPositions);
-        //shuffle spellvariants
-        //ShuffleList(spellVariants);
-
-        //add most unique
-        m_SpellsOnPage[0] = Instantiate(spellVariants[0], m_SpellPositions[0].transform); 
-
-        SpellScript spell = m_SpellsOnPage[0].GetComponent<SpellScript>();
-
-        spell.DrawRunes(Random.Range(1, 3));
-
-        for (int i = 1; i < spellVariants.Length; i++)
+        
+        int IndexPositionList = 0;
+   
+        for (int i = 0; i < spellVariants.Length; i++)
         {
-            int indexPos = 1;
-            int numberOfSpellcards = Random.Range(2, 5);
-            int numberOfRunes = Random.Range(2, 3);
+            int numberOfSpellcards = Random.Range(2, 5); //[2,4]
+            int numberOfRunes = Random.Range(1, 4); //[1,3]
 
-            int riter = m_SpellsOnPage.GetUpperBound(0);
-            
+            //first Spell in spellVariants[] will be unique on the page
+            if(i == 0)
+                numberOfSpellcards = 1;
 
+            Debug.Log(spellVariants[0].ToString() + ": numberofSpellcards = " + numberOfSpellcards + ". numberOfRunes = " + numberOfRunes);
             for (int j = 0; j < numberOfSpellcards; j++)
             {
-                m_SpellsOnPage[riter+j] = Instantiate(spellVariants[i], m_SpellPositions[indexPos].transform);
-                spell = m_SpellsOnPage[riter + j].GetComponent<SpellScript>();
-                spell.DrawRunes(numberOfRunes);
-            }
-                
-        }
+                //Debug.Log("IndexPosiontList: " + IndexPositionList);
 
-        
-        
+                //m_SpellsOnPage.Add(Instantiate(spellVariants[i], m_SpellPositions[IndexPositionList].transform));
+                m_SpellsOnPage.Add(Instantiate(spellVariants[i]));
+                m_SpellsOnPage[m_SpellsOnPage.Count - 1].SetActive(true);
+                //m_SpellsOnPage[m_SpellsOnPage.Count - 1].transform.SetParent(this.transform);
+
+                GameObject temp = m_SpellsOnPage[m_SpellsOnPage.Count - 1].transform.GetChild(0).transform.GetChild(0).gameObject;
+                RectTransform recttrans = temp.GetComponent<RectTransform>();
+                recttrans.anchoredPosition = m_SpellPositions[IndexPositionList].transform.position;
+                //temp.transform.position = m_SpellPositions[IndexPositionList].transform.position;
+                //Debug.Log(temp.ToString());
+
+                SpellScript spell = m_SpellsOnPage[m_SpellsOnPage.Count - 1].GetComponent<SpellScript>();
+                
+                spell.DrawRunes(numberOfRunes);
+
+                IndexPositionList++;
+            }
+        }
     }
 
     private void ClearPage()
     {
-        for (int i = 0; i < m_SpellsOnPage.Length; i++)
+        if (m_SpellsOnPage.Count > 0)
         {
-            Destroy(m_SpellsOnPage[i]);
+            for (int i = 0; i < m_SpellsOnPage.Count; i++)
+            {
+                //Debug.Log("destroying SpellsOnPage[" + i + "]");
+                Destroy(m_SpellsOnPage[i]);
+            }
+
         }
+       
     }
 
     public void ShuffleList(GameObject[] List)

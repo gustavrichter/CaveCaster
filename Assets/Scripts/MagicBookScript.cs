@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicBookScript : MonoBehaviour
 {
-    private bool m_bisClosed = true;
+    private bool m_bisClosed = false;
 
     public GameObject m_OpenImage;
     public GameObject m_ClosedImage;
@@ -21,8 +21,11 @@ public class MagicBookScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_ClosedImage.SetActive(true);
-        m_OpenImage.SetActive(false);
+        if(m_bisClosed)
+            m_ClosedImage.SetActive(true);
+        else
+            m_OpenImage.SetActive(true);
+
         m_PageScript = m_Page.GetComponent<PageScript>();
     }
 
@@ -52,15 +55,19 @@ public class MagicBookScript : MonoBehaviour
     {
         if (!m_bisClosed)
         {
-            GameObject[] shuffledSpellList = m_Spells;
-            GameObject[] selectedSpellsList = null;
+            //select between 3 and 4 of the first spells in shuffledList
+            int numberOfSpells = Random.Range(2, 5); //[2,4]
+
+            GameObject[] shuffledSpellList = (GameObject[]) m_Spells.Clone();
+            GameObject[] selectedSpellsList = new GameObject[numberOfSpells];
             m_PageScript.ShuffleList(shuffledSpellList);
 
-            int r = Random.Range(2, 4);
-            for (int i = 0 ; i < r; i++)
+            for (int i = 0 ; i < numberOfSpells; i++)
             {
                 selectedSpellsList[i] = shuffledSpellList[i];
+                //Debug.Log(selectedSpellsList[i].ToString());
             }
+            
             m_PageScript.NextPage(selectedSpellsList);
 
         }
