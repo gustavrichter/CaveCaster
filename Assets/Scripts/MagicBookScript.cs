@@ -56,10 +56,12 @@ public class MagicBookScript : MonoBehaviour
         if (!m_bisClosed)
         {
             //select between 3 and 4 of the first spells in shuffledList
-            int numberOfSpells = Random.Range(2, 5); //[2,4]
+            int numberOfSpells = Random.Range(3, 5); //[3,4]
 
             GameObject[] shuffledSpellList = (GameObject[]) m_Spells.Clone();
             GameObject[] selectedSpellsList = new GameObject[numberOfSpells];
+
+            //sometimes an error is given, saying the List is not an instance of any object
             m_PageScript.ShuffleList(shuffledSpellList);
 
             for (int i = 0 ; i < numberOfSpells; i++)

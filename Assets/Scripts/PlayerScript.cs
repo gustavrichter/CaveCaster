@@ -27,6 +27,16 @@ public class PlayerScript : MonoBehaviour
         {
             m_MagicBookScript.TurnPage();
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Shooting");
+            Ray aray = new Ray(Input.mousePosition, -this.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(aray, out hit))
+            {
+                Debug.Log("Hit Something");
+            }
+        }
 
     }
 }
