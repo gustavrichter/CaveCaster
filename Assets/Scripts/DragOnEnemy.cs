@@ -57,12 +57,12 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     }
     void Update()
     {
-        //Vector3 screenpos = Input.mousePosition;
+        Vector3 screenpos = Input.mousePosition;
         //Vector3 screenpos = myPosition.lossyScale;
-        Vector3 screenpos = myPosition.transform.position;
+        //Vector3 screenpos = myPosition.transform.position;
         
         screenpos.z = Camera.main.nearClipPlane + 1; ;
-        Debug.DrawRay(Camera.main.ScreenToWorldPoint(screenpos), this.transform.forward*20, rayColor);
+        Debug.DrawRay(Camera.main.ScreenToWorldPoint(screenpos), this.transform.forward*30, rayColor);
 
     }
 }
