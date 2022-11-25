@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 struct Positions
 {
     public int numberOfRunes;
     public int[] m_activePositions;
-   
-    
     public Positions(int num, int[] pos)
     {
         numberOfRunes = num;
         m_activePositions = pos;
     }
-
 }
+
+
 public  class SpellScript : MonoBehaviour
 {
-    private int m_damage;
+    [SerializeField] private int element;
+    private int numberOfRunes;
+    private int baseDamage = 10;
     public GameObject m_Rune;
+    public bool wasFired = false;
+    public bool bunique = false;
+
     [SerializeField] private GameObject[] m_SpellPositions;//size=9
 
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size
@@ -61,29 +66,12 @@ public  class SpellScript : MonoBehaviour
         }
     }
 
-    public void MouseClicked()
-    {
 
-        Debug.Log("Spell clicked. (MouseClicked)");
-
-    }
-    void OnMouseDown()
-    {
-        Debug.Log("Spell clicked. (OnMouseDown)");
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("Spell clicked (update)");
-        }
-    }
 
     public void DrawRunes(int amount)
     {
-
-        int[] pos = GetPositionList(amount);
+        numberOfRunes = amount;
+        int[] pos = GetPositionList();
 
         if (pos == null)
             Debug.Log("no PositionList returned");
@@ -96,12 +84,12 @@ public  class SpellScript : MonoBehaviour
     }
   
 
-    int[] GetPositionList(int amount)
+    int[] GetPositionList()
     {
         //Debug.Log("m_aPositions.Lenth = " + m_aPositions.Length);
         for (int i = 0; i < m_aPositions.Length; i++)
         {
-            if (m_aPositions[i].numberOfRunes == amount)
+            if (m_aPositions[i].numberOfRunes == numberOfRunes)
             {
                 return m_aPositions[i].m_activePositions;
             }
@@ -109,5 +97,14 @@ public  class SpellScript : MonoBehaviour
         //failed: amount not found
         return null;
 
+    }
+
+    public int getDamage()
+    {
+        return baseDamage*numberOfRunes;
+    }
+    public int getElement()
+    {
+        return element;
     }
 }

@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: m_Rune
       value: 
       objectReference: {fileID: 8515657932043611606}
+    - target: {fileID: 3469948146450246947, guid: 0461501def83ef041aabc6075c517522,
+        type: 3}
+      propertyPath: element
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6139424996481941386, guid: 0461501def83ef041aabc6075c517522,
         type: 3}
       propertyPath: m_RootOrder

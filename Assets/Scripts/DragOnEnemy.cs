@@ -6,15 +6,20 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 {
     RectTransform myPosition;
     CanvasGroup myCanvasGroup;
-    Color rayColor;
-    public Camera mainCamera;
+    SpellScript mySpellScript;
+    PageScript myPageScript;
     private void Awake()
     {
         myPosition = GetComponent<RectTransform>();
         myCanvasGroup = GetComponent<CanvasGroup>();
-        rayColor = Color.red;
+        mySpellScript = gameObject.GetComponentInParent(typeof(SpellScript)) as SpellScript;
+        //myPageScript = gameObject.GetComponentInParent(typeof(PageScript)) as PageScript;
         if (!myCanvasGroup)
-            Debug.Log("canvGroup not found");
+            Debug.Log(gameObject.name + "canvGroup not found");
+        if (!mySpellScript)
+            Debug.Log(gameObject.name + "SpellScript not found");
+        //if (!myPageScript)
+        //    Debug.Log(gameObject.name + "PageScript not found");
 
     }
     public void OnDrop(PointerEventData eventData)
@@ -41,13 +46,29 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("EndDrag");
-        Ray aray = new Ray(Input.mousePosition, this.transform.forward*30);
-        RaycastHit hit;
-        if (Physics.Raycast(aray, out hit))
+        //Debug.Log("EndDrag");
+        if (mySpellScript.bunique)
         {
-            Debug.Log("Hit Something");
+            RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+            if (rayHit)
+            {
+                //EnemySlimeScript enemyscr = rayHit.transform.gameObject.GetComponent<EnemySlimeScript>();
+                EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
+                if (!enemyScript)
+                    Debug.Log("enemyscr not found");
+                else
+                {
+                    enemyScript.TakeDamage(mySpellScript.getDamage(), mySpellScript.getElement());
+                }
+
+
+            }
+            else
+            {
+                Debug.Log("No target hit");
+            }
         }
+      
         myCanvasGroup.blocksRaycasts = true;
     }
 
@@ -55,15 +76,6 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         //Debug.Log("PointerDown");
     }
-    void Update()
-    {
-        Vector3 screenpos = Input.mousePosition;
-        //Vector3 screenpos = myPosition.lossyScale;
-        //Vector3 screenpos = myPosition.transform.position;
-        
-        screenpos.z = Camera.main.nearClipPlane + 1; ;
-        Debug.DrawRay(Camera.main.ScreenToWorldPoint(screenpos), this.transform.forward*30, rayColor);
-
-    }
+  
 }
 

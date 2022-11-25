@@ -13,6 +13,7 @@ public class PageScript : MonoBehaviour
     public int numberOfSpellcards;
     public int maxNumberOfSpellcards;
     private List<GameObject> m_SpellsOnPage = new List<GameObject>(); //dynamic size
+    private List<SpellScript> m_SpellScripts= new List<SpellScript>(); //dynamic size
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,14 @@ public class PageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if (m_SpellsOnPage.Count > 0)
+        //{
+        //    foreach (var item in m_SpellScripts)
+        //    {
+        //        if (item.wasFired)
+        //            NextPage();
+        //    }
+        //}
     }
 
     public void NextPage(GameObject[] spellVariants)
@@ -30,7 +38,6 @@ public class PageScript : MonoBehaviour
         //shuffle transform list to place the spellcards randomly
         ShuffleList(m_SpellPositions);
         
-        int IndexOnPositionList = 0;
 
         int maxNumberOfSpellcards = 12;
         //if (Random.Range(0, 2) == 1)
@@ -38,7 +45,6 @@ public class PageScript : MonoBehaviour
 
 
         int numberOfSpells = spellVariants.Length;
-        //Debug.Log("numberofSpells =  " + numberOfSpells);
 
         int[] numberOfSpellsList = new int[numberOfSpells];
         numberOfSpellsList[0] = 1;
@@ -51,6 +57,7 @@ public class PageScript : MonoBehaviour
         }
 
         int counter = 1;
+
         while(SpellCardCounter< maxNumberOfSpellcards)
         {
             if (Random.Range(0, 2) == 1)
@@ -75,27 +82,24 @@ public class PageScript : MonoBehaviour
 
 
 
-            Debug.Log(spellVariants[i].ToString() + ": numberofSpellcards = " + numberOfSpellsList[i] + ". numberOfRunes = " + numberOfRunes);
+            //Debug.Log(spellVariants[i].ToString() + ": numberofSpellcards = " + numberOfSpellsList[i] + ". numberOfRunes = " + numberOfRunes);
 
             for (int j = 0; j < numberOfSpellsList[i]; j++)
             {
                 m_SpellsOnPage.Add(Instantiate(spellVariants[i]));
-                //on second run: fails to instantiate the first spell at the desired position, but the rest works fine. reason: Unknown
-                //on third run: does not find m_SpellPositions[0] and throws an error. reason: ClearPage()
-                m_SpellsOnPage[SpellCardCounter].transform.SetParent(m_SpellPositions[IndexOnPositionList].transform, false);
+                m_SpellsOnPage[SpellCardCounter].transform.SetParent(m_SpellPositions[SpellCardCounter].transform, false);
+                m_SpellScripts.Add(m_SpellsOnPage[SpellCardCounter].transform.GetChild(0).GetComponent<SpellScript>());//SpellPrefab->Spell<SpellScript>
 
-                SpellScript spellScript = m_SpellsOnPage[SpellCardCounter].transform.GetChild(0).GetComponent<SpellScript>();//SpellPrefab->Spell<SpellScript>
-
-                if (!spellScript)
+                if (!m_SpellScripts[SpellCardCounter])
                     Debug.Log("no spellscript found");
                 else
-                    spellScript.DrawRunes(numberOfRunes);
+                    m_SpellScripts[SpellCardCounter].DrawRunes(numberOfRunes);
 
-                IndexOnPositionList++;
                 maxNumberOfSpellcards -= numberOfSpellcards;
                 SpellCardCounter = m_SpellsOnPage.Count;
             }
         }
+        m_SpellScripts[0].bunique = true;
     }
  
     private void ClearPage()
@@ -109,6 +113,7 @@ public class PageScript : MonoBehaviour
                 
             }
             m_SpellsOnPage.Clear();
+            m_SpellScripts.Clear();
         }
        
     }

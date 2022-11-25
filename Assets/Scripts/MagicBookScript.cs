@@ -35,6 +35,7 @@ public class MagicBookScript : MonoBehaviour
     
 
     }
+   
     public void OpenBook()
     {
 
