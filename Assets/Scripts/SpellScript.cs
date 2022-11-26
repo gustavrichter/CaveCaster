@@ -24,18 +24,18 @@ public  class SpellScript : MonoBehaviour
     public bool wasFired = false;
     public bool bunique = false;
 
-    [SerializeField] private GameObject[] m_SpellPositions;//size=9
+    [SerializeField] private GameObject[] m_SpellPositions;//size=7
 
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size
 
     //set positions for all number variations
-    private int[] m_positions_1 = new int[] { 0, 0, 0, 0, 1, 0, 0, 0, 0 };
-    private int[] m_positions_2 = new int[] { 1, 0, 0, 0, 0, 0, 0, 0, 1 };
-    private int[] m_positions_3 = new int[] { 0, 0, 1, 0, 1, 0, 1, 0, 0 };
-    private int[] m_positions_4 = new int[] { 1, 0, 1, 0, 0, 0, 1, 0, 1 };
-    private int[] m_positions_5 = new int[] { 1, 0, 1, 0, 1, 0, 1, 0, 1 };
-    private int[] m_positions_6 = new int[] { 1, 0, 1, 1, 0, 1, 1, 0, 1 };
-    private int[] m_positions_7 = new int[] { 1, 0, 1, 1, 1, 1, 1, 0, 1 };
+    private int[] m_positions_1 = new int[] { 1, 0, 0, 0, 0, 0, 0};
+    private int[] m_positions_2 = new int[] { 0, 0, 1, 0, 0, 1, 0};
+    private int[] m_positions_3 = new int[] { 1, 0, 0, 1, 0, 0, 1};
+    private int[] m_positions_4 = new int[] { 0, 1, 0, 1, 1, 0, 1};
+    private int[] m_positions_5 = new int[] { 1, 1, 1, 0, 1, 1, 0};
+    private int[] m_positions_6 = new int[] { 0, 1, 1, 1, 1, 1, 1};
+    private int[] m_positions_7 = new int[] { 1, 1, 1, 1, 1, 1, 1};
 
     //private Positions[] m_aPositions = new Positions[] { new Positions(), new Positions(), new Positions()};
     private Positions[] m_aPositions = new Positions[7];
