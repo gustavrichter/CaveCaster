@@ -2,6 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+struct SpellcardVariant
+{
+    public int element;
+    public int numberOfRunes;
+    public int numberOfSpellcards;
+    public SpellcardVariant(int el, int numRunes, int numSpellcards)
+    {
+        element = el;
+        numberOfRunes = numRunes;
+        numberOfSpellcards = numSpellcards;
+    }
+
+}
 
 public class PageScript : MonoBehaviour
 {
@@ -13,6 +26,7 @@ public class PageScript : MonoBehaviour
     //public int maxNumberOfSpellcards;
     private List<GameObject> m_SpellsOnPage = new List<GameObject>(); //dynamic size
     private List<SpellScript> m_SpellScripts= new List<SpellScript>(); //dynamic size
+    private List<SpellcardVariant> m_SpellcardVariants = new List<SpellcardVariant>();
     // Start is called before the first frame update
     void Start()
     {
@@ -36,71 +50,143 @@ public class PageScript : MonoBehaviour
         ClearPage();
         //shuffle transform list to place the spellcards randomly
         ShuffleList(m_SpellPositions);
-        
+        //create the different types of spellcards
+        CreateSpellcardVariants(spellVariants);
 
-        int maxNumberOfSpellcards = 12;
-        //if (Random.Range(0, 2) == 1)
-        //    maxNumberOfSpellcards = 8;
-
-
-        int numberOfSpells = spellVariants.Length;
-
-        int[] numberOfSpellsList = new int[numberOfSpells];
-        numberOfSpellsList[0] = 1;
-        int SpellCardCounter = 1;
-        for (int i = 1; i < numberOfSpellsList.Length; i++)
-        {
-            
-            numberOfSpellsList[i] = 2;
-            SpellCardCounter += 2;
-        }
-
-        int counter = 1;
-
-        while(SpellCardCounter< maxNumberOfSpellcards)
-        {
-            if (Random.Range(0, 2) == 1)
-            {
-                numberOfSpellsList[counter]++;
-                SpellCardCounter++;
-
-            }
-
-            counter++;
-            if (counter >= numberOfSpells)
-                counter = 1;
-
-        }
-
-        SpellCardCounter = 0;
+        int SpellCardCounter = 0;
         for (int i = 0; i < spellVariants.Length; i++)
         {
-            
-            int numberOfRunes = Random.Range(1, 8); //[1,7]
-
-
-
-
             //Debug.Log(spellVariants[i].ToString() + ": numberofSpellcards = " + numberOfSpellsList[i] + ". numberOfRunes = " + numberOfRunes);
 
-            for (int j = 0; j < numberOfSpellsList[i]; j++)
+            for (int j = 0; j < m_SpellcardVariants[i].numberOfSpellcards; j++)
             {
                 m_SpellsOnPage.Add(Instantiate(spellVariants[i]));
                 m_SpellsOnPage[SpellCardCounter].transform.SetParent(m_SpellPositions[SpellCardCounter].transform, false);
                 m_SpellScripts.Add(m_SpellsOnPage[SpellCardCounter].transform.GetChild(0).GetComponent<SpellScript>());//SpellPrefab->Spell<SpellScript>
 
-                if (!m_SpellScripts[SpellCardCounter])
-                    Debug.Log("no spellscript found");
+                if (m_SpellScripts[SpellCardCounter])
+                {
+                    m_SpellScripts[SpellCardCounter].DrawRunes(m_SpellcardVariants[i].numberOfRunes);
+                    SpellCardCounter++;
+                }
                 else
-                    m_SpellScripts[SpellCardCounter].DrawRunes(numberOfRunes);
+                {
+                    Debug.Log("no spellscript found");
+                }
 
-                //maxNumberOfSpellcards -= numberOfSpellcards;
-                SpellCardCounter = m_SpellsOnPage.Count;
             }
         }
-        m_SpellScripts[0].bunique = true;
     }
+
+    void CreateSpellcardVariants(GameObject[] spellVariants) {
+
+        m_SpellcardVariants.Clear();
+        SpellcardVariant temp = new SpellcardVariant();
+
+        //element
+        for (int i = 0; i < spellVariants.Length; i++)
+        {
+            m_SpellcardVariants.Add(new SpellcardVariant(0,0,0));
+            SpellScript sp = spellVariants[i].transform.GetChild(0).GetComponent<SpellScript>();
+            if (!sp)
+                Debug.Log("spellscript not found");
+            temp = m_SpellcardVariants[i];
+            temp.element = sp.getElement();
+            m_SpellcardVariants[i] = temp;
+        }
+
+        //numberOfSpellcards
+        int maxNumberOfSpellcards = 12;
+        temp = m_SpellcardVariants[0];
+        temp.numberOfSpellcards = 1;
+        m_SpellcardVariants[0] = temp;
+        int spellcardCount = 1;
+
+        for (int i = 1; i < m_SpellcardVariants.Count; i++)
+        {
+
+            temp = m_SpellcardVariants[i];
+            temp.numberOfSpellcards = 2;
+            spellcardCount += 2;
+            m_SpellcardVariants[i] = temp;
+
+        }
+
+        int index = 1;
+        do
+        {
+            if (Random.Range(0, 2) == 1)
+            {
+                temp = m_SpellcardVariants[index];
+                temp.numberOfSpellcards++;
+                m_SpellcardVariants[index] = temp;
+                spellcardCount++;
+            }
+            index++;
+            if (index >= m_SpellcardVariants.Count)
+                index = 1;
+        } while (spellcardCount < maxNumberOfSpellcards);
  
+        //numberOfRunes
+        int numberOfRuneVariants = 3;
+        int[] randRunes = { 0, 0, 0 };
+
+        for (int i = 0; i < numberOfRuneVariants; i++)
+        {
+            bool numberTaken;
+            do
+            {
+                randRunes[i] = Random.Range(1, 8);
+                numberTaken = false;
+                
+                for (int j = 0; j < numberOfRuneVariants; j++)
+                {
+                    if (i != j)
+                    {
+                        if (randRunes[i] == randRunes[j])
+                        {
+                            numberTaken = true;
+
+                        }
+                    }
+                }
+            } while (numberTaken);
+        }
+
+        for (int i = 0; i < m_SpellcardVariants.Count; i++)
+        {
+            temp = m_SpellcardVariants[i];
+            temp.numberOfRunes = 0;
+            m_SpellcardVariants[i] = temp;
+        }
+
+        for (int i = 0; i < m_SpellcardVariants.Count; i++)
+        {
+            if (i == 0)//if unique
+            {
+                temp = m_SpellcardVariants[0];
+                temp.numberOfRunes = randRunes[0];
+                m_SpellcardVariants[0] = temp;
+            }
+            else
+            {
+                int lowerBound = 0;
+                if (m_SpellcardVariants[i].element == m_SpellcardVariants[0].element)//if same element as unique: cannot have the runes in randRunes[0]
+                {
+                    lowerBound = 1;
+                }
+
+                temp = m_SpellcardVariants[i];
+                temp.numberOfRunes = randRunes[Random.Range(lowerBound, numberOfRuneVariants)];
+                m_SpellcardVariants[i] = temp;
+            }
+        }
+        //for (int i = 0; i < m_SpellcardVariants.Count; i++)
+        //{
+        //    Debug.Log("SpellcardVariants[" + i + "]: element = " + m_SpellcardVariants[i].element + ", #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ", #runes = " + m_SpellcardVariants[i].numberOfRunes);
+        //}
+    }
+
     private void ClearPage()
     {
         if (m_SpellsOnPage.Count > 0)

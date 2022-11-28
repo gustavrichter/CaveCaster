@@ -65,7 +65,6 @@ public  class SpellScript : MonoBehaviour
             m_RunesOnSpell[i].SetActive(false);
             //m_RunesOnSpell[i].transform.SetParent(m_SpellPositions[i].transform, false);
 
-
         }
     }
 
@@ -78,11 +77,13 @@ public  class SpellScript : MonoBehaviour
 
         if (pos == null)
             Debug.Log("no PositionList returned");
-
-        for (int i = 0; i < m_RunesOnSpell.Count; i++)
+        else
         {
+            for (int i = 0; i < m_RunesOnSpell.Count; i++)
+            {
 
-            m_RunesOnSpell[i].SetActive(pos[i]==1);
+                m_RunesOnSpell[i].SetActive(pos[i] == 1);
+            }
         }
     }
   
@@ -109,5 +110,13 @@ public  class SpellScript : MonoBehaviour
     public int getElement()
     {
         return element;
+    }
+    public int getNumberOfRunes()
+    {
+        return numberOfRunes;
+    }
+    public void setNumberOfRunes(int numRunes)
+    {
+        numberOfRunes = numRunes;
     }
 }
