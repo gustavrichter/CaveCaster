@@ -8,10 +8,9 @@ public class PageScript : MonoBehaviour
 
     
     [SerializeField] private GameObject[] m_SpellPositions; //size=12
-    [SerializeField] private Canvas mainCanvas;
 
-    public int numberOfSpellcards;
-    public int maxNumberOfSpellcards;
+    //public int numberOfSpellcards;
+    //public int maxNumberOfSpellcards;
     private List<GameObject> m_SpellsOnPage = new List<GameObject>(); //dynamic size
     private List<SpellScript> m_SpellScripts= new List<SpellScript>(); //dynamic size
     // Start is called before the first frame update
@@ -95,7 +94,7 @@ public class PageScript : MonoBehaviour
                 else
                     m_SpellScripts[SpellCardCounter].DrawRunes(numberOfRunes);
 
-                maxNumberOfSpellcards -= numberOfSpellcards;
+                //maxNumberOfSpellcards -= numberOfSpellcards;
                 SpellCardCounter = m_SpellsOnPage.Count;
             }
         }

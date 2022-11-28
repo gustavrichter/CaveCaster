@@ -24,6 +24,9 @@ public  class SpellScript : MonoBehaviour
     public bool wasFired = false;
     public bool bunique = false;
 
+    public delegate void SpellAction();
+    public event SpellAction WasFired;
+
     [SerializeField] private GameObject[] m_SpellPositions;//size=7
 
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size

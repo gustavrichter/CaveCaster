@@ -6,11 +6,11 @@ public class MagicBookScript : MonoBehaviour
 {
     private bool m_bisClosed = false;
 
-    public GameObject m_OpenImage;
-    public GameObject m_ClosedImage;
+    public GameObject m_BookOpen;
+    public GameObject m_BookClosed;
 
     [SerializeField]
-    private GameObject[] m_Spells;//size=4
+    private GameObject[] m_Spells;//size=5
     
 
     [SerializeField]
@@ -19,14 +19,18 @@ public class MagicBookScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if(m_bisClosed)
-            m_ClosedImage.SetActive(true);
-        else
-            m_OpenImage.SetActive(true);
+        
+        m_BookOpen.SetActive(false);
+        m_BookClosed.SetActive(false);
+        m_bisClosed = true;
+
+        OpenBook();
 
         m_PageScript = m_Page.GetComponent<PageScript>();
+        m_Page.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -41,15 +45,16 @@ public class MagicBookScript : MonoBehaviour
 
         if (m_bisClosed)
         {
-            m_ClosedImage.SetActive(false);
-            m_OpenImage.SetActive(true);
+            m_BookClosed.SetActive(false);
+            m_BookOpen.SetActive(true);
             m_bisClosed = false;
         }
         else
         {
-            m_ClosedImage.SetActive(true);
-            m_OpenImage.SetActive(false);
+            m_BookClosed.SetActive(true);
+            m_BookOpen.SetActive(false);
             m_bisClosed = true;
+
         }
     }
     public void TurnPage()
@@ -61,8 +66,11 @@ public class MagicBookScript : MonoBehaviour
 
             GameObject[] shuffledSpellList = (GameObject[]) m_Spells.Clone();
             GameObject[] selectedSpellsList = new GameObject[numberOfSpells];
-
-            //sometimes an error is given, saying the List is not an instance of any object
+            if (!m_PageScript)
+            {
+                Debug.Log("Book has not found PageScript");
+            }
+            m_PageScript.ShuffleList(m_Spells);
             m_PageScript.ShuffleList(shuffledSpellList);
 
             for (int i = 0 ; i < numberOfSpells; i++)

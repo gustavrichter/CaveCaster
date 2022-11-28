@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyScript : MonoBehaviour
 {
-    [SerializeField] protected GameObject player;
+    protected GameObject player;
     protected PlayerScript playerScript;
     protected float coolDown;
     protected float health;
@@ -14,7 +14,7 @@ public abstract class EnemyScript : MonoBehaviour
     protected int ice = 2;
     protected int nature = 3;
     protected int shock = 4;
-    protected float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock
+    protected float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
     protected bool alive;
     
     protected virtual void Awake()
@@ -24,16 +24,16 @@ public abstract class EnemyScript : MonoBehaviour
     }
     protected virtual void Init()
     {
-        //Debug.Log(this.transform.name + " commencing Init().");
         damage = 10;
         coolDown = 4;
         health = 100;
         alive = true;
+
+        player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerScript>();
         if (!playerScript)
             Debug.Log("PlayerScript not found");
     }
-    // Update is called once per frame
     protected virtual void Update()
     {
         coolDown -= Time.deltaTime;
@@ -53,11 +53,11 @@ public abstract class EnemyScript : MonoBehaviour
         health -= (damage/elementResistances[element]);
 
         if (elementResistances[element] < 1)//if crit
-            Debug.Log(gameObject.name + ": Extra Outch: " + health);
+            Debug.Log(gameObject.name + ": Extra Outch! " + health);
         else if(elementResistances[element] > 1)
-            Debug.Log(gameObject.name + ": Not so Outch!" + health);
+            Debug.Log(gameObject.name + ": Not so Outch! " + health);
         else
-            Debug.Log(gameObject.name + ": Outch!" + health);
+            Debug.Log(gameObject.name + ": Outch! " + health);
 
         if (health<= 0)
         {

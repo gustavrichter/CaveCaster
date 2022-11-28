@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragOnEnemyFire : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     RectTransform myPosition;
     CanvasGroup myCanvasGroup;
@@ -10,14 +10,18 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
    
     private void Awake()
     {
-        myPosition = GetComponent<RectTransform>();
+        //string spellName = GetComponentInParent<Transform>().name;
+        string spellName = GetComponentInParent<Transform>().name;
+        myPosition = gameObject.GetComponentInParent(typeof(RectTransform)) as RectTransform;
         myCanvasGroup = GetComponent<CanvasGroup>();
-        mySpellScript = gameObject.GetComponentInParent(typeof(SpellScript)) as SpellScript;
+        mySpellScript = GetComponent<SpellScript>();
         if (!myCanvasGroup)
-            Debug.Log(gameObject.name + "canvGroup not found");
+            Debug.Log(spellName + " canvGroup not found");
+        if (!myPosition)
+            Debug.Log(spellName + " rectTransform not found");
         if (!mySpellScript)
         {
-            Debug.Log(gameObject.name + "SpellScript not found");
+            Debug.Log(spellName + "SpellScript not found");
         }
 
 
@@ -25,7 +29,7 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("OnDrop");
-      
+       
 
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -75,14 +79,8 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("Finding spellscript from Spellpos");
-        //mySpellScript = transform.GetChild(0).GetChild(0).GetComponent<SpellScript>();
-
-        //if (!mySpellScript)
-        //    Debug.Log(gameObject.name + "SpellScript not found");
-
         //Debug.Log("PointerDown");
     }
-
+  
 }
 

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3849260732866148502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -121,9 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101ecf330537f404d9cfd1bda233f13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OpenImage: {fileID: 3849260732866148501}
-  m_ClosedImage: {fileID: 3849260734782984604}
-  m_Spells: []
+  m_BookOpen: {fileID: 3849260732866148501}
+  m_BookClosed: {fileID: 3849260734782984604}
+  m_Spells:
+  - {fileID: 1753519492334419225, guid: 0c268cb0e81a39744a7810b1c64185e0, type: 3}
+  - {fileID: 1753519492334419225, guid: c391cf2641a452643986bee963205329, type: 3}
+  - {fileID: 1753519492334419225, guid: a675707c0bc89084680524061087c520, type: 3}
+  - {fileID: 1753519492334419225, guid: 375e732c4f1827e47bb1cf8f1878b17b, type: 3}
+  - {fileID: 1753519492334419225, guid: da619522038193f479f285daee2ecd53, type: 3}
   m_Page: {fileID: 3849260734037857858}
 --- !u!1 &3849260732923389116
 GameObject:
@@ -704,8 +709,6 @@ MonoBehaviour:
   - {fileID: 3849260733161794573}
   - {fileID: 3849260733353242060}
   mainCanvas: {fileID: 0}
-  numberOfSpellcards: 0
-  maxNumberOfSpellcards: 0
 --- !u!1 &3849260734393302129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3849260734782984605
 RectTransform:
   m_ObjectHideFlags: 0

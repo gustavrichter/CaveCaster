@@ -21,7 +21,8 @@ public class CaveScript : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        clonedEnemy = Instantiate(enemy, spawnPoint);
+        clonedEnemy = Instantiate(enemy, this.gameObject.transform) as GameObject;
+        //clonedEnemy.gameObject.transform.SetParent(this.transform, true);
         
     }
 }

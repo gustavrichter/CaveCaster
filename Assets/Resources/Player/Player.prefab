@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590f3d374a772af458d8e97d40dfaea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MagicBook: {fileID: 0}
+  m_MagicBook: {fileID: 3849260732913964694, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+    type: 3}
   m_MagicBookScript: {fileID: 0}
+  m_Cave: {fileID: 1463707670969758129, guid: 8797e743221f4884d940e65eaac9b798, type: 3}
