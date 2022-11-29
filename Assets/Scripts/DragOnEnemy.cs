@@ -2,43 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
+
 public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     RectTransform myPosition;
+    Vector2 posAnchoredPosition;
     CanvasGroup myCanvasGroup;
-    SpellScript mySpellScript;
-   
+    PointerEventData ped;
+    public Action SpellCardDropped = delegate {};//will always be called, that way: won't give nullreference exception when no methods are subscribed
+
     private void Awake()
     {
         myPosition = GetComponent<RectTransform>();
         myCanvasGroup = GetComponent<CanvasGroup>();
-        mySpellScript = gameObject.GetComponentInParent(typeof(SpellScript)) as SpellScript;
-        if (!myCanvasGroup)
-            Debug.Log(gameObject.name + "canvGroup not found");
-        if (!mySpellScript)
-        {
-            Debug.Log(gameObject.name + "SpellScript not found");
-        }
-
-
+    }
+   void Start()
+    {
+        posAnchoredPosition = myPosition.anchoredPosition;
     }
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log("OnDrop");
-      
-
+     
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Debug.Log("BeginDrag");
         myCanvasGroup.blocksRaycasts = false;
 
+
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("OnDrag");
-        myPosition.anchoredPosition += eventData.delta / myPosition.lossyScale; //scaling it correctly with lossyScale
+        myPosition.anchoredPosition += eventData.delta;// / myPosition.lossyScale; //scaling it correctly with lossyScale
        
 
 
@@ -46,42 +44,20 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("EndDrag");
-        if (mySpellScript.bunique)
-        {
-            RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-            if (rayHit)
-            {
-                //EnemySlimeScript enemyscr = rayHit.transform.gameObject.GetComponent<EnemySlimeScript>();
-                EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
-                if (!enemyScript)
-                    Debug.Log("enemyscr not found");
-                else
-                {
-                    enemyScript.TakeDamage(mySpellScript.getDamage(), mySpellScript.getElement());
-                }
+        Debug.Log(gameObject.name + "SpellcardDropped");
+        SpellCardDropped();
 
-               
-            }
-            else
-            {
-                Debug.Log("No target hit");
-            }
-        }
-
-        
         myCanvasGroup.blocksRaycasts = true;
+    }
+    public void ResetPosition()
+    {
+        myPosition.anchoredPosition = posAnchoredPosition;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("Finding spellscript from Spellpos");
-        //mySpellScript = transform.GetChild(0).GetChild(0).GetComponent<SpellScript>();
-
-        //if (!mySpellScript)
-        //    Debug.Log(gameObject.name + "SpellScript not found");
-
         //Debug.Log("PointerDown");
+
     }
 
 }

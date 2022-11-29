@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public abstract class EnemyScript : MonoBehaviour
 {
+    public int m_id;
     protected GameObject player;
     protected PlayerScript playerScript;
     protected float coolDown;
@@ -16,6 +17,8 @@ public abstract class EnemyScript : MonoBehaviour
     protected int shock = 4;
     protected float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
     protected bool alive;
+
+    public Action<int> EnemyDeath = delegate { };
     
     protected virtual void Awake()
     {
@@ -62,6 +65,7 @@ public abstract class EnemyScript : MonoBehaviour
         if (health<= 0)
         {
             alive = false;
+            EnemyDeath(m_id);
         }
     }
     public abstract void Attack();

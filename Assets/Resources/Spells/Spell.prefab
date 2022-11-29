@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 48993738082035486}
   - component: {fileID: 770893110498818369}
   - component: {fileID: 7039962472447635164}
-  - component: {fileID: 2954178646788558510}
-  - component: {fileID: 7652238617113130067}
   m_Layer: 7
   m_Name: SpellCard
   m_TagString: Untagged
@@ -85,30 +83,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2954178646788558510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630465086738795907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!225 &7652238617113130067
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630465086738795907}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1753519492334419225
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 0
+  m_dragScript: {fileID: 0}
   m_Rune: {fileID: 0}
   wasFired: 0
   bunique: 0

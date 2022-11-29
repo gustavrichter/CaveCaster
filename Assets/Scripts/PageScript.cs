@@ -18,36 +18,21 @@ struct SpellcardVariant
 
 public class PageScript : MonoBehaviour
 {
-
     
     [SerializeField] private GameObject[] m_SpellPositions; //size=12
 
-    //public int numberOfSpellcards;
-    //public int maxNumberOfSpellcards;
-    private List<GameObject> m_SpellsOnPage = new List<GameObject>(); //dynamic size
-    private List<SpellScript> m_SpellScripts= new List<SpellScript>(); //dynamic size
-    private List<SpellcardVariant> m_SpellcardVariants = new List<SpellcardVariant>();
-    // Start is called before the first frame update
-    void Start()
+    private List<GameObject> m_SpellsOnPage; //dynamic size
+    private List<SpellScript> m_SpellScripts; //dynamic size
+    private List<SpellcardVariant> m_SpellcardVariants;
+    private void Awake()
     {
-    }
+        m_SpellsOnPage = new List<GameObject>();
+        m_SpellScripts = new List<SpellScript>();
+        m_SpellcardVariants = new List<SpellcardVariant>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (m_SpellsOnPage.Count > 0)
-        //{
-        //    foreach (var item in m_SpellScripts)
-        //    {
-        //        if (item.wasFired)
-        //            NextPage();
-        //    }
-        //}
     }
-
     public void NextPage(GameObject[] spellVariants)
     {
-        ClearPage();
         //shuffle transform list to place the spellcards randomly
         ShuffleList(m_SpellPositions);
         //create the different types of spellcards
@@ -66,6 +51,9 @@ public class PageScript : MonoBehaviour
 
                 if (m_SpellScripts[SpellCardCounter])
                 {
+                    if (i == 0)
+                        m_SpellScripts[SpellCardCounter].bunique = true;
+
                     m_SpellScripts[SpellCardCounter].DrawRunes(m_SpellcardVariants[i].numberOfRunes);
                     SpellCardCounter++;
                 }
@@ -141,15 +129,10 @@ public class PageScript : MonoBehaviour
                 
                 for (int j = 0; j < numberOfRuneVariants; j++)
                 {
-                    if (i != j)
-                    {
-                        if (randRunes[i] == randRunes[j])
-                        {
-                            numberTaken = true;
-
-                        }
-                    }
+                    if (i != j && randRunes[i] == randRunes[j])
+                        numberTaken = true;
                 }
+
             } while (numberTaken);
         }
 
@@ -187,7 +170,7 @@ public class PageScript : MonoBehaviour
         //}
     }
 
-    private void ClearPage()
+    public void ClearPage()
     {
         if (m_SpellsOnPage.Count > 0)
         {
@@ -215,5 +198,14 @@ public class PageScript : MonoBehaviour
             List[i] = List[r];
             List[r] = temp;
         }
+    }
+
+    public List<SpellScript> GetSpellScripts()
+    {
+        if (m_SpellScripts.Count > 0)
+        {
+            return m_SpellScripts;
+        }
+        return null;
     }
 }

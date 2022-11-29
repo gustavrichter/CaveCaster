@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 
 struct Positions
 {
@@ -18,15 +18,15 @@ struct Positions
 public  class SpellScript : MonoBehaviour
 {
     [SerializeField] private int element;
+    [SerializeField] private DragOnEnemy m_dragScript;
     private int numberOfRunes;
-    private int baseDamage = 10;
+    private int baseDamage = 50;
     public GameObject m_Rune;
     public bool wasFired = false;
     public bool bunique = false;
+    public Action SpellFired = delegate { };
 
-    public delegate void SpellAction();
-    public event SpellAction WasFired;
-
+   
     [SerializeField] private GameObject[] m_SpellPositions;//size=7
 
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size
@@ -40,7 +40,6 @@ public  class SpellScript : MonoBehaviour
     private int[] m_positions_6 = new int[] { 0, 1, 1, 1, 1, 1, 1};
     private int[] m_positions_7 = new int[] { 1, 1, 1, 1, 1, 1, 1};
 
-    //private Positions[] m_aPositions = new Positions[] { new Positions(), new Positions(), new Positions()};
     private Positions[] m_aPositions = new Positions[7];
 
    
@@ -63,13 +62,46 @@ public  class SpellScript : MonoBehaviour
         {
             m_RunesOnSpell.Add(Instantiate(m_Rune, m_SpellPositions[i].transform));
             m_RunesOnSpell[i].SetActive(false);
-            //m_RunesOnSpell[i].transform.SetParent(m_SpellPositions[i].transform, false);
 
         }
+       
     }
+    private void Start()
+    {
+        m_dragScript = GetComponentInParent<DragOnEnemy>() as DragOnEnemy;
+        if (!m_dragScript)
+            Debug.Log("dragsrpit not found");
+        m_dragScript.SpellCardDropped += FiringSpell;
 
+    }
+    private void OnDestroy()
+    {
+        m_dragScript.SpellCardDropped -= FiringSpell;
+    }
+    private void FiringSpell()
+    {
+        //do raycast
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+        if (rayHit)
+        {
 
+            EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
+            if (!enemyScript)
+                Debug.Log("enemyscr not found");
+            else if(bunique)
+            {
+                enemyScript.TakeDamage(getDamage(), getElement());
+            }
 
+            SpellFired();
+        }
+        else
+        {
+            Debug.Log("No target hit");
+        }
+
+        m_dragScript.ResetPosition();
+    }
     public void DrawRunes(int amount)
     {
         numberOfRunes = amount;
@@ -105,7 +137,8 @@ public  class SpellScript : MonoBehaviour
 
     public int getDamage()
     {
-        return baseDamage*numberOfRunes;
+
+        return baseDamage;// *numberOfRunes;
     }
     public int getElement()
     {

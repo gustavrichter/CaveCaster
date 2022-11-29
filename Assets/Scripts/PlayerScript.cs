@@ -10,8 +10,7 @@ public class PlayerScript : MonoBehaviour
     private MagicBookScript m_MagicBookScript;
     public GameObject m_Cave;
     private CaveScript m_caveScript;
-    // private bool healthWasSet = false;
-    // private bool healthWasSet2 = false;
+
 
     private void Awake()
     {
@@ -27,24 +26,13 @@ public class PlayerScript : MonoBehaviour
 
         m_MagicBookScript = m_MagicBook.GetComponent<MagicBookScript>();
         m_caveScript = m_Cave.GetComponent<CaveScript>();
+        m_caveScript.EnemiesAhead += OpenBook;
+        m_caveScript.StageComplete += CloseBook;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            m_MagicBookScript.OpenBook();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            m_MagicBookScript.TurnPage();
-
-        }
-        
         if (Input.GetKeyDown(KeyCode.E))
         {
             m_caveScript.SpawnEnemy();
@@ -62,6 +50,16 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Game Over.");
         }
     }
+
+    private void OpenBook()
+    {
+        m_MagicBookScript.OpenBook();
+    } 
+    private void CloseBook()
+    {
+        m_MagicBookScript.CloseBook();
+    }
+
 
 }
 

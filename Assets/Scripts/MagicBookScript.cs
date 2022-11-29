@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicBookScript : MonoBehaviour
 {
-    private bool m_bisClosed = false;
+    private bool m_bisClosed;
 
     public GameObject m_BookOpen;
     public GameObject m_BookClosed;
@@ -23,13 +23,10 @@ public class MagicBookScript : MonoBehaviour
     {
         
         m_BookOpen.SetActive(false);
-        m_BookClosed.SetActive(false);
+        m_BookClosed.SetActive(true);
         m_bisClosed = true;
-
-        OpenBook();
-
         m_PageScript = m_Page.GetComponent<PageScript>();
-        m_Page.SetActive(true);
+        
         
     }
 
@@ -42,39 +39,55 @@ public class MagicBookScript : MonoBehaviour
    
     public void OpenBook()
     {
-
-        if (m_bisClosed)
-        {
-            m_BookClosed.SetActive(false);
-            m_BookOpen.SetActive(true);
-            m_bisClosed = false;
-        }
-        else
-        {
-            m_BookClosed.SetActive(true);
-            m_BookOpen.SetActive(false);
-            m_bisClosed = true;
-
-        }
+        m_BookClosed.SetActive(false);
+        m_BookOpen.SetActive(true);
+        m_bisClosed = false;
+        TurnPage();
+    }
+    public void CloseBook()
+    {
+        m_BookClosed.SetActive(true);
+        m_BookOpen.SetActive(false);
+        m_bisClosed = true;
+        m_PageScript.ClearPage();
     }
     public void TurnPage()
     {
+
+        List<SpellScript> spellScripts = m_PageScript.GetSpellScripts();
+        if (spellScripts != null)
+        {
+            for (int i = 0; i < spellScripts.Count; i++)
+            {
+                spellScripts[i].SpellFired -= TurnPage;
+            }
+
+        }
+
+
+        m_PageScript.ClearPage();
         if (!m_bisClosed)
         {
             //get a list with the spellvariants to put on the page
             GameObject[] selectedSpellVariants = GetSpellVariants();
             m_PageScript.NextPage(selectedSpellVariants);
-
+            spellScripts = m_PageScript.GetSpellScripts();
+            for (int i = 0; i < spellScripts.Count; i++)
+            {
+                spellScripts[i].SpellFired += TurnPage;
+            }
         }
+       
 
     }
+
 
     GameObject[] GetSpellVariants()
     {
         //select between 3 and 4 of the first spells in shuffledList
         int numberOfSpells = Random.Range(2, 4); //[2,3]
         int numberOfSpellcardVariants = Random.Range(4, 6);//[4,5]
-        Debug.Log("Creating " + numberOfSpellcardVariants + " spell card variants");
+        //Debug.Log("Creating " + numberOfSpellcardVariants + " spell card variants");
 
         GameObject[] shuffledSpellList = (GameObject[])m_Spells.Clone();
         GameObject[] selectedSpellsList = new GameObject[numberOfSpells];
@@ -112,7 +125,7 @@ public class MagicBookScript : MonoBehaviour
                 }
                 
             }
-            Debug.Log("SpellVarians[" + i + "]= " + selectedSpellsVariantsList[i].name);
+            //Debug.Log("SpellVarians[" + i + "]= " + selectedSpellsVariantsList[i].name);
         }
         return selectedSpellsVariantsList;
     }

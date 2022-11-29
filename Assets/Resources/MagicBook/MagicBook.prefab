@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: 3849260732923389117}
   - component: {fileID: 3849260732923389104}
   - component: {fileID: 3849260732923389118}
+  - component: {fileID: 5969989656129706730}
+  - component: {fileID: 7900983413100568462}
   m_Layer: 5
   m_Name: SpellPos8
   m_TagString: Untagged
@@ -202,6 +204,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &5969989656129706730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260732923389116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &7900983413100568462
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260732923389116}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260733160082392
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +239,8 @@ GameObject:
   - component: {fileID: 3849260733160082393}
   - component: {fileID: 3849260733160082396}
   - component: {fileID: 3849260733160082394}
+  - component: {fileID: 2749767056480172670}
+  - component: {fileID: 3728011611391785528}
   m_Layer: 5
   m_Name: SpellPos1
   m_TagString: Untagged
@@ -274,6 +302,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &2749767056480172670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733160082392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &3728011611391785528
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733160082392}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260733161794573
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +337,8 @@ GameObject:
   - component: {fileID: 3849260733161794574}
   - component: {fileID: 3849260733161794561}
   - component: {fileID: 3849260733161794575}
+  - component: {fileID: 5092919494634253730}
+  - component: {fileID: 1192101121875382336}
   m_Layer: 5
   m_Name: SpellPos11
   m_TagString: Untagged
@@ -346,6 +400,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!225 &5092919494634253730
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733161794573}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1192101121875382336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733161794573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3849260733316462575
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +435,8 @@ GameObject:
   - component: {fileID: 3849260733316462560}
   - component: {fileID: 3849260733316462563}
   - component: {fileID: 3849260733316462561}
+  - component: {fileID: 6518749120349080520}
+  - component: {fileID: 5842319165479844606}
   m_Layer: 5
   m_Name: SpellPos2
   m_TagString: Untagged
@@ -418,6 +498,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &6518749120349080520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733316462575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &5842319165479844606
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733316462575}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260733353242060
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +533,8 @@ GameObject:
   - component: {fileID: 3849260733353242061}
   - component: {fileID: 3849260733353242048}
   - component: {fileID: 3849260733353242062}
+  - component: {fileID: 1568208362210086688}
+  - component: {fileID: 5125719553285505230}
   m_Layer: 5
   m_Name: SpellPos12
   m_TagString: Untagged
@@ -490,6 +596,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &1568208362210086688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733353242060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &5125719553285505230
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733353242060}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260733379476683
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +631,8 @@ GameObject:
   - component: {fileID: 3849260733379476684}
   - component: {fileID: 3849260733379476687}
   - component: {fileID: 3849260733379476685}
+  - component: {fileID: 2302712128909085907}
+  - component: {fileID: 4525881296644903695}
   m_Layer: 5
   m_Name: SpellPos5
   m_TagString: Untagged
@@ -562,6 +694,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &2302712128909085907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733379476683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &4525881296644903695
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733379476683}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260733419163673
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +729,8 @@ GameObject:
   - component: {fileID: 3849260733419163674}
   - component: {fileID: 3849260733419163677}
   - component: {fileID: 3849260733419163675}
+  - component: {fileID: 9158002962794266059}
+  - component: {fileID: 6990204234090380987}
   m_Layer: 5
   m_Name: SpellPos10
   m_TagString: Untagged
@@ -634,6 +792,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &9158002962794266059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733419163673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &6990204234090380987
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260733419163673}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260734037857858
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +890,6 @@ MonoBehaviour:
   - {fileID: 3849260733419163673}
   - {fileID: 3849260733161794573}
   - {fileID: 3849260733353242060}
-  mainCanvas: {fileID: 0}
 --- !u!1 &3849260734393302129
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +901,8 @@ GameObject:
   - component: {fileID: 3849260734393302130}
   - component: {fileID: 3849260734393302133}
   - component: {fileID: 3849260734393302131}
+  - component: {fileID: 4689736115841480014}
+  - component: {fileID: 2502905608160729892}
   m_Layer: 5
   m_Name: SpellPos9
   m_TagString: Untagged
@@ -781,6 +964,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!225 &4689736115841480014
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734393302129}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &2502905608160729892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734393302129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3849260734411877115
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +1102,8 @@ GameObject:
   - component: {fileID: 3849260734425161835}
   - component: {fileID: 3849260734425161838}
   - component: {fileID: 3849260734425161836}
+  - component: {fileID: 695952842639429718}
+  - component: {fileID: 1724721080253366754}
   m_Layer: 5
   m_Name: SpellPos7
   m_TagString: Untagged
@@ -956,6 +1165,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!225 &695952842639429718
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734425161834}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1724721080253366754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734425161834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3849260734714225313
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +1200,8 @@ GameObject:
   - component: {fileID: 3849260734714225314}
   - component: {fileID: 3849260734714225317}
   - component: {fileID: 3849260734714225315}
+  - component: {fileID: 1987857210883920560}
+  - component: {fileID: 8146494742759468873}
   m_Layer: 5
   m_Name: SpellPos3
   m_TagString: Untagged
@@ -1028,6 +1263,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &1987857210883920560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734714225313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &8146494742759468873
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734714225313}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260734782984604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1374,8 @@ GameObject:
   - component: {fileID: 3849260734880759205}
   - component: {fileID: 3849260734880759192}
   - component: {fileID: 3849260734880759206}
+  - component: {fileID: 5862237249416655681}
+  - component: {fileID: 2509577159821790095}
   m_Layer: 5
   m_Name: SpellPos6
   m_TagString: Untagged
@@ -1176,6 +1437,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &5862237249416655681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734880759204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &2509577159821790095
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734880759204}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3849260734885530954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1472,8 @@ GameObject:
   - component: {fileID: 3849260734885530955}
   - component: {fileID: 3849260734885530958}
   - component: {fileID: 3849260734885530956}
+  - component: {fileID: 538932797135154555}
+  - component: {fileID: 7061296376916024238}
   m_Layer: 5
   m_Name: SpellPos4
   m_TagString: Untagged
@@ -1248,3 +1535,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &538932797135154555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734885530954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &7061296376916024238
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849260734885530954}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
