@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MagicBookScript : MonoBehaviour
 {
-    private bool m_bisClosed = true;
+    private bool m_bisClosed;
 
-    public GameObject m_OpenImage;
-    public GameObject m_ClosedImage;
+    public GameObject m_BookOpen;
+    public GameObject m_BookClosed;
 
     [SerializeField]
-    private GameObject[] m_Spells;//size=4
+    private GameObject[] m_Spells;//size=5
     
 
     [SerializeField]
@@ -19,11 +19,15 @@ public class MagicBookScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        m_ClosedImage.SetActive(true);
-        m_OpenImage.SetActive(false);
+        
+        m_BookOpen.SetActive(false);
+        m_BookClosed.SetActive(true);
+        m_bisClosed = true;
         m_PageScript = m_Page.GetComponent<PageScript>();
+        
+        
     }
 
     // Update is called once per frame
@@ -32,38 +36,97 @@ public class MagicBookScript : MonoBehaviour
     
 
     }
+   
     public void OpenBook()
     {
-
-        if (m_bisClosed)
-        {
-            m_ClosedImage.SetActive(false);
-            m_OpenImage.SetActive(true);
-            m_bisClosed = false;
-        }
-        else
-        {
-            m_ClosedImage.SetActive(true);
-            m_OpenImage.SetActive(false);
-            m_bisClosed = true;
-        }
+        m_BookClosed.SetActive(false);
+        m_BookOpen.SetActive(true);
+        m_bisClosed = false;
+        TurnPage();
+    }
+    public void CloseBook()
+    {
+        m_BookClosed.SetActive(true);
+        m_BookOpen.SetActive(false);
+        m_bisClosed = true;
+        m_PageScript.ClearPage();
     }
     public void TurnPage()
     {
-        if (!m_bisClosed)
-        {
-            GameObject[] shuffledSpellList = m_Spells;
-            GameObject[] selectedSpellsList = null;
-            m_PageScript.ShuffleList(shuffledSpellList);
 
-            int r = Random.Range(2, 4);
-            for (int i = 0 ; i < r; i++)
+        List<SpellScript> spellScripts = m_PageScript.GetSpellScripts();
+        if (spellScripts != null)
+        {
+            for (int i = 0; i < spellScripts.Count; i++)
             {
-                selectedSpellsList[i] = shuffledSpellList[i];
+                spellScripts[i].SpellFired -= TurnPage;
             }
-            m_PageScript.NextPage(selectedSpellsList);
 
         }
 
+
+        m_PageScript.ClearPage();
+        if (!m_bisClosed)
+        {
+            //get a list with the spellvariants to put on the page
+            GameObject[] selectedSpellVariants = GetSpellVariants();
+            m_PageScript.NextPage(selectedSpellVariants);
+            spellScripts = m_PageScript.GetSpellScripts();
+            for (int i = 0; i < spellScripts.Count; i++)
+            {
+                spellScripts[i].SpellFired += TurnPage;
+            }
+        }
+       
+
+    }
+
+
+    GameObject[] GetSpellVariants()
+    {
+        //select between 3 and 4 of the first spells in shuffledList
+        int numberOfSpells = Random.Range(2, 4); //[2,3]
+        int numberOfSpellcardVariants = Random.Range(4, 6);//[4,5]
+        //Debug.Log("Creating " + numberOfSpellcardVariants + " spell card variants");
+
+        GameObject[] shuffledSpellList = (GameObject[])m_Spells.Clone();
+        GameObject[] selectedSpellsList = new GameObject[numberOfSpells];
+        GameObject[] selectedSpellsVariantsList = new GameObject[numberOfSpellcardVariants];
+        if (!m_PageScript)
+        {
+            Debug.Log("Book has not found PageScript");
+        }
+
+        m_PageScript.ShuffleList(shuffledSpellList);
+
+        for (int i = 0; i < numberOfSpells; i++)
+        {
+            //select the first 2 or 3 spells from the shuffled spell list
+            selectedSpellsList[i] = shuffledSpellList[i];
+            //selectedSpellsList[i] = m_Spells[Random.Range(0, m_Spells.Length - 1)];
+        }
+        for (int i = 0; i < numberOfSpellcardVariants; i++)//create a list with 4-5 spell variants on a page
+        {
+            if (i < numberOfSpells)
+            {
+                selectedSpellsVariantsList[i] = selectedSpellsList[i];
+            }
+            else
+            {
+                //sicherstellen dass es von dem unique element mindestens zwei variants gibt damit man nie einfach durch farbe entscheiden kann
+                if (i == numberOfSpells)
+                {
+                    selectedSpellsVariantsList[i] = selectedSpellsList[0];
+                }
+                else
+                {
+                    //ansonsten einen random spell aus selected spell list hinzufügen
+                    selectedSpellsVariantsList[i] = selectedSpellsList[Random.Range(0, numberOfSpells)];//not certain if all spells in selected spell list will be chosen
+                }
+                
+            }
+            //Debug.Log("SpellVarians[" + i + "]= " + selectedSpellsVariantsList[i].name);
+        }
+        return selectedSpellsVariantsList;
     }
 }
