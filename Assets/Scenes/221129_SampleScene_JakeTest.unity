@@ -4125,6 +4125,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345102322513121244, guid: 3124d5bfc5e42804abd20bb67d9ff90e,
         type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345102322513121244, guid: 3124d5bfc5e42804abd20bb67d9ff90e,
+        type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0
       objectReference: {fileID: 0}
@@ -4909,7 +4914,7 @@ PrefabInstance:
     - target: {fileID: 3849260734411877118, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
         type: 3}
       propertyPath: m_ReferenceResolution.y
-      value: 1280
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 3849260734411877118, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
         type: 3}
