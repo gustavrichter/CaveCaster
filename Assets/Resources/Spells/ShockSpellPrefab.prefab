@@ -163,12 +163,12 @@ PrefabInstance:
     - target: {fileID: 1424420370015856412, guid: 7f29ba8932f15ee4eaf3733ce4f9604e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1424420370015856412, guid: 7f29ba8932f15ee4eaf3733ce4f9604e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1424420370015856412, guid: 7f29ba8932f15ee4eaf3733ce4f9604e,
         type: 3}
@@ -235,17 +235,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShockElement
       objectReference: {fileID: 0}
-    - target: {fileID: 2674945236840857746, guid: 7f29ba8932f15ee4eaf3733ce4f9604e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562952613771694993, guid: 7f29ba8932f15ee4eaf3733ce4f9604e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6943ad0eb2c3d404a92f1c3fb62fe453,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f29ba8932f15ee4eaf3733ce4f9604e, type: 3}
 --- !u!224 &4895495708855276251 stripped
