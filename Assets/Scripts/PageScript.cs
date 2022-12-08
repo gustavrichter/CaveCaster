@@ -65,7 +65,9 @@ public class PageScript : MonoBehaviour
             }
         }
     }
-
+    void RevealUnique()
+    {
+    }
     void CreateSpellcardVariants(GameObject[] spellVariants) {
 
         m_SpellcardVariants.Clear();
