@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3849260732866148502}
   - component: {fileID: 3849260732866148488}
   - component: {fileID: 3849260732866148503}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BookOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260732866148501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734411877116}
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -700}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -102}
+  m_SizeDelta: {x: 176, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260732866148488
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3536578abfdfb6745ab45d668ccc8441, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 157fcc5000e338a42b1230a544701be2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3849260732913964695}
   - component: {fileID: 3849260732913964680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MagicBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_BookClosed: {fileID: 3849260734782984604}
   m_Spells:
   - {fileID: 1753519492334419225, guid: 0c268cb0e81a39744a7810b1c64185e0, type: 3}
-  - {fileID: 1753519492334419225, guid: c391cf2641a452643986bee963205329, type: 3}
   - {fileID: 1753519492334419225, guid: a675707c0bc89084680524061087c520, type: 3}
   - {fileID: 1753519492334419225, guid: 375e732c4f1827e47bb1cf8f1878b17b, type: 3}
   - {fileID: 1753519492334419225, guid: da619522038193f479f285daee2ecd53, type: 3}
+  - {fileID: 1753519492334419225, guid: c391cf2641a452643986bee963205329, type: 3}
   m_Page: {fileID: 3849260734037857858}
 --- !u!1 &3849260732923389116
 GameObject:
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3849260732923389118}
   - component: {fileID: 5969989656129706730}
   - component: {fileID: 7900983413100568462}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260732923389116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -167,8 +167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 339, y: -557}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 44, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260732923389104
 CanvasRenderer:
@@ -202,7 +202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &5969989656129706730
 MonoBehaviour:
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3849260733160082394}
   - component: {fileID: 2749767056480172670}
   - component: {fileID: 3728011611391785528}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260733160082392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -265,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -389, y: -540}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -66, y: 33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260733160082396
 CanvasRenderer:
@@ -300,7 +300,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &2749767056480172670
 MonoBehaviour:
@@ -326,104 +326,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &3849260733161794573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3849260733161794574}
-  - component: {fileID: 3849260733161794561}
-  - component: {fileID: 3849260733161794575}
-  - component: {fileID: 5092919494634253730}
-  - component: {fileID: 1192101121875382336}
-  m_Layer: 5
-  m_Name: SpellPos11
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3849260733161794574
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733161794573}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3849260734037857859}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112, y: -867}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3849260733161794561
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733161794573}
-  m_CullTransparentMesh: 1
---- !u!61 &3849260733161794575
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733161794573}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!225 &5092919494634253730
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733161794573}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &1192101121875382336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733161794573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3849260733316462575
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +339,7 @@ GameObject:
   - component: {fileID: 3849260733316462561}
   - component: {fileID: 6518749120349080520}
   - component: {fileID: 5842319165479844606}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +355,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260733316462575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -461,8 +363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -398, y: -675}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -22, y: -33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260733316462563
 CanvasRenderer:
@@ -496,7 +398,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &6518749120349080520
 MonoBehaviour:
@@ -522,104 +424,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &3849260733353242060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3849260733353242061}
-  - component: {fileID: 3849260733353242048}
-  - component: {fileID: 3849260733353242062}
-  - component: {fileID: 1568208362210086688}
-  - component: {fileID: 5125719553285505230}
-  m_Layer: 5
-  m_Name: SpellPos12
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3849260733353242061
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733353242060}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3849260734037857859}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 318, y: -865}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3849260733353242048
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733353242060}
-  m_CullTransparentMesh: 1
---- !u!61 &3849260733353242062
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733353242060}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!114 &1568208362210086688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733353242060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2fd190700a3374cab6c3d5286deb1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!225 &5125719553285505230
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3849260733353242060}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &3849260733379476683
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +437,7 @@ GameObject:
   - component: {fileID: 3849260733379476685}
   - component: {fileID: 2302712128909085907}
   - component: {fileID: 4525881296644903695}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +453,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260733379476683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -657,8 +461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -177, y: -677}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -66, y: -33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260733379476687
 CanvasRenderer:
@@ -692,7 +496,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &2302712128909085907
 MonoBehaviour:
@@ -731,7 +535,7 @@ GameObject:
   - component: {fileID: 3849260733419163675}
   - component: {fileID: 9158002962794266059}
   - component: {fileID: 6990204234090380987}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +551,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260733419163673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -755,8 +559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353, y: -702}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 66, y: -33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260733419163677
 CanvasRenderer:
@@ -790,7 +594,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &9158002962794266059
 MonoBehaviour:
@@ -826,7 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3849260734037857859}
   - component: {fileID: 3849260734037857860}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,15 +659,13 @@ RectTransform:
   - {fileID: 3849260732923389117}
   - {fileID: 3849260734393302130}
   - {fileID: 3849260733419163674}
-  - {fileID: 3849260733161794574}
-  - {fileID: 3849260733353242061}
   m_Father: {fileID: 3849260734411877116}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -102}
+  m_SizeDelta: {x: 176, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3849260734037857860
 MonoBehaviour:
@@ -888,8 +690,6 @@ MonoBehaviour:
   - {fileID: 3849260732923389116}
   - {fileID: 3849260734393302129}
   - {fileID: 3849260733419163673}
-  - {fileID: 3849260733161794573}
-  - {fileID: 3849260733353242060}
 --- !u!1 &3849260734393302129
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +703,7 @@ GameObject:
   - component: {fileID: 3849260734393302131}
   - component: {fileID: 4689736115841480014}
   - component: {fileID: 2502905608160729892}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +719,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260734393302129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -927,8 +727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83, y: -702}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 22, y: 33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260734393302133
 CanvasRenderer:
@@ -962,7 +762,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!225 &4689736115841480014
 CanvasGroup:
@@ -1000,7 +800,7 @@ GameObject:
   - component: {fileID: 3849260734411877119}
   - component: {fileID: 3849260734411877118}
   - component: {fileID: 3849260734411877117}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,10 +839,10 @@ Canvas:
   m_GameObject: {fileID: 3849260734411877115}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 24
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1063,10 +863,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 180, y: 320}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1104,7 +904,7 @@ GameObject:
   - component: {fileID: 3849260734425161836}
   - component: {fileID: 695952842639429718}
   - component: {fileID: 1724721080253366754}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +920,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260734425161834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -1128,8 +928,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87, y: -558}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 22, y: -33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260734425161838
 CanvasRenderer:
@@ -1163,7 +963,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!225 &695952842639429718
 CanvasGroup:
@@ -1202,7 +1002,7 @@ GameObject:
   - component: {fileID: 3849260734714225315}
   - component: {fileID: 1987857210883920560}
   - component: {fileID: 8146494742759468873}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1018,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260734714225313}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -1226,8 +1026,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -402, y: -851}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -44, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260734714225317
 CanvasRenderer:
@@ -1261,7 +1061,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &1987857210883920560
 MonoBehaviour:
@@ -1298,7 +1098,7 @@ GameObject:
   - component: {fileID: 3849260734782984605}
   - component: {fileID: 3849260734782984607}
   - component: {fileID: 3849260734782984606}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BookClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1114,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260734782984604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734411877116}
@@ -1322,8 +1122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -700}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -102}
+  m_SizeDelta: {x: 176, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260734782984607
 CanvasRenderer:
@@ -1353,7 +1153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9850d23a9185aef408541f8767ff1a4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09a9ba3bb5f031248817552561c03719, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1376,7 +1176,7 @@ GameObject:
   - component: {fileID: 3849260734880759206}
   - component: {fileID: 5862237249416655681}
   - component: {fileID: 2509577159821790095}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1192,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260734880759204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -1400,8 +1200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: -844}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 66, y: 33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260734880759192
 CanvasRenderer:
@@ -1435,7 +1235,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &5862237249416655681
 MonoBehaviour:
@@ -1474,7 +1274,7 @@ GameObject:
   - component: {fileID: 3849260734885530956}
   - component: {fileID: 538932797135154555}
   - component: {fileID: 7061296376916024238}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpellPos4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1290,7 @@ RectTransform:
   m_GameObject: {fileID: 3849260734885530954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3849260734037857859}
@@ -1498,8 +1298,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178, y: -553}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -22, y: 33}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849260734885530958
 CanvasRenderer:
@@ -1533,7 +1333,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!114 &538932797135154555
 MonoBehaviour:

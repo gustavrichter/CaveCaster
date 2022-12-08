@@ -39,7 +39,7 @@ public abstract class EnemyScript : MonoBehaviour
     }
     protected virtual void Update()
     {
-        coolDown -= Time.deltaTime;
+        //coolDown -= Time.deltaTime;
         if(coolDown<= 0)
         {
             coolDown = 15.0f;
@@ -48,7 +48,7 @@ public abstract class EnemyScript : MonoBehaviour
         if (!alive)
         {
             Debug.Log(this.transform.name + " has been slayn.");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
     public void TakeDamage(int damage, int element) {

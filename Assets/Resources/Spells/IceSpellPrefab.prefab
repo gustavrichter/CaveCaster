@@ -165,12 +165,12 @@ PrefabInstance:
     - target: {fileID: 350635462094196358, guid: 608891849a0b5b945a3c0e7014cc7501,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 350635462094196358, guid: 608891849a0b5b945a3c0e7014cc7501,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 350635462094196358, guid: 608891849a0b5b945a3c0e7014cc7501,
         type: 3}
@@ -242,12 +242,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099015754307990064, guid: 608891849a0b5b945a3c0e7014cc7501,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 61130231e0bbddb4da61d8e61a14ec7a,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608891849a0b5b945a3c0e7014cc7501, type: 3}
 --- !u!1 &7112836591963543422 stripped

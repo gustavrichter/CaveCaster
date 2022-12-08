@@ -17,10 +17,10 @@ struct Positions
 
 public  class SpellScript : MonoBehaviour
 {
-    [SerializeField] private int element;
+    [SerializeField] private int m_element;
     [SerializeField] private DragOnEnemy m_dragScript;
-    private int numberOfRunes;
-    private int baseDamage = 50;
+    private int m_numberOfRunes;
+    private int m_baseDamage = 50;
     public GameObject m_Rune;
     public bool wasFired = false;
     public bool bunique = false;
@@ -32,6 +32,7 @@ public  class SpellScript : MonoBehaviour
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size
 
     //set positions for all number variations
+    private int[] m_positions_0 = new int[] { 0, 0, 0, 0, 0, 0, 0};
     private int[] m_positions_1 = new int[] { 1, 0, 0, 0, 0, 0, 0};
     private int[] m_positions_2 = new int[] { 0, 0, 1, 0, 0, 1, 0};
     private int[] m_positions_3 = new int[] { 1, 0, 0, 1, 0, 0, 1};
@@ -82,18 +83,23 @@ public  class SpellScript : MonoBehaviour
     {
         //do raycast
         RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-        if (rayHit)
+
+        if (rayHit)//ray hit something
         {
-
-            EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
-            if (!enemyScript)
-                Debug.Log("enemyscr not found");
-            else if(bunique)
+            Debug.Log("Hit: " + rayHit.transform.gameObject.name);
+            if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
             {
-                enemyScript.TakeDamage(getDamage(), getElement());
-            }
+                //Debug.Log("enemy hit!");
 
-            SpellFired();
+                EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
+                if (!enemyScript)
+                    Debug.Log("enemyscr not found");
+                else if (bunique)//only do damage if spell is unique
+                {
+                    enemyScript.TakeDamage(m_baseDamage, m_element);
+                }
+                SpellFired(); //always fire spell when enemy is hit to make the page turn
+            }
         }
         else
         {
@@ -104,19 +110,37 @@ public  class SpellScript : MonoBehaviour
     }
     public void DrawRunes(int amount)
     {
-        numberOfRunes = amount;
+        m_numberOfRunes = amount;
         int[] pos = GetPositionList();
-
+        //Debug.Log("Rune Pattern:");           
         if (pos == null)
-            Debug.Log("no PositionList returned");
-        else
         {
-            for (int i = 0; i < m_RunesOnSpell.Count; i++)
-            {
-
-                m_RunesOnSpell[i].SetActive(pos[i] == 1);
-            }
+            Debug.Log("no PositionList returned. No Runes will be drawn.");
+            pos = m_positions_0;
         }
+
+        for (int i = 0; i < m_RunesOnSpell.Count; i++)
+        {
+            bool bsetactive = pos[i] == 1;
+            m_RunesOnSpell[i].SetActive(bsetactive);
+        }
+        //Debug.Log("Active Self: " +
+        //    "[" + m_RunesOnSpell[0].activeSelf + 
+        //    ", " + m_RunesOnSpell[1].activeSelf + 
+        //    ", " + m_RunesOnSpell[2].activeSelf + 
+        //    ", " + m_RunesOnSpell[3].activeSelf + 
+        //    ", " + m_RunesOnSpell[4].activeSelf + 
+        //    ", " + m_RunesOnSpell[5].activeSelf + 
+        //    ", " + m_RunesOnSpell[6].activeSelf + "]");
+        //Debug.Log("Active in Hierarchy: " +
+        //    "[" + m_RunesOnSpell[0].activeInHierarchy +
+        //    ", " + m_RunesOnSpell[1].activeInHierarchy +
+        //    ", " + m_RunesOnSpell[2].activeInHierarchy +
+        //    ", " + m_RunesOnSpell[3].activeInHierarchy +
+        //    ", " + m_RunesOnSpell[4].activeInHierarchy +
+        //    ", " + m_RunesOnSpell[5].activeInHierarchy +
+        //    ", " + m_RunesOnSpell[6].activeInHierarchy + "]");
+
     }
   
 
@@ -125,7 +149,7 @@ public  class SpellScript : MonoBehaviour
         //Debug.Log("m_aPositions.Lenth = " + m_aPositions.Length);
         for (int i = 0; i < m_aPositions.Length; i++)
         {
-            if (m_aPositions[i].numberOfRunes == numberOfRunes)
+            if (m_aPositions[i].numberOfRunes == m_numberOfRunes)
             {
                 return m_aPositions[i].m_activePositions;
             }
@@ -138,18 +162,18 @@ public  class SpellScript : MonoBehaviour
     public int getDamage()
     {
 
-        return baseDamage;// *numberOfRunes;
+        return m_baseDamage;// *numberOfRunes;
     }
     public int getElement()
     {
-        return element;
+        return m_element;
     }
     public int getNumberOfRunes()
     {
-        return numberOfRunes;
+        return m_numberOfRunes;
     }
     public void setNumberOfRunes(int numRunes)
     {
-        numberOfRunes = numRunes;
+        m_numberOfRunes = numRunes;
     }
 }

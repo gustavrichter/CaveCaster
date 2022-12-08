@@ -40,12 +40,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6139424996481941386}
     m_Modifications:
-    - target: {fileID: 4923340861053600336, guid: ba1a4823546d56440b8e629f8552dbab,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7273661119a666742a1b3ae75621393c,
-        type: 3}
     - target: {fileID: 5899453526020358877, guid: ba1a4823546d56440b8e629f8552dbab,
         type: 3}
       propertyPath: m_Pivot.x
@@ -84,12 +78,12 @@ PrefabInstance:
     - target: {fileID: 5899453526020358877, guid: ba1a4823546d56440b8e629f8552dbab,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5899453526020358877, guid: ba1a4823546d56440b8e629f8552dbab,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5899453526020358877, guid: ba1a4823546d56440b8e629f8552dbab,
         type: 3}
