@@ -19,7 +19,7 @@ struct SpellcardVariant
 public class PageScript : MonoBehaviour
 {
     
-    [SerializeField] private GameObject[] m_SpellPositions; //size=12
+    [SerializeField] private GameObject[] m_SpellPositions; //size=10
 
     private List<GameObject> m_SpellsOnPage; //dynamic size
     private List<SpellScript> m_SpellScripts; //dynamic size
@@ -74,7 +74,7 @@ public class PageScript : MonoBehaviour
         //element
         for (int i = 0; i < spellVariants.Length; i++)
         {
-            m_SpellcardVariants.Add(new SpellcardVariant(0,0,0));
+            m_SpellcardVariants.Add(new SpellcardVariant(0, 0, 0));
             SpellScript sp = spellVariants[i].transform.GetChild(0).GetComponent<SpellScript>();
             if (!sp)
                 Debug.Log("spellscript not found");
@@ -84,15 +84,15 @@ public class PageScript : MonoBehaviour
         }
 
         //numberOfSpellcards
-        int maxNumberOfSpellcards = 12;
+        int maxNumberOfSpellcards = 10;
         temp = m_SpellcardVariants[0];
-        temp.numberOfSpellcards = 1;
+        temp.numberOfSpellcards = 1;//set amount of spellcards for first spellcarcvariant in the list, which will be the most unique
         m_SpellcardVariants[0] = temp;
         int spellcardCount = 1;
 
         for (int i = 1; i < m_SpellcardVariants.Count; i++)
         {
-
+            //the rest of the spellcardvariants have always at least 2 spellcards
             temp = m_SpellcardVariants[i];
             temp.numberOfSpellcards = 2;
             spellcardCount += 2;
@@ -100,9 +100,10 @@ public class PageScript : MonoBehaviour
 
         }
 
-        int index = 1;
+        int index = 1; //count from 1 because we dont want to change the amount of spellcard for the unique spellcardvariant which sits at index = 0
         do
         {
+            //only add a spellcard with a 50/50 chance ->  better variaton
             if (Random.Range(0, 2) == 1)
             {
                 temp = m_SpellcardVariants[index];
@@ -113,20 +114,22 @@ public class PageScript : MonoBehaviour
             index++;
             if (index >= m_SpellcardVariants.Count)
                 index = 1;
-        } while (spellcardCount < maxNumberOfSpellcards);
- 
+        } while (spellcardCount < maxNumberOfSpellcards); //until all spellcard positions can get a spellcard
+
         //numberOfRunes
-        int numberOfRuneVariants = 3;
+        int numberOfRuneVariants = 3; //always have 3 different rune patterns
         int[] randRunes = { 0, 0, 0 };
 
         for (int i = 0; i < numberOfRuneVariants; i++)
         {
             bool numberTaken;
+            //this do while loop ensures that there are 3 different numbers in the randRunes array
             do
             {
                 randRunes[i] = Random.Range(1, 8);
                 numberTaken = false;
-                
+
+
                 for (int j = 0; j < numberOfRuneVariants; j++)
                 {
                     if (i != j && randRunes[i] == randRunes[j])
@@ -136,25 +139,30 @@ public class PageScript : MonoBehaviour
             } while (numberTaken);
         }
 
+        //initialise all spellcardvariants with 0 runes
         for (int i = 0; i < m_SpellcardVariants.Count; i++)
         {
             temp = m_SpellcardVariants[i];
             temp.numberOfRunes = 0;
             m_SpellcardVariants[i] = temp;
         }
+        //randRunes[0] = 0;
+        //randRunes[1] = 0;
+        //randRunes[2] = 0;
 
+        //decide rune pattern for all variants
         for (int i = 0; i < m_SpellcardVariants.Count; i++)
         {
             if (i == 0)//if unique
             {
                 temp = m_SpellcardVariants[0];
-                temp.numberOfRunes = randRunes[0];
+                temp.numberOfRunes = randRunes[0];//the unique spell (which sits in m_SpellcardVariants[0] gets the rune pattern in randRunes[0]
                 m_SpellcardVariants[0] = temp;
             }
             else
             {
                 int lowerBound = 0;
-                if (m_SpellcardVariants[i].element == m_SpellcardVariants[0].element)//if same element as unique: cannot have the runes in randRunes[0]
+                if (m_SpellcardVariants[i].element == m_SpellcardVariants[0].element)//if it is the same element as unique it cannot have the rune pattern in randRunes[0]
                 {
                     lowerBound = 1;
                 }
@@ -164,10 +172,10 @@ public class PageScript : MonoBehaviour
                 m_SpellcardVariants[i] = temp;
             }
         }
-        //for (int i = 0; i < m_SpellcardVariants.Count; i++)
-        //{
-        //    Debug.Log("SpellcardVariants[" + i + "]: element = " + m_SpellcardVariants[i].element + ", #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ", #runes = " + m_SpellcardVariants[i].numberOfRunes);
-        //}
+        for (int i = 0; i < m_SpellcardVariants.Count; i++)
+        {
+            Debug.Log(i + ", #cards = " + m_SpellcardVariants[i].numberOfSpellcards + "]: element = " + m_SpellcardVariants[i].element + ", #runes = " + m_SpellcardVariants[i].numberOfRunes);
+        }
     }
 
     public void ClearPage()

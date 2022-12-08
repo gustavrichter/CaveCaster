@@ -145,6 +145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterElement
       objectReference: {fileID: 0}
+    - target: {fileID: 5602143487799323733, guid: 7afc461c14b7a6d4cb91a7a894f73d71,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7185304250971952120, guid: 7afc461c14b7a6d4cb91a7a894f73d71,
         type: 3}
       propertyPath: m_Pivot.x

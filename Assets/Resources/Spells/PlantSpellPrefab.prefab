@@ -150,6 +150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NatureElement
       objectReference: {fileID: 0}
+    - target: {fileID: 7444218411682519705, guid: ba1a4823546d56440b8e629f8552dbab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1a4823546d56440b8e629f8552dbab, type: 3}
 --- !u!224 &4665040131914118546 stripped
