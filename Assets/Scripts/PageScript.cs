@@ -148,10 +148,7 @@ public class PageScript : MonoBehaviour
             temp.numberOfRunes = 0;
             m_SpellcardVariants[i] = temp;
         }
-        //randRunes[0] = 0;
-        //randRunes[1] = 0;
-        //randRunes[2] = 0;
-
+     
         //decide rune pattern for all variants
         for (int i = 0; i < m_SpellcardVariants.Count; i++)
         {
@@ -176,7 +173,7 @@ public class PageScript : MonoBehaviour
         }
         for (int i = 0; i < m_SpellcardVariants.Count; i++)
         {
-            Debug.Log(i + ", #cards = " + m_SpellcardVariants[i].numberOfSpellcards + "]: element = " + m_SpellcardVariants[i].element + ", #runes = " + m_SpellcardVariants[i].numberOfRunes);
+            Debug.Log("SpellcardVariant_" + i + ",: #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ". element = " + m_SpellcardVariants[i].element + ". #runes = " + m_SpellcardVariants[i].numberOfRunes);
         }
     }
 
