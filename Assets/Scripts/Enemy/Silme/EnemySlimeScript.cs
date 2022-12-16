@@ -18,7 +18,7 @@ public class EnemySlimeScript : EnemyScript
         int element = 0;
         for (int i = 0; i < elementResistances.Length; i++)
         {
-            if (elementResistances[i] == 2)
+            if (elementResistances[i] == 2) //2 = water element
                 element = i;
         }
         Debug.Log(gameObject.name + "Attack for " + damage + " damage!");

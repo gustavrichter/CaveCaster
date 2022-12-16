@@ -37,7 +37,9 @@ public class CaveScript : MonoBehaviour
         m_numberOfEnemies = 3;
         for (int i = 0; i < m_numberOfEnemies; i++)
         {
-            m_EnemiesOnFloor.Add(Instantiate(m_Enemies[UnityEngine.Random.Range(1, m_Enemies.Length)]) as GameObject);
+
+
+            m_EnemiesOnFloor.Add(Instantiate(m_Enemies[UnityEngine.Random.Range(0, m_Enemies.Length)]) as GameObject);
             m_EnemiesOnFloor[i].transform.SetParent(spawnPoints[i].transform, false);
             m_EnemyScripts.Add(m_EnemiesOnFloor[i].GetComponent<EnemyScript>());
             m_EnemyScripts[i].m_id = i;

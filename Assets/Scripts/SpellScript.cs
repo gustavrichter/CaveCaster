@@ -19,6 +19,7 @@ public  class SpellScript : MonoBehaviour
 {
     [SerializeField] private int m_element;
     [SerializeField] private DragOnEnemy m_dragScript;
+    private List<RuneAnimationScript> m_runeAnimators = new List<RuneAnimationScript>(); //only animators of active Runes 
     private int m_numberOfRunes;
     private int m_baseDamage = 50;
     public GameObject m_Rune;
@@ -61,7 +62,7 @@ public  class SpellScript : MonoBehaviour
         //am anfang alle spells draufzeichnnen und erstmal deaktivieren
         for (int i = 0; i < m_SpellPositions.Length; i++)
         {
-            m_RunesOnSpell.Add(Instantiate(m_Rune, m_SpellPositions[i].transform));
+            m_RunesOnSpell.Add(Instantiate(m_Rune, m_SpellPositions[i].transform) as GameObject);
             m_RunesOnSpell[i].SetActive(false);
 
         }
@@ -89,8 +90,6 @@ public  class SpellScript : MonoBehaviour
             Debug.Log("Hit: " + rayHit.transform.gameObject.name);
             if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
             {
-                //Debug.Log("enemy hit!");
-
                 EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
                 if (!enemyScript)
                     Debug.Log("enemyscr not found");
@@ -112,7 +111,7 @@ public  class SpellScript : MonoBehaviour
     {
         m_numberOfRunes = amount;
         int[] pos = GetPositionList();
-        //Debug.Log("Rune Pattern:");           
+        //Debug.Log("Rune Pattern: element=" + m_element);           
         if (pos == null)
         {
             Debug.Log("no PositionList returned. No Runes will be drawn.");
@@ -122,7 +121,21 @@ public  class SpellScript : MonoBehaviour
         for (int i = 0; i < m_RunesOnSpell.Count; i++)
         {
             bool bsetactive = pos[i] == 1;
-            m_RunesOnSpell[i].SetActive(bsetactive);
+
+            if (bsetactive)
+            {
+                m_RunesOnSpell[i].SetActive(true);
+                if (m_element == 0)
+                {
+                    //string name = transform.name;
+                    //Debug.Log("This Object: " + name + ".ChildCount = " + transform.childCount);
+                    // name = m_RunesOnSpell[i].gameObject.name;
+                    //Debug.Log(name + ".ChildCount = " +m_RunesOnSpell[i].transform.childCount);
+                    m_runeAnimators.Add(m_RunesOnSpell[i].gameObject.GetComponent<RuneAnimationScript>());
+                    m_runeAnimators[m_runeAnimators.Count - 1].PlayIdleAnimation();
+                }
+               
+            }
         }
         //Debug.Log("Active Self: " +
         //    "[" + m_RunesOnSpell[0].activeSelf + 

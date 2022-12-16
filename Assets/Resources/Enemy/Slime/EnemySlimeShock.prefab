@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4775174068746438084}
   - component: {fileID: 4775174068746438087}
   - component: {fileID: 1736621542441679686}
+  - component: {fileID: 8155593384683133959}
+  - component: {fileID: -1050332401383236086}
   m_Layer: 0
   m_Name: EnemySlimeShock
   m_TagString: Enemy
@@ -179,3 +181,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 0
+  animationScript: {fileID: 0}
+--- !u!114 &8155593384683133959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d3f13567ebe7a448d5c62d30eba336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: Base Layer.ShockSlimeAttack
+  damagedName: Base Layer.ShockSlimeDamaged
+  defeatName: Base Layer.ShockSlimeDefeat
+--- !u!95 &-1050332401383236086
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82fb30a11eb05b245952fe064341ffef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

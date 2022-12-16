@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4775174068746438084}
   - component: {fileID: 4775174068746438087}
   - component: {fileID: 9184482530710073441}
+  - component: {fileID: 9051552303462923218}
+  - component: {fileID: 3807438598229863694}
   m_Layer: 0
   m_Name: EnemySlimeIce
   m_TagString: Enemy
@@ -179,3 +181,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 0
+  animationScript: {fileID: 0}
+--- !u!114 &9051552303462923218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d3f13567ebe7a448d5c62d30eba336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: Base Layer.IceSlimeAttack
+  damagedName: Base Layer.IceSlimeDamaged
+  defeatName: Base Layer.IceSlimeDefeat
+--- !u!95 &3807438598229863694
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba0b17e1aa0b4894bae0721267486e12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
