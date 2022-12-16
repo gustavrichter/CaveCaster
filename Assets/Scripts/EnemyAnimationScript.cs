@@ -19,19 +19,19 @@ public class EnemyAnimationScript : MonoBehaviour
 
     public void PlayAttackAnimation()
     {
-        Debug.Log(transform.name + ": Playing Attack Animation");
+        //Debug.Log(transform.name + ": Playing Attack Animation");
         anim.Play(attackName);
     }
 
     public void PlayDamagedAnimation()
     {
-        Debug.Log(transform.name + ": Playing Damaged Animation");
+        //Debug.Log(transform.name + ": Playing Damaged Animation");
         anim.Play(damagedName);
     }
 
     public void PlayDefeatAnimation()
     {
-        Debug.Log(transform.name + ": Playing Death Animation");
+        //Debug.Log(transform.name + ": Playing Death Animation");
         anim.Play(defeatName);
     }
     public void PlayIdleAnimation()

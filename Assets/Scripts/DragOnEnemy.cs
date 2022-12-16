@@ -57,6 +57,7 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     }
     public void ResetPosition()
     {
+        //Debug.Log("Resetting Position");
         myPosition.anchoredPosition = posAnchoredPosition;
     }
 
