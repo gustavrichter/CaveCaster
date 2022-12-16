@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5360645120795352795}
   - component: {fileID: 7562952613771694993}
   - component: {fileID: 4407123105082198156}
+  - component: {fileID: 7984389998527050709}
   m_Layer: 8
   m_Name: ShockElement
   m_TagString: Untagged
@@ -97,3 +98,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7984389998527050709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2674945236840857746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bde393a0321d934cb5c99619211d1dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeName: Base Layer.ShockRuneActive
+  blackenName: Base Layer.ShockRuneBlacken

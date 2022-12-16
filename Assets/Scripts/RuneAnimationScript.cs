@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class RuneAnimationScript : MonoBehaviour
 {
     Animator anim;
-    public string idleName;
     public string activeName;
-    public string implodeName;
+    public string blackenName;
+    public Action SpellSpent = delegate { };
+
 
     // Start is called before the first frame update
     void Awake()
@@ -19,12 +21,19 @@ public class RuneAnimationScript : MonoBehaviour
         }
     }
 
-  
-
-    public void PlayIdleAnimation()
+    public void PlayActiveAnimation()
     {
-        //Debug.Log(transform.name + ": Playing Idle Animation.");
-        //anim.Play(idleName, 0, Random.Range(0.0f, 1.0f));
-        anim.Play(idleName, 0, .5f);
+        anim.Play(activeName);
+    } 
+    public void PlayBlackenAnimation()
+    {
+        //Debug.Log(this.name + blackenName);
+        anim.Play(blackenName);
     }
+    public void LetSpellBeDeleted()
+    {
+        SpellSpent();
+    }
+
+  
 }

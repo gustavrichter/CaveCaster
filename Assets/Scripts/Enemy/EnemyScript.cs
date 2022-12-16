@@ -53,12 +53,12 @@ public abstract class EnemyScript : MonoBehaviour
     public void TakeDamage(int damage, int element) {
         health -= (damage/elementResistances[element]);
 
-        if (elementResistances[element] < 1)//if crit
-            Debug.Log(gameObject.name + ": Extra Outch! " + health);
-        else if(elementResistances[element] > 1)//if resisted
-            Debug.Log(gameObject.name + ": Not so Outch! " + health);
-        else//normal damage
-            Debug.Log(gameObject.name + ": Outch! " + health);
+        //if (elementResistances[element] < 1)//if crit
+        //    Debug.Log(gameObject.name + ": Extra Outch! " + health);
+        //else if(elementResistances[element] > 1)//if resisted
+        //    Debug.Log(gameObject.name + ": Not so Outch! " + health);
+        //else//normal damage
+        //    Debug.Log(gameObject.name + ": Outch! " + health);
 
         if (health<= 0)
         {

@@ -21,7 +21,7 @@ public class EnemySlimeScript : EnemyScript
             if (elementResistances[i] == 2) //2 = water element
                 element = i;
         }
-        Debug.Log(gameObject.name + "Attack for " + damage + " damage!");
+        //Debug.Log(gameObject.name + "Attack for " + damage + " damage!");
         playerScript.TakeDamage(damage, element);
         
     }

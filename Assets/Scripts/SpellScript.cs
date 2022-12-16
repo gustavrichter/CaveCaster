@@ -25,7 +25,10 @@ public  class SpellScript : MonoBehaviour
     public GameObject m_Rune;
     public bool wasFired = false;
     public bool bunique = false;
-    public Action SpellFired = delegate { };
+    public int m_index;
+    public int m_variant;
+    public Action<int> SpellFired = delegate { };
+    public Action SpellSpent = delegate { };
 
    
     [SerializeField] private GameObject[] m_SpellPositions;//size=7
@@ -64,6 +67,7 @@ public  class SpellScript : MonoBehaviour
         {
             m_RunesOnSpell.Add(Instantiate(m_Rune, m_SpellPositions[i].transform) as GameObject);
             m_RunesOnSpell[i].SetActive(false);
+            //m_runeAnimators.Add(m_RunesOnSpell[i].gameObject.GetComponent<RuneAnimationScript>());
 
         }
        
@@ -72,13 +76,17 @@ public  class SpellScript : MonoBehaviour
     {
         m_dragScript = GetComponentInParent<DragOnEnemy>() as DragOnEnemy;
         if (!m_dragScript)
-            Debug.Log("dragsrpit not found");
-        m_dragScript.SpellCardDropped += FiringSpell;
+        {
+            //Debug.Log("dragsrpit not found");
+        }
+        else
+            m_dragScript.SpellCardDropped += FiringSpell;
 
     }
     private void OnDestroy()
     {
-        m_dragScript.SpellCardDropped -= FiringSpell;
+        if(m_dragScript)
+            m_dragScript.SpellCardDropped -= FiringSpell;
     }
     private void FiringSpell()
     {
@@ -87,7 +95,7 @@ public  class SpellScript : MonoBehaviour
 
         if (rayHit)//ray hit something
         {
-            Debug.Log("Hit: " + rayHit.transform.gameObject.name);
+            //Debug.Log("Hit: " + rayHit.transform.gameObject.name);
             if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
             {
                 EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
@@ -97,7 +105,7 @@ public  class SpellScript : MonoBehaviour
                 {
                     enemyScript.TakeDamage(m_baseDamage, m_element);
                 }
-                SpellFired(); //always fire spell when enemy is hit to make the page turn
+                SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
             }
         }
         else
@@ -125,37 +133,24 @@ public  class SpellScript : MonoBehaviour
             if (bsetactive)
             {
                 m_RunesOnSpell[i].SetActive(true);
-                if (m_element == 0)
-                {
-                    //string name = transform.name;
-                    //Debug.Log("This Object: " + name + ".ChildCount = " + transform.childCount);
-                    // name = m_RunesOnSpell[i].gameObject.name;
-                    //Debug.Log(name + ".ChildCount = " +m_RunesOnSpell[i].transform.childCount);
-                    m_runeAnimators.Add(m_RunesOnSpell[i].gameObject.GetComponent<RuneAnimationScript>());
-                    m_runeAnimators[m_runeAnimators.Count - 1].PlayIdleAnimation();
-                }
-               
+                m_runeAnimators.Add(m_RunesOnSpell[i].gameObject.GetComponent<RuneAnimationScript>());
             }
         }
-        //Debug.Log("Active Self: " +
-        //    "[" + m_RunesOnSpell[0].activeSelf + 
-        //    ", " + m_RunesOnSpell[1].activeSelf + 
-        //    ", " + m_RunesOnSpell[2].activeSelf + 
-        //    ", " + m_RunesOnSpell[3].activeSelf + 
-        //    ", " + m_RunesOnSpell[4].activeSelf + 
-        //    ", " + m_RunesOnSpell[5].activeSelf + 
-        //    ", " + m_RunesOnSpell[6].activeSelf + "]");
-        //Debug.Log("Active in Hierarchy: " +
-        //    "[" + m_RunesOnSpell[0].activeInHierarchy +
-        //    ", " + m_RunesOnSpell[1].activeInHierarchy +
-        //    ", " + m_RunesOnSpell[2].activeInHierarchy +
-        //    ", " + m_RunesOnSpell[3].activeInHierarchy +
-        //    ", " + m_RunesOnSpell[4].activeInHierarchy +
-        //    ", " + m_RunesOnSpell[5].activeInHierarchy +
-        //    ", " + m_RunesOnSpell[6].activeInHierarchy + "]");
+    
+    }
+    public void BindSpellSpentAction()
+    {
+      
+        //Debug.Log("animation count " + m_runeAnimators.Count);
+        m_runeAnimators[0].SpellSpent += SpentSpell;
 
     }
-  
+    void SpentSpell()
+    {
+        //Debug.Log("SpendingSpell");
+        SpellSpent();
+        m_runeAnimators[0].SpellSpent -= SpentSpell;
+    }
 
     int[] GetPositionList()
     {
@@ -188,5 +183,16 @@ public  class SpellScript : MonoBehaviour
     public void setNumberOfRunes(int numRunes)
     {
         m_numberOfRunes = numRunes;
+    }
+
+    public void FadeOut()
+    {
+        //Debug.Log("animators.Count = " + m_runeAnimators.Count);
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayBlackenAnimation();
+            //m_runeAnimators[i].PlayActiveAnimation();
+        }
+
     }
 }

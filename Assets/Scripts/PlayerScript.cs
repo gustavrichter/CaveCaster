@@ -43,11 +43,12 @@ public class PlayerScript : MonoBehaviour
     {
         
         m_fhealth -= damage;
-        Debug.Log(gameObject.name + ": Ouchie! I have " + m_fhealth + " healt left.");
+        //Debug.Log(gameObject.name + ": Ouchie! I have " + m_fhealth + " healt left.");
+        //Debug.Log( m_fhealth + " health left.");
 
         if(m_fhealth<= 0)
         {
-            Debug.Log("Game Over.");
+            //Debug.Log("Game Over.");
         }
     }
 

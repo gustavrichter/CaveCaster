@@ -26,15 +26,13 @@ public class MagicBookScript : MonoBehaviour
         m_BookClosed.SetActive(true);
         m_bisClosed = true;
         m_PageScript = m_Page.GetComponent<PageScript>();
+        m_PageScript.ReadyNextPage += TurnPage;
         
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-    
-
+        m_PageScript.ReadyNextPage -= TurnPage;
     }
    
     public void OpenBook()
@@ -54,28 +52,13 @@ public class MagicBookScript : MonoBehaviour
     public void TurnPage()
     {
 
-        List<SpellScript> spellScripts = m_PageScript.GetSpellScripts();
-        if (spellScripts != null)
-        {
-            for (int i = 0; i < spellScripts.Count; i++)
-            {
-                spellScripts[i].SpellFired -= TurnPage;
-            }
-
-        }
-
-
         m_PageScript.ClearPage();
         if (!m_bisClosed)
         {
             //get a list with the spellvariants to put on the page
             GameObject[] selectedSpellVariants = GetSpellVariants();
             m_PageScript.NextPage(selectedSpellVariants);
-            spellScripts = m_PageScript.GetSpellScripts();
-            for (int i = 0; i < spellScripts.Count; i++)
-            {
-                spellScripts[i].SpellFired += TurnPage;
-            }
+          
         }
        
 
@@ -129,4 +112,6 @@ public class MagicBookScript : MonoBehaviour
         }
         return selectedSpellsVariantsList;
     }
+
+   
 }

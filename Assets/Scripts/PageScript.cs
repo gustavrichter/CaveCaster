@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 struct SpellcardVariant
 {
@@ -22,24 +23,34 @@ public class PageScript : MonoBehaviour
     [SerializeField] private GameObject[] m_SpellPositions; //size=10
 
     private List<GameObject> m_SpellsOnPage; //dynamic size
+    private List<GameObject> m_SpellVariants; //dynamic size
     private List<SpellScript> m_SpellScripts; //dynamic size
     private List<SpellcardVariant> m_SpellcardVariants;
+    private GameObject m_FiredSpell;
+    private SpellScript m_FiredSpellScript;
+    private RuneAnimationScript m_FiredSpellAnimationScript;
+    public Action ReadyNextPage = delegate { };
     private void Awake()
     {
         m_SpellsOnPage = new List<GameObject>();
         m_SpellScripts = new List<SpellScript>();
         m_SpellcardVariants = new List<SpellcardVariant>();
+        m_SpellVariants = new List<GameObject>();
 
     }
     public void NextPage(GameObject[] spellVariants)
     {
+        for (int i = 0; i < spellVariants.Length; i++)
+        {
+            m_SpellVariants.Add(spellVariants[i]);
+        }
         //shuffle transform list to place the spellcards randomly
         ShuffleList(m_SpellPositions);
         //create the different types of spellcards
         CreateSpellcardVariants(spellVariants);
 
         int SpellCardCounter = 0;
-        for (int i = 0; i < spellVariants.Length; i++)
+        for (int i = 0; i < m_SpellVariants.Count; i++)
         {
             //Debug.Log(spellVariants[i].ToString() + ": numberofSpellcards = " + numberOfSpellsList[i] + ". numberOfRunes = " + numberOfRunes);
 
@@ -55,6 +66,9 @@ public class PageScript : MonoBehaviour
                         m_SpellScripts[SpellCardCounter].bunique = true;
 
                     m_SpellScripts[SpellCardCounter].DrawRunes(m_SpellcardVariants[i].numberOfRunes);
+                    m_SpellScripts[SpellCardCounter].m_index = SpellCardCounter;
+                    m_SpellScripts[SpellCardCounter].m_variant = i;
+                    m_SpellScripts[SpellCardCounter].SpellFired += FireSpell;
                     SpellCardCounter++;
                 }
                 else
@@ -67,6 +81,31 @@ public class PageScript : MonoBehaviour
     }
     void RevealUnique()
     {
+    }
+
+    void FireSpell(int index)
+    {
+        int variant = m_SpellScripts[index].m_variant;
+        m_FiredSpell = Instantiate(m_SpellVariants[variant]) as GameObject;
+        m_FiredSpell.transform.SetParent(this.transform, false);
+        m_FiredSpell.transform.position = m_SpellsOnPage[index].transform.position;
+        //Debug.Log("Firing Spell: #cards=" + m_SpellcardVariants[variant].numberOfSpellcards + ", element=" + m_SpellcardVariants[variant].element + ", #runes=" + ", numberOfSpellcards=" + m_SpellcardVariants[variant].numberOfRunes);
+        m_FiredSpellScript = m_FiredSpell.transform.GetChild(0).GetComponent<SpellScript>();
+        m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
+        m_FiredSpellScript.BindSpellSpentAction();
+        m_FiredSpellScript.SpellSpent += ClearFiredSpell;
+
+        m_FiredSpellScript.FadeOut();
+        ReadyNextPage();
+    }
+
+    void ClearFiredSpell()
+    {
+        //Debug.Log("ClearingFiredSpell");
+        m_FiredSpellScript.SpellSpent -= ClearFiredSpell;
+        Destroy(m_FiredSpell);
+        m_FiredSpellScript = null;
+        m_FiredSpellAnimationScript = null;
     }
     void CreateSpellcardVariants(GameObject[] spellVariants) {
 
@@ -86,7 +125,7 @@ public class PageScript : MonoBehaviour
         }
 
         //numberOfSpellcards
-        int maxNumberOfSpellcards = 10;
+        int maxNumberOfSpellcards = UnityEngine.Random.Range(8, 11);//[8,10]
         temp = m_SpellcardVariants[0];
         temp.numberOfSpellcards = 1;//set amount of spellcards for first spellcarcvariant in the list, which will be the most unique
         m_SpellcardVariants[0] = temp;
@@ -106,7 +145,7 @@ public class PageScript : MonoBehaviour
         do
         {
             //only add a spellcard with a 50/50 chance ->  better variation
-            if (Random.Range(0, 2) == 1)
+            if (UnityEngine.Random.Range(0, 2) == 1)
             {
                 temp = m_SpellcardVariants[index];
                 temp.numberOfSpellcards++;
@@ -116,7 +155,7 @@ public class PageScript : MonoBehaviour
             index++;
             if (index >= m_SpellcardVariants.Count)
                 index = 1;
-        } while (spellcardCount < maxNumberOfSpellcards); //until all spellcard positions can get a spellcard
+        } while (spellcardCount < maxNumberOfSpellcards); //until all spellcard positions are filled
 
         //numberOfRunes
         int numberOfRuneVariants = 3; //always have 3 different rune patterns
@@ -128,7 +167,7 @@ public class PageScript : MonoBehaviour
             //this do while loop ensures that there are 3 different numbers in the randRunes array
             do
             {
-                randRunes[i] = Random.Range(1, 8);
+                randRunes[i] = UnityEngine.Random.Range(1, 8);
                 numberTaken = false;
 
 
@@ -167,14 +206,14 @@ public class PageScript : MonoBehaviour
                 }
 
                 temp = m_SpellcardVariants[i];
-                temp.numberOfRunes = randRunes[Random.Range(lowerBound, numberOfRuneVariants)];
+                temp.numberOfRunes = randRunes[UnityEngine.Random.Range(lowerBound, numberOfRuneVariants)];
                 m_SpellcardVariants[i] = temp;
             }
         }
-        for (int i = 0; i < m_SpellcardVariants.Count; i++)
-        {
-            Debug.Log("SpellcardVariant_" + i + ",: #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ". element = " + m_SpellcardVariants[i].element + ". #runes = " + m_SpellcardVariants[i].numberOfRunes);
-        }
+        //for (int i = 0; i < m_SpellcardVariants.Count; i++)
+        //{
+        //    Debug.Log("SpellcardVariant_" + i + ",: #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ". element = " + m_SpellcardVariants[i].element + ". #runes = " + m_SpellcardVariants[i].numberOfRunes);
+        //}
     }
 
     public void ClearPage()
@@ -184,9 +223,11 @@ public class PageScript : MonoBehaviour
             for (int i = 0; i < m_SpellsOnPage.Count; i++)
             {
                 //Debug.Log("destroying SpellsOnPage[" + i + "]");
+                m_SpellScripts[i].SpellFired -= FireSpell;
                 Destroy(m_SpellsOnPage[i]);
                 
             }
+            m_SpellVariants.Clear();
             m_SpellsOnPage.Clear();
             m_SpellScripts.Clear();
         }
@@ -200,7 +241,7 @@ public class PageScript : MonoBehaviour
         {
             GameObject temp = List[i];
 
-            int r = Random.Range(0, List.Length-1);
+            int r = UnityEngine.Random.Range(0, List.Length-1);
             //r = Random.Range(i, List.Length-1);
             List[i] = List[r];
             List[r] = temp;
