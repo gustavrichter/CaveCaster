@@ -105,7 +105,7 @@ public class PageScript : MonoBehaviour
         int index = 1; //count from 1 because we dont want to change the amount of spellcard for the unique spellcardvariant which sits at index = 0
         do
         {
-            //only add a spellcard with a 50/50 chance ->  better variaton
+            //only add a spellcard with a 50/50 chance ->  better variation
             if (Random.Range(0, 2) == 1)
             {
                 temp = m_SpellcardVariants[index];

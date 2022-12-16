@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 4775174068746438084}
   - component: {fileID: 4775174068746438087}
   - component: {fileID: -9170188833567477698}
+  - component: {fileID: -1265515702794122348}
+  - component: {fileID: 1274691049614191289}
   m_Layer: 0
   m_Name: EnemySlimeFire
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,3 +181,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 0
+  animationScript: {fileID: 0}
+--- !u!114 &-1265515702794122348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d3f13567ebe7a448d5c62d30eba336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: Base Layer.FireSlimeAttack
+  damagedName: Base Layer.FireSlimeDamaged
+  defeatName: Base Layer.FireSlimeDefeat
+--- !u!95 &1274691049614191289
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 439e207a7d5aeb641bc619222a862693, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

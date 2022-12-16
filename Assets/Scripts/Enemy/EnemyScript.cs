@@ -17,6 +17,8 @@ public abstract class EnemyScript : MonoBehaviour
     protected int shock = 4;
     protected float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
     protected bool alive;
+    [SerializeField]
+    private EnemyAnimationScript animationScript;
 
     public Action<int> EnemyDeath = delegate { };
     
@@ -24,50 +26,56 @@ public abstract class EnemyScript : MonoBehaviour
     {
         
         Init();
+        animationScript = GetComponent<EnemyAnimationScript>();
     }
     protected virtual void Init()
     {
         damage = 10;
-        coolDown = 4;
+        coolDown = UnityEngine.Random.Range(4.0f,10.0f);
         health = 100;
         alive = true;
 
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerScript>();
         if (!playerScript)
-            Debug.Log("PlayerScript not found");
+            Debug.Log(transform.name + ": PlayerScript not found");
     }
     protected virtual void Update()
     {
-        //coolDown -= Time.deltaTime;
+        coolDown -= Time.deltaTime;
         if(coolDown<= 0)
         {
-            coolDown = 15.0f;
-            Attack();
+            coolDown = UnityEngine.Random.Range(4.0f, 10.0f);
+            animationScript.PlayAttackAnimation();
         }
-        if (!alive)
-        {
-            Debug.Log(this.transform.name + " has been slayn.");
-            //Destroy(gameObject);
-        }
+     
     }
     public void TakeDamage(int damage, int element) {
-
         health -= (damage/elementResistances[element]);
 
         if (elementResistances[element] < 1)//if crit
             Debug.Log(gameObject.name + ": Extra Outch! " + health);
-        else if(elementResistances[element] > 1)
+        else if(elementResistances[element] > 1)//if resisted
             Debug.Log(gameObject.name + ": Not so Outch! " + health);
-        else
+        else//normal damage
             Debug.Log(gameObject.name + ": Outch! " + health);
 
         if (health<= 0)
         {
             alive = false;
-            EnemyDeath(m_id);
+            animationScript.PlayDefeatAnimation();
+        }
+        else
+        {
+            animationScript.PlayDamagedAnimation();
+
         }
     }
     public abstract void Attack();
+    public void EnemyDies()
+    {
+        Debug.Log(transform.name + " has been slayn.");
+        EnemyDeath(m_id);
+    }
 
 }
