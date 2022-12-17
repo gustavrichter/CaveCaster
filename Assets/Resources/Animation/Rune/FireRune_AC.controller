@@ -93,7 +93,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6e551b4533e251a4499a40a745271f67, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7e7230215e655c747a017c28f6dd5086, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -200,7 +200,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireRuneBlacken
+  m_Name: FireRuneRapidFlash
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -214,7 +214,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7e7230215e655c747a017c28f6dd5086, type: 2}
+  m_Motion: {fileID: 7400000, guid: d80fce24cb2a017439e19d9b306b77e2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

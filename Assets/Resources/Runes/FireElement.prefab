@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeName: Base Layer.FireRuneActive
-  blackenName: Base Layer.FireRuneBlacken
+  rapidflashName: Base Layer.FireRuneRapidFlash

@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterRuneBlacken
+  m_Name: WaterRuneRapidFlash
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8a2613f3974f1654fb4400878abda1a2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2f0f0d24c9a56d0489a1b31f48c97db5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -164,7 +164,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7b73171387d06cb4ea59117daf6feea6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8a2613f3974f1654fb4400878abda1a2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

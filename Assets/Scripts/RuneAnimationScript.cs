@@ -7,7 +7,7 @@ public class RuneAnimationScript : MonoBehaviour
 {
     Animator anim;
     public string activeName;
-    public string blackenName;
+    public string rapidflashName;
     public Action SpellSpent = delegate { };
 
 
@@ -28,7 +28,7 @@ public class RuneAnimationScript : MonoBehaviour
     public void PlayBlackenAnimation()
     {
         //Debug.Log(this.name + blackenName);
-        anim.Play(blackenName);
+        anim.Play(rapidflashName);
     }
     public void LetSpellBeDeleted()
     {
