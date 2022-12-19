@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea2f69e2393cb03468cb1f7f2619f9cd
+guid: ddfb3f1304621ed4fa19df91c0dd51b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_0
+      name: 221219_BookClosedAnimationIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beb67dab76131ab44aba20532067657f
-      internalID: 1589758814
+      spriteID: f88409ea7bd40da44be44e672242c151
+      internalID: -1954698958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_1
+      name: 221219_BookClosedAnimationIdle_1
       rect:
         serializedVersion: 2
         x: 176
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f782f589c18bbac49b6194c6ad9d73b8
-      internalID: -45174392
+      spriteID: 6d07802af198e7240ae2f8a6b8d7586a
+      internalID: -2032766206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_2
+      name: 221219_BookClosedAnimationIdle_2
       rect:
         serializedVersion: 2
         x: 352
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1841170ef33044f4b8f11c765f023c4b
-      internalID: 504472696
+      spriteID: 5b88515b9bd78f64e8d0122c0e6ddad9
+      internalID: 15071822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_3
+      name: 221219_BookClosedAnimationIdle_3
       rect:
         serializedVersion: 2
         x: 528
@@ -218,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50755617299b7de44baff22096d1ca48
-      internalID: 223160526
+      spriteID: fc0ad31c8ab268a4dbbe93ecdcb64e90
+      internalID: 701295015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_4
+      name: 221219_BookClosedAnimationIdle_4
       rect:
         serializedVersion: 2
         x: 704
@@ -239,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89a8151e99971f43bbf1dd0a146f7ba
-      internalID: -472004977
+      spriteID: dfff5d7ffcb33f4479a044967d28c50d
+      internalID: -1615608542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_5
+      name: 221219_BookClosedAnimationIdle_5
       rect:
         serializedVersion: 2
         x: 880
@@ -260,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc1629e5cf4b18d44a5fe7bacbfc5cd3
-      internalID: 1037354637
+      spriteID: d41682dcd97231a4f94e58df6760092d
+      internalID: -2016264119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_6
+      name: 221219_BookClosedAnimationIdle_6
       rect:
         serializedVersion: 2
         x: 0
@@ -281,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73cb2d7368af53b4cac142c455c596df
-      internalID: 1364342612
+      spriteID: a2d1b40d894f66449a01a58d08f1e8cb
+      internalID: 259472927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_7
+      name: 221219_BookClosedAnimationIdle_7
       rect:
         serializedVersion: 2
         x: 176
@@ -302,14 +302,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a63f8a61125cb074c94bd5a07b97af66
-      internalID: -1837508088
+      spriteID: 2134f45194a64764dbe83eedfda56ac0
+      internalID: -5134867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_8
+      name: 221219_BookClosedAnimationIdle_8
       rect:
         serializedVersion: 2
         x: 352
@@ -323,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb902a7ca42e17842b17bc9e41d90ef0
-      internalID: -1793659969
+      spriteID: d5dbb4bf110fe354fb1463bbd282837a
+      internalID: -351396378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_9
+      name: 221219_BookClosedAnimationIdle_9
       rect:
         serializedVersion: 2
         x: 528
@@ -344,14 +344,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfcb9dbc25887914495130a6181a5e52
-      internalID: 1664101867
+      spriteID: 618f6d1083b507f459bc9aa5d08840f2
+      internalID: -3919182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_10
+      name: 221219_BookClosedAnimationIdle_10
       rect:
         serializedVersion: 2
         x: 704
@@ -365,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 616ea63817b59264396066beceddf244
-      internalID: 2004317212
+      spriteID: bfc3879693a92cb4dbd8041dacc55942
+      internalID: -322120419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_11
+      name: 221219_BookClosedAnimationIdle_11
       rect:
         serializedVersion: 2
         x: 880
@@ -386,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9d6367f212c8344191295cfdea51abb
-      internalID: 176271733
+      spriteID: 320b421e42a47d04ea2b941e5bbf685b
+      internalID: -1069235936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_12
+      name: 221219_BookClosedAnimationIdle_12
       rect:
         serializedVersion: 2
         x: 0
@@ -407,14 +407,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 688589e436fa0f34a86aa7a13a6789c7
-      internalID: 1977388740
+      spriteID: 0856fcbb9ac36154bbe0c5d97e086e0d
+      internalID: -1472079951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_13
+      name: 221219_BookClosedAnimationIdle_13
       rect:
         serializedVersion: 2
         x: 176
@@ -428,14 +428,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ffa133a598993841953baed0cf6723f
-      internalID: -1799793279
+      spriteID: 810096e21838fb1489234b811f3f3162
+      internalID: -1952148440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_14
+      name: 221219_BookClosedAnimationIdle_14
       rect:
         serializedVersion: 2
         x: 352
@@ -449,14 +449,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b1f77072ac0c64bbeb37392bebf550
-      internalID: -1409909270
+      spriteID: 2f02b760b322d4545a08ffcd8237a072
+      internalID: -305284976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_15
+      name: 221219_BookClosedAnimationIdle_15
       rect:
         serializedVersion: 2
         x: 528
@@ -470,14 +470,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59243b3100ec99d4fa51ecbbaa24c121
-      internalID: -158736928
+      spriteID: 8bef8e7175749f1439861c3442de0bcf
+      internalID: -267148108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_16
+      name: 221219_BookClosedAnimationIdle_16
       rect:
         serializedVersion: 2
         x: 704
@@ -491,14 +491,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 427e165a076175a449d0427c8665d7c1
-      internalID: 409496232
+      spriteID: 8576f1b518af43147bc38c64d26c24a8
+      internalID: 107464519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_17
+      name: 221219_BookClosedAnimationIdle_17
       rect:
         serializedVersion: 2
         x: 880
@@ -512,14 +512,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 613d482929bdd494b8c1e7eabd74110e
-      internalID: 2059029232
+      spriteID: efa421451bc5b094daf06c6f4db1f007
+      internalID: 360221018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_18
+      name: 221219_BookClosedAnimationIdle_18
       rect:
         serializedVersion: 2
         x: 0
@@ -533,14 +533,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5534b5289755a6443a0124111a6c8fc5
-      internalID: 518060814
+      spriteID: 5c8ad2c1088cc8d4fabb859b2c42d3fe
+      internalID: -363441800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_19
+      name: 221219_BookClosedAnimationIdle_19
       rect:
         serializedVersion: 2
         x: 176
@@ -554,14 +554,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9eb769bc50a0564185d2abfe2f65d03
-      internalID: -1654420973
+      spriteID: a4253d9a3396c734d88a8b57257f0f6d
+      internalID: 854210338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_20
+      name: 221219_BookClosedAnimationIdle_20
       rect:
         serializedVersion: 2
         x: 352
@@ -575,14 +575,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15f2932912725cc4a8880b078ad9b9f1
-      internalID: 833346278
+      spriteID: ec97592abf92a9f4caaf449bce9ed5e4
+      internalID: -365132499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_21
+      name: 221219_BookClosedAnimationIdle_21
       rect:
         serializedVersion: 2
         x: 528
@@ -596,14 +596,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 078f4295f9d8de74c9b02b060001cdd6
-      internalID: 1226281971
+      spriteID: e728c0154d6dc20498af6f6f3fd2aba8
+      internalID: -205718060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_22
+      name: 221219_BookClosedAnimationIdle_22
       rect:
         serializedVersion: 2
         x: 704
@@ -617,14 +617,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab9984cb9399be04d8da1228369233d3
-      internalID: 1913560249
+      spriteID: c68619ae9615d5641b1b1e718a39d078
+      internalID: 2077830920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_23
+      name: 221219_BookClosedAnimationIdle_23
       rect:
         serializedVersion: 2
         x: 880
@@ -638,14 +638,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8386a7ceb5004874c84d0b10186fadb5
-      internalID: -1547551570
+      spriteID: 1bb6af7f1e719814bacbb743296bdb05
+      internalID: 58962825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_24
+      name: 221219_BookClosedAnimationIdle_24
       rect:
         serializedVersion: 2
         x: 0
@@ -659,14 +659,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f8d64954041c1b49acb36ed00847e7d
-      internalID: -1793690188
+      spriteID: c254f0252b041df468c83d488bb68d30
+      internalID: 670762568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_25
+      name: 221219_BookClosedAnimationIdle_25
       rect:
         serializedVersion: 2
         x: 176
@@ -680,14 +680,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 680afa060412a99488f934ee449596af
-      internalID: 1239176930
+      spriteID: 0ec5319db1e200a4c84ef5524814d205
+      internalID: 1002265491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_26
+      name: 221219_BookClosedAnimationIdle_26
       rect:
         serializedVersion: 2
         x: 352
@@ -701,14 +701,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45397f8ff75a0864d9b2dc190abc4dea
-      internalID: 376033754
+      spriteID: b930f6d8e925ef44e91b2c017a141945
+      internalID: -481754736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_27
+      name: 221219_BookClosedAnimationIdle_27
       rect:
         serializedVersion: 2
         x: 528
@@ -722,14 +722,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f446eb04c0b0a7a45aed4dee5cf471df
-      internalID: 1139479019
+      spriteID: 013564e83d789cb4385522d811b2e283
+      internalID: -677087291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_28
+      name: 221219_BookClosedAnimationIdle_28
       rect:
         serializedVersion: 2
         x: 704
@@ -743,14 +743,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a11dc1fef24a46e4c9ae2e8b26a2553b
-      internalID: 1652946275
+      spriteID: f1fb4387160e8e847ab7527c4c908d5e
+      internalID: -1096454963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_29
+      name: 221219_BookClosedAnimationIdle_29
       rect:
         serializedVersion: 2
         x: 880
@@ -764,14 +764,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a776adbbcc88a2409a541f797ca83b7
-      internalID: -1135395772
+      spriteID: 6225d24e8ad5de840b813a8a274e40df
+      internalID: 923726164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_30
+      name: 221219_BookClosedAnimationIdle_30
       rect:
         serializedVersion: 2
         x: 0
@@ -785,14 +785,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c7ff4d12e02e294286a80aeed472340
-      internalID: 1729557068
+      spriteID: acf4c350e5d3df74d912fb44580f6dad
+      internalID: -469775816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_31
+      name: 221219_BookClosedAnimationIdle_31
       rect:
         serializedVersion: 2
         x: 176
@@ -806,14 +806,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4d3456f8f19c4844b1f9eb2f1bc36bc
-      internalID: -59188219
+      spriteID: bedfb697a91bae74c8c3aaa836a842fb
+      internalID: -1905278278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_32
+      name: 221219_BookClosedAnimationIdle_32
       rect:
         serializedVersion: 2
         x: 352
@@ -827,14 +827,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36e1d74d8c49c90419cc8ebd9b88c23f
-      internalID: 142152787
+      spriteID: deed35ab275dca248a2255c49b870188
+      internalID: -2031452782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_33
+      name: 221219_BookClosedAnimationIdle_33
       rect:
         serializedVersion: 2
         x: 528
@@ -848,14 +848,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c147532bc6a0f914ca391e7e1de6515d
-      internalID: 963467885
+      spriteID: b5b9829574acdaf45a694add1bcc3ef5
+      internalID: 17267208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_34
+      name: 221219_BookClosedAnimationIdle_34
       rect:
         serializedVersion: 2
         x: 704
@@ -869,14 +869,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddc65385375d0fb49bd7529fda379866
-      internalID: 416360850
+      spriteID: e0b7c0c4eaf088747bfa613111ceafb4
+      internalID: 1844388050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_35
+      name: 221219_BookClosedAnimationIdle_35
       rect:
         serializedVersion: 2
         x: 880
@@ -890,14 +890,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a451ef30e6b47c7488a7d9d4f2ffa24c
-      internalID: 1783990155
+      spriteID: 7e8f6aa85b75167459625e1f4de1c268
+      internalID: 83851539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_36
+      name: 221219_BookClosedAnimationIdle_36
       rect:
         serializedVersion: 2
         x: 0
@@ -911,14 +911,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b2e57238240a3a4b8d3415e8cf29945
-      internalID: 651671711
+      spriteID: 0be7180f0c062df48ba6932439be0910
+      internalID: 480558011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_37
+      name: 221219_BookClosedAnimationIdle_37
       rect:
         serializedVersion: 2
         x: 176
@@ -932,14 +932,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 383bf9ace4b740849a9efab6aee81163
-      internalID: 582908070
+      spriteID: cdd343c0a8d5ced4eb111fa7a3020220
+      internalID: -950167638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_38
+      name: 221219_BookClosedAnimationIdle_38
       rect:
         serializedVersion: 2
         x: 352
@@ -953,14 +953,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd51461a1856ba74586024c1f641513c
-      internalID: 382572300
+      spriteID: 09d38267ca83bc44b9104b3dc294a949
+      internalID: -2111608633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_39
+      name: 221219_BookClosedAnimationIdle_39
       rect:
         serializedVersion: 2
         x: 528
@@ -974,14 +974,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b77cf176c3477343b49a6563900c6d6
-      internalID: 440552527
+      spriteID: 315490689d273ce4f87bfae22d145ddf
+      internalID: -1560940073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_40
+      name: 221219_BookClosedAnimationIdle_40
       rect:
         serializedVersion: 2
         x: 704
@@ -995,14 +995,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 604b093f67cee2e49a91f5d0565b193d
-      internalID: -414870440
+      spriteID: 6cb4bf2bcfcf70141a8ff5d8532a2ba4
+      internalID: -639864998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_41
+      name: 221219_BookClosedAnimationIdle_41
       rect:
         serializedVersion: 2
         x: 880
@@ -1016,14 +1016,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6831b73089eb0fe4198923ac700bc96f
-      internalID: 813380100
+      spriteID: d537839c846ec7f41ac2191bdf26c683
+      internalID: 1394254609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_42
+      name: 221219_BookClosedAnimationIdle_42
       rect:
         serializedVersion: 2
         x: 0
@@ -1037,14 +1037,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50a88232c570eb54b816d5bffe216671
-      internalID: 2046856613
+      spriteID: 1561b4082940db44b8e2bc0fe6d2df07
+      internalID: -672151738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_43
+      name: 221219_BookClosedAnimationIdle_43
       rect:
         serializedVersion: 2
         x: 176
@@ -1058,14 +1058,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17114ea4ffe5bd64f8aac4703d8f49b8
-      internalID: -501500158
+      spriteID: ec4c917e650135340ae7f136bdc50200
+      internalID: 38867675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_44
+      name: 221219_BookClosedAnimationIdle_44
       rect:
         serializedVersion: 2
         x: 352
@@ -1079,14 +1079,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7906d2b8c8334734a97672b7a97b3fbb
-      internalID: -1827773961
+      spriteID: e75a4796b9d305a4da9fd4678a03ce79
+      internalID: 524889804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_45
+      name: 221219_BookClosedAnimationIdle_45
       rect:
         serializedVersion: 2
         x: 528
@@ -1100,14 +1100,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 090a7e5de5bdfcf4eb27eeb84fd5f2d1
-      internalID: 676738716
+      spriteID: 628a453332d3766438143addcad25abd
+      internalID: -1216918322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_46
+      name: 221219_BookClosedAnimationIdle_46
       rect:
         serializedVersion: 2
         x: 704
@@ -1121,14 +1121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcc373b1207d6f8429e2a1a314947bd5
-      internalID: -823100136
+      spriteID: da81390f586eb6b4d95268126c6a7622
+      internalID: 1303004299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 221218_BookClosedAnimation-Sheets_47
+      name: 221219_BookClosedAnimationIdle_47
       rect:
         serializedVersion: 2
         x: 880
@@ -1142,8 +1142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c6657c7fd66f14ebbdb97864bd39d7
-      internalID: -1529787283
+      spriteID: e1f2ee6b8941c6a4c98ec4a83d16a471
+      internalID: 645882497
       vertices: []
       indices: 
       edges: []
@@ -1151,7 +1151,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 01bc22b8ad601f54295d75941aab4415
+    spriteID: c3f9c70327d09504c98d2e533551424b
     internalID: 0
     vertices: []
     indices: 
@@ -1159,54 +1159,54 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      221218_BookClosedAnimation-Sheets_16: 409496232
-      221218_BookClosedAnimation-Sheets_25: 1239176930
-      221218_BookClosedAnimation-Sheets_12: 1977388740
-      221218_BookClosedAnimation-Sheets_3: 223160526
-      221218_BookClosedAnimation-Sheets_28: 1652946275
-      221218_BookClosedAnimation-Sheets_42: 2046856613
-      221218_BookClosedAnimation-Sheets_23: -1547551570
-      221218_BookClosedAnimation-Sheets_36: 651671711
-      221218_BookClosedAnimation-Sheets_47: -1529787283
-      221218_BookClosedAnimation-Sheets_2: 504472696
-      221218_BookClosedAnimation-Sheets_11: 176271733
-      221218_BookClosedAnimation-Sheets_38: 382572300
-      221218_BookClosedAnimation-Sheets_10: 2004317212
-      221218_BookClosedAnimation-Sheets_13: -1799793279
-      221218_BookClosedAnimation-Sheets_41: 813380100
-      221218_BookClosedAnimation-Sheets_4: -472004977
-      221218_BookClosedAnimation-Sheets_39: 440552527
-      221218_BookClosedAnimation-Sheets_44: -1827773961
-      221218_BookClosedAnimation-Sheets_46: -823100136
-      221218_BookClosedAnimation-Sheets_29: -1135395772
-      221218_BookClosedAnimation-Sheets_5: 1037354637
-      221218_BookClosedAnimation-Sheets_37: 582908070
-      221218_BookClosedAnimation-Sheets_1: -45174392
-      221218_BookClosedAnimation-Sheets_19: -1654420973
-      221218_BookClosedAnimation-Sheets_0: 1589758814
-      221218_BookClosedAnimation-Sheets_20: 833346278
-      221218_BookClosedAnimation-Sheets_17: 2059029232
-      221218_BookClosedAnimation-Sheets_24: -1793690188
-      221218_BookClosedAnimation-Sheets_31: -59188219
-      221218_BookClosedAnimation-Sheets_7: -1837508088
-      221218_BookClosedAnimation-Sheets_32: 142152787
-      221218_BookClosedAnimation-Sheets_27: 1139479019
-      221218_BookClosedAnimation-Sheets_45: 676738716
-      221218_BookClosedAnimation-Sheets_8: -1793659969
-      221218_BookClosedAnimation-Sheets_33: 963467885
-      221218_BookClosedAnimation-Sheets_21: 1226281971
-      221218_BookClosedAnimation-Sheets_22: 1913560249
-      221218_BookClosedAnimation-Sheets_40: -414870440
-      221218_BookClosedAnimation-Sheets_18: 518060814
-      221218_BookClosedAnimation-Sheets_26: 376033754
-      221218_BookClosedAnimation-Sheets_9: 1664101867
-      221218_BookClosedAnimation-Sheets_15: -158736928
-      221218_BookClosedAnimation-Sheets_6: 1364342612
-      221218_BookClosedAnimation-Sheets_14: -1409909270
-      221218_BookClosedAnimation-Sheets_35: 1783990155
-      221218_BookClosedAnimation-Sheets_30: 1729557068
-      221218_BookClosedAnimation-Sheets_43: -501500158
-      221218_BookClosedAnimation-Sheets_34: 416360850
+      221219_BookClosedAnimationIdle_1: -2032766206
+      221219_BookClosedAnimationIdle_6: 259472927
+      221219_BookClosedAnimationIdle_46: 1303004299
+      221219_BookClosedAnimationIdle_0: -1954698958
+      221219_BookClosedAnimationIdle_16: 107464519
+      221219_BookClosedAnimationIdle_20: -365132499
+      221219_BookClosedAnimationIdle_15: -267148108
+      221219_BookClosedAnimationIdle_45: -1216918322
+      221219_BookClosedAnimationIdle_42: -672151738
+      221219_BookClosedAnimationIdle_28: -1096454963
+      221219_BookClosedAnimationIdle_32: -2031452782
+      221219_BookClosedAnimationIdle_44: 524889804
+      221219_BookClosedAnimationIdle_34: 1844388050
+      221219_BookClosedAnimationIdle_22: 2077830920
+      221219_BookClosedAnimationIdle_36: 480558011
+      221219_BookClosedAnimationIdle_38: -2111608633
+      221219_BookClosedAnimationIdle_7: -5134867
+      221219_BookClosedAnimationIdle_10: -322120419
+      221219_BookClosedAnimationIdle_12: -1472079951
+      221219_BookClosedAnimationIdle_41: 1394254609
+      221219_BookClosedAnimationIdle_2: 15071822
+      221219_BookClosedAnimationIdle_25: 1002265491
+      221219_BookClosedAnimationIdle_31: -1905278278
+      221219_BookClosedAnimationIdle_3: 701295015
+      221219_BookClosedAnimationIdle_24: 670762568
+      221219_BookClosedAnimationIdle_26: -481754736
+      221219_BookClosedAnimationIdle_5: -2016264119
+      221219_BookClosedAnimationIdle_23: 58962825
+      221219_BookClosedAnimationIdle_14: -305284976
+      221219_BookClosedAnimationIdle_39: -1560940073
+      221219_BookClosedAnimationIdle_17: 360221018
+      221219_BookClosedAnimationIdle_40: -639864998
+      221219_BookClosedAnimationIdle_43: 38867675
+      221219_BookClosedAnimationIdle_27: -677087291
+      221219_BookClosedAnimationIdle_4: -1615608542
+      221219_BookClosedAnimationIdle_13: -1952148440
+      221219_BookClosedAnimationIdle_29: 923726164
+      221219_BookClosedAnimationIdle_47: 645882497
+      221219_BookClosedAnimationIdle_37: -950167638
+      221219_BookClosedAnimationIdle_21: -205718060
+      221219_BookClosedAnimationIdle_8: -351396378
+      221219_BookClosedAnimationIdle_18: -363441800
+      221219_BookClosedAnimationIdle_33: 17267208
+      221219_BookClosedAnimationIdle_35: 83851539
+      221219_BookClosedAnimationIdle_9: -3919182
+      221219_BookClosedAnimationIdle_19: 854210338
+      221219_BookClosedAnimationIdle_30: -469775816
+      221219_BookClosedAnimationIdle_11: -1069235936
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
