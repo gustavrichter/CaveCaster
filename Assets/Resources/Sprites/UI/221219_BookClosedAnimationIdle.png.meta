@@ -1,0 +1,1215 @@
+fileFormatVersion: 2
+guid: ddfb3f1304621ed4fa19df91c0dd51b0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88409ea7bd40da44be44e672242c151
+      internalID: -1954698958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 784
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d07802af198e7240ae2f8a6b8d7586a
+      internalID: -2032766206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 784
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b88515b9bd78f64e8d0122c0e6ddad9
+      internalID: 15071822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 784
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0ad31c8ab268a4dbbe93ecdcb64e90
+      internalID: 701295015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 784
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfff5d7ffcb33f4479a044967d28c50d
+      internalID: -1615608542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_5
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 784
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41682dcd97231a4f94e58df6760092d
+      internalID: -2016264119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d1b40d894f66449a01a58d08f1e8cb
+      internalID: 259472927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_7
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 672
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2134f45194a64764dbe83eedfda56ac0
+      internalID: -5134867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_8
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 672
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dbb4bf110fe354fb1463bbd282837a
+      internalID: -351396378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_9
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 672
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618f6d1083b507f459bc9aa5d08840f2
+      internalID: -3919182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_10
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 672
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc3879693a92cb4dbd8041dacc55942
+      internalID: -322120419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 672
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320b421e42a47d04ea2b941e5bbf685b
+      internalID: -1069235936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0856fcbb9ac36154bbe0c5d97e086e0d
+      internalID: -1472079951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_13
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 560
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810096e21838fb1489234b811f3f3162
+      internalID: -1952148440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_14
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 560
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f02b760b322d4545a08ffcd8237a072
+      internalID: -305284976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_15
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 560
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bef8e7175749f1439861c3442de0bcf
+      internalID: -267148108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_16
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 560
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8576f1b518af43147bc38c64d26c24a8
+      internalID: 107464519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_17
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 560
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa421451bc5b094daf06c6f4db1f007
+      internalID: 360221018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8ad2c1088cc8d4fabb859b2c42d3fe
+      internalID: -363441800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_19
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 448
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4253d9a3396c734d88a8b57257f0f6d
+      internalID: 854210338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_20
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 448
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec97592abf92a9f4caaf449bce9ed5e4
+      internalID: -365132499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_21
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 448
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e728c0154d6dc20498af6f6f3fd2aba8
+      internalID: -205718060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_22
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 448
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68619ae9615d5641b1b1e718a39d078
+      internalID: 2077830920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_23
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 448
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb6af7f1e719814bacbb743296bdb05
+      internalID: 58962825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c254f0252b041df468c83d488bb68d30
+      internalID: 670762568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_25
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 336
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec5319db1e200a4c84ef5524814d205
+      internalID: 1002265491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_26
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 336
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b930f6d8e925ef44e91b2c017a141945
+      internalID: -481754736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_27
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 336
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013564e83d789cb4385522d811b2e283
+      internalID: -677087291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_28
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 336
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fb4387160e8e847ab7527c4c908d5e
+      internalID: -1096454963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_29
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 336
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6225d24e8ad5de840b813a8a274e40df
+      internalID: 923726164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf4c350e5d3df74d912fb44580f6dad
+      internalID: -469775816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_31
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 224
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedfb697a91bae74c8c3aaa836a842fb
+      internalID: -1905278278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_32
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deed35ab275dca248a2255c49b870188
+      internalID: -2031452782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_33
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 224
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b9829574acdaf45a694add1bcc3ef5
+      internalID: 17267208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_34
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 224
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b7c0c4eaf088747bfa613111ceafb4
+      internalID: 1844388050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_35
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 224
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e8f6aa85b75167459625e1f4de1c268
+      internalID: 83851539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be7180f0c062df48ba6932439be0910
+      internalID: 480558011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_37
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd343c0a8d5ced4eb111fa7a3020220
+      internalID: -950167638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_38
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 112
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d38267ca83bc44b9104b3dc294a949
+      internalID: -2111608633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_39
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 112
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315490689d273ce4f87bfae22d145ddf
+      internalID: -1560940073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_40
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 112
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb4bf2bcfcf70141a8ff5d8532a2ba4
+      internalID: -639864998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_41
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 112
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d537839c846ec7f41ac2191bdf26c683
+      internalID: 1394254609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1561b4082940db44b8e2bc0fe6d2df07
+      internalID: -672151738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_43
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4c917e650135340ae7f136bdc50200
+      internalID: 38867675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_44
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75a4796b9d305a4da9fd4678a03ce79
+      internalID: 524889804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_45
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628a453332d3766438143addcad25abd
+      internalID: -1216918322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_46
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da81390f586eb6b4d95268126c6a7622
+      internalID: 1303004299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 221219_BookClosedAnimationIdle_47
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 176
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f2ee6b8941c6a4c98ec4a83d16a471
+      internalID: 645882497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c3f9c70327d09504c98d2e533551424b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      221219_BookClosedAnimationIdle_1: -2032766206
+      221219_BookClosedAnimationIdle_6: 259472927
+      221219_BookClosedAnimationIdle_46: 1303004299
+      221219_BookClosedAnimationIdle_0: -1954698958
+      221219_BookClosedAnimationIdle_16: 107464519
+      221219_BookClosedAnimationIdle_20: -365132499
+      221219_BookClosedAnimationIdle_15: -267148108
+      221219_BookClosedAnimationIdle_45: -1216918322
+      221219_BookClosedAnimationIdle_42: -672151738
+      221219_BookClosedAnimationIdle_28: -1096454963
+      221219_BookClosedAnimationIdle_32: -2031452782
+      221219_BookClosedAnimationIdle_44: 524889804
+      221219_BookClosedAnimationIdle_34: 1844388050
+      221219_BookClosedAnimationIdle_22: 2077830920
+      221219_BookClosedAnimationIdle_36: 480558011
+      221219_BookClosedAnimationIdle_38: -2111608633
+      221219_BookClosedAnimationIdle_7: -5134867
+      221219_BookClosedAnimationIdle_10: -322120419
+      221219_BookClosedAnimationIdle_12: -1472079951
+      221219_BookClosedAnimationIdle_41: 1394254609
+      221219_BookClosedAnimationIdle_2: 15071822
+      221219_BookClosedAnimationIdle_25: 1002265491
+      221219_BookClosedAnimationIdle_31: -1905278278
+      221219_BookClosedAnimationIdle_3: 701295015
+      221219_BookClosedAnimationIdle_24: 670762568
+      221219_BookClosedAnimationIdle_26: -481754736
+      221219_BookClosedAnimationIdle_5: -2016264119
+      221219_BookClosedAnimationIdle_23: 58962825
+      221219_BookClosedAnimationIdle_14: -305284976
+      221219_BookClosedAnimationIdle_39: -1560940073
+      221219_BookClosedAnimationIdle_17: 360221018
+      221219_BookClosedAnimationIdle_40: -639864998
+      221219_BookClosedAnimationIdle_43: 38867675
+      221219_BookClosedAnimationIdle_27: -677087291
+      221219_BookClosedAnimationIdle_4: -1615608542
+      221219_BookClosedAnimationIdle_13: -1952148440
+      221219_BookClosedAnimationIdle_29: 923726164
+      221219_BookClosedAnimationIdle_47: 645882497
+      221219_BookClosedAnimationIdle_37: -950167638
+      221219_BookClosedAnimationIdle_21: -205718060
+      221219_BookClosedAnimationIdle_8: -351396378
+      221219_BookClosedAnimationIdle_18: -363441800
+      221219_BookClosedAnimationIdle_33: 17267208
+      221219_BookClosedAnimationIdle_35: 83851539
+      221219_BookClosedAnimationIdle_9: -3919182
+      221219_BookClosedAnimationIdle_19: 854210338
+      221219_BookClosedAnimationIdle_30: -469775816
+      221219_BookClosedAnimationIdle_11: -1069235936
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
