@@ -1326,40 +1326,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3849260734528975352}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1615275888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615275886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b29fae26d9c7d44da358010f22f32b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
---- !u!114 &1615275891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615275886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c70c9deb2fda346a1bbce91ab1ebe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1891933295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6869770265735348469, guid: 043279fc556582e4b926d515f18fbedd,
@@ -1610,11 +1576,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnPoint1
-      objectReference: {fileID: 0}
-    - target: {fileID: 630122575700928489, guid: f941ca3e2334a4c46b46db282206b0b6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 630122575700928490, guid: f941ca3e2334a4c46b46db282206b0b6,
         type: 3}
@@ -1927,11 +1888,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint2
       objectReference: {fileID: 0}
-    - target: {fileID: 6869770265735348468, guid: 043279fc556582e4b926d515f18fbedd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6869770265735348469, guid: 043279fc556582e4b926d515f18fbedd,
         type: 3}
       propertyPath: m_RootOrder
@@ -2055,11 +2011,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnPoint3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7857500275046367925, guid: 217ced87f6884494d8f4177ccf66848e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 217ced87f6884494d8f4177ccf66848e, type: 3}

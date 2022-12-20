@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Base Layer.IceSlimeAttack
   damagedName: Base Layer.IceSlimeDamaged
+  damagedCritName: Base Layer.IceSlimeCrit
   defeatName: Base Layer.IceSlimeDefeat
 --- !u!95 &3807438598229863694
 Animator:
