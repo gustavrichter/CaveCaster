@@ -33,7 +33,7 @@ public abstract class EnemyScript : MonoBehaviour
     {
         damage = 10;
         coolDown = UnityEngine.Random.Range(4.0f,10.0f);
-        health = 110;
+        health = 100;
         alive = true;
         animating = false;
 
@@ -68,7 +68,7 @@ public abstract class EnemyScript : MonoBehaviour
         }
     }
     public void TakeDamage(int damage, int element) {
-        AkSoundEngine.PostEvent("Combat_Enemy_damage", gameObject);
+        //AkSoundEngine.PostEvent("Combat_Enemy_damage", gameObject);
         health -= (damage/elementResistances[element]);
 
         //if (elementResistances[element] < 1)//if crit
@@ -94,12 +94,13 @@ public abstract class EnemyScript : MonoBehaviour
     public abstract void Attack();
     public void EnemyDies()
     {
-        Debug.Log(transform.name + " has been slayn.");
+        //Debug.Log(transform.name + " has been slayn.");
         EnemyDeath(m_id);
     }
 
     public void finishedAnimating()
     {
+        //Debug.Log(transform.name + " finishedAnimating");
         animating = false;
     }
 }

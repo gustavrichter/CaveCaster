@@ -37,7 +37,7 @@ public class MagicBookScript : MonoBehaviour
    
     public void OpenBook()
     {
-        AkSoundEngine.PostEvent("Book_open", gameObject);
+        //AkSoundEngine.PostEvent("Book_open", gameObject);
         m_BookClosed.SetActive(false);
         m_BookOpen.SetActive(true);
         m_bisClosed = false;
@@ -45,7 +45,7 @@ public class MagicBookScript : MonoBehaviour
     }
     public void CloseBook()
     {
-        AkSoundEngine.PostEvent("Book_close", gameObject);
+        //AkSoundEngine.PostEvent("Book_close", gameObject);
         m_BookClosed.SetActive(true);
         m_BookOpen.SetActive(false);
         m_bisClosed = true;
@@ -53,7 +53,7 @@ public class MagicBookScript : MonoBehaviour
     }
     public void TurnPage()
     {
-        AkSoundEngine.PostEvent("Book_turn_page", gameObject);
+        //AkSoundEngine.PostEvent("Book_turn_page", gameObject);
         m_PageScript.ClearPage();
         if (!m_bisClosed)
         {

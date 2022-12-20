@@ -138,8 +138,8 @@ public class AkInitializer : UnityEngine.MonoBehaviour
 	//Use LateUpdate instead of Update() to ensure all gameobjects positions, listener positions, environements, RTPC, etc are set before finishing the audio frame.
 	private void LateUpdate()
 	{
-		if (ms_Instance == this)
-			AkSoundEngineController.Instance.LateUpdate();
+		//if (ms_Instance == this)
+			//AkSoundEngineController.Instance.LateUpdate();
 	}
 
 #region WwiseMigration
