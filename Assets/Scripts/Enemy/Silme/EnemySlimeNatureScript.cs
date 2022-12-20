@@ -10,6 +10,6 @@ public class EnemySlimeNatureScript : EnemySlimeScript
     {
         base.Init();
         elementResistances[nature] = 2;
-        elementResistances[fire] = 0.5f;
+        elementResistances[ice] = 0.5f;
     }
 }

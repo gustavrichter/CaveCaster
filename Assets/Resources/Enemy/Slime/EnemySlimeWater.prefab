@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Base Layer.WaterSlimeAttack
   damagedName: Base Layer.WaterSlimeDamaged
+  damagedCritName: Base Layer.WaterSlimeCrit
   defeatName: Base Layer.WaterSlimeDefeat
 --- !u!95 &5699777152867806775
 Animator:

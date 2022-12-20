@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Base Layer.ShockSlimeAttack
   damagedName: Base Layer.ShockSlimeDamaged
+  damagedCritName: Base Layer.ShockSlimeCrit
   defeatName: Base Layer.ShockSlimeDefeat
 --- !u!95 &-1050332401383236086
 Animator:
