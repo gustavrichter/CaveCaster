@@ -9,7 +9,7 @@ public class RuneAnimationScript : MonoBehaviour
     public string activeName;
     public string rapidflashName;
     public Action SpellSpent = delegate { };
-
+    public int iLoop = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,7 +32,15 @@ public class RuneAnimationScript : MonoBehaviour
     }
     public void LetSpellBeDeleted()
     {
-        SpellSpent();
+        if (iLoop == 1)
+        {
+            SpellSpent();
+        }
+        else
+        {
+            iLoop++;
+        }
+        
     }
 
   
