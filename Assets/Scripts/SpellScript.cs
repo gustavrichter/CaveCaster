@@ -36,6 +36,16 @@ public  class SpellScript : MonoBehaviour
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size
 
     //set positions for all number variations
+    //new positions:    even -> /      odd -> \
+    private int[] m_positions_0 = new int[] { 0, 0, 0, 0, 0, 0, 0};
+    private int[] m_positions_1 = new int[] { 1, 0, 0, 0, 0, 0, 0};
+    private int[] m_positions_2 = new int[] { 0, 1, 1, 0, 0, 0, 0};
+    private int[] m_positions_3 = new int[] { 1, 0, 0, 1, 1, 0, 0};
+    private int[] m_positions_4 = new int[] { 0, 1, 1, 0, 0, 1, 1};
+    private int[] m_positions_5 = new int[] { 1, 1, 1, 1, 1, 0, 0};
+    private int[] m_positions_6 = new int[] { 0, 1, 1, 1, 1, 1, 1};
+    private int[] m_positions_7 = new int[] { 1, 1, 1, 1, 1, 1, 1};
+    /*old:
     private int[] m_positions_0 = new int[] { 0, 0, 0, 0, 0, 0, 0};
     private int[] m_positions_1 = new int[] { 1, 0, 0, 0, 0, 0, 0};
     private int[] m_positions_2 = new int[] { 0, 0, 1, 0, 0, 1, 0};
@@ -44,6 +54,7 @@ public  class SpellScript : MonoBehaviour
     private int[] m_positions_5 = new int[] { 1, 1, 1, 0, 1, 1, 0};
     private int[] m_positions_6 = new int[] { 0, 1, 1, 1, 1, 1, 1};
     private int[] m_positions_7 = new int[] { 1, 1, 1, 1, 1, 1, 1};
+    */
 
     private Positions[] m_aPositions = new Positions[7];
 
