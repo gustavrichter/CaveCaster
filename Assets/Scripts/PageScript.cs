@@ -93,26 +93,26 @@ public class PageScript : MonoBehaviour
         //Debug.Log("Firing Spell: #cards=" + m_SpellcardVariants[variant].numberOfSpellcards + ", element=" + m_SpellcardVariants[variant].element + ", #runes=" + ", numberOfSpellcards=" + m_SpellcardVariants[variant].numberOfRunes);
         m_FiredSpellScript = m_FiredSpell.transform.GetChild(0).GetComponent<SpellScript>();
 
-        //switch (m_FiredSpellScript.getElement())
-        //{
-        //    case 0:
-        //        AkSoundEngine.PostEvent("Spell_Fire", gameObject);
-        //        break;
-        //    case 1:
-        //        AkSoundEngine.PostEvent("Spell_Water", gameObject);
-        //        break;
-        //    case 2:
-        //        AkSoundEngine.PostEvent("Spell_Ice", gameObject);
-        //        break;
-        //    case 3:
-        //        AkSoundEngine.PostEvent("Spell_Nature", gameObject);
-        //        break;
-        //    case 4:
-        //        AkSoundEngine.PostEvent("Spell_Lightning", gameObject);
-        //        break;
-        //}
+        switch (m_FiredSpellScript.getElement())
+        {
+            case 0:
+                AkSoundEngine.PostEvent("Spell_Fire", gameObject);
+                break;
+            case 1:
+                AkSoundEngine.PostEvent("Spell_Water", gameObject);
+                break;
+            case 2:
+                AkSoundEngine.PostEvent("Spell_Ice", gameObject);
+                break;
+            case 3:
+                AkSoundEngine.PostEvent("Spell_Nature", gameObject);
+                break;
+            case 4:
+                AkSoundEngine.PostEvent("Spell_Lightning", gameObject);
+                break;
+                }
 
-        m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
+                m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
         m_FiredSpellScript.BindSpellSpentAction();
         m_FiredSpellScript.SpellSpent += ClearFiredSpell;
 
