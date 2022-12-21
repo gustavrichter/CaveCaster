@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6139424996481941386}
   - component: {fileID: 3469948146450246947}
+  - component: {fileID: -5507310241698146946}
   m_Layer: 7
   m_Name: Spell
   m_TagString: Untagged
@@ -128,11 +129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ef2bce3440b345972e84aa237fddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 0
+  m_element: 0
   m_dragScript: {fileID: 0}
   m_Rune: {fileID: 0}
   wasFired: 0
   bunique: 0
+  m_index: 0
+  m_variant: 0
   m_SpellPositions:
   - {fileID: 6117578864645496590}
   - {fileID: 8256585785867395254}
@@ -141,6 +144,19 @@ MonoBehaviour:
   - {fileID: 7758581356466121834}
   - {fileID: 8071305386601404141}
   - {fileID: 7929742429551026188}
+--- !u!114 &-5507310241698146946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753519492334419225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bf1f49ea83bad43b9fcfd455f8b4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveName: Base Layer.SpellFrameDissolve
 --- !u!1 &5832735988270931642
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     CanvasGroup myCanvasGroup;
     Canvas myCanvas;
     PointerEventData ped;
-    public Action SpellCardDropped = delegate {};//will always be called, that way: won't give nullreference exception when no methods are subscribed
+    public Action SpellCardDropped = delegate { };//will always be called, that way: won't give nullreference exception when no methods are subscribed
+    public Action SpellCardDragged = delegate { };
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class DragOnEnemy : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         //Debug.Log("BeginDrag");
         myCanvasGroup.blocksRaycasts = false;
+        SpellCardDragged();
 
 
     }

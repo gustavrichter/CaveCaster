@@ -117,7 +117,13 @@ public class PageScript : MonoBehaviour
         m_FiredSpellScript.SpellSpent += ClearFiredSpell;
 
         m_FiredSpellScript.FadeOut();
-        ReadyNextPage();
+        for (int i = 0; i < m_SpellScripts.Count; i++)
+        {
+            m_SpellScripts[i].LetSpellDissolve();
+
+        }
+        m_FiredSpellScript.LetSpellDissolve();
+        StartCoroutine(WaitTurnPage());
     }
 
     void ClearFiredSpell()
@@ -201,6 +207,7 @@ public class PageScript : MonoBehaviour
             } while (numberTaken);
         }
 
+
         //initialise all spellcardvariants with 0 runes
         for (int i = 0; i < m_SpellcardVariants.Count; i++)
         {
@@ -237,6 +244,13 @@ public class PageScript : MonoBehaviour
         //}
     }
 
+    IEnumerator WaitTurnPage()
+    {
+        //Debug.Log("Dissolve before yield.");
+        yield return new WaitForSeconds(.8f);
+        ReadyNextPage();
+       // Debug.Log("Dissolve after yield.");
+    }
     public void ClearPage()
     {
         if (m_SpellsOnPage.Count > 0)
