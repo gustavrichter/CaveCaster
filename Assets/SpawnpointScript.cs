@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-bool isCamera 0;
+//bool isCamera 0;
 
 public class SpawnpointScript : MonoBehaviour
 {
@@ -15,7 +15,6 @@ public class SpawnpointScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ()
         
     }
 }
