@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Base Layer.FireSlimeAttack
   damagedName: Base Layer.FireSlimeDamaged
+  damagedCritName: Base Layer.FireSlimeCrit
   defeatName: Base Layer.FireSlimeDefeat
 --- !u!95 &1274691049614191289
 Animator:

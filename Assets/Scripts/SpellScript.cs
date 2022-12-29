@@ -29,6 +29,7 @@ public  class SpellScript : MonoBehaviour
     public int m_variant;
     public Action<int> SpellFired = delegate { };
     public Action SpellSpent = delegate { };
+    private SpellAnimationScript m_spellAnimScript;
 
    
     [SerializeField] private GameObject[] m_SpellPositions;//size=7
@@ -36,6 +37,16 @@ public  class SpellScript : MonoBehaviour
     private List<GameObject> m_RunesOnSpell = new List<GameObject>();// dynamic size
 
     //set positions for all number variations
+    //new positions:    even -> /      odd -> \
+    private int[] m_positions_0 = new int[] { 0, 0, 0, 0, 0, 0, 0};
+    private int[] m_positions_1 = new int[] { 1, 0, 0, 0, 0, 0, 0};
+    private int[] m_positions_2 = new int[] { 0, 1, 1, 0, 0, 0, 0};
+    private int[] m_positions_3 = new int[] { 1, 0, 0, 1, 1, 0, 0};
+    private int[] m_positions_4 = new int[] { 0, 1, 1, 0, 0, 1, 1};
+    private int[] m_positions_5 = new int[] { 1, 1, 1, 1, 1, 0, 0};
+    private int[] m_positions_6 = new int[] { 0, 1, 1, 1, 1, 1, 1};
+    private int[] m_positions_7 = new int[] { 1, 1, 1, 1, 1, 1, 1};
+    /*old:
     private int[] m_positions_0 = new int[] { 0, 0, 0, 0, 0, 0, 0};
     private int[] m_positions_1 = new int[] { 1, 0, 0, 0, 0, 0, 0};
     private int[] m_positions_2 = new int[] { 0, 0, 1, 0, 0, 1, 0};
@@ -44,6 +55,7 @@ public  class SpellScript : MonoBehaviour
     private int[] m_positions_5 = new int[] { 1, 1, 1, 0, 1, 1, 0};
     private int[] m_positions_6 = new int[] { 0, 1, 1, 1, 1, 1, 1};
     private int[] m_positions_7 = new int[] { 1, 1, 1, 1, 1, 1, 1};
+    */
 
     private Positions[] m_aPositions = new Positions[7];
 
@@ -61,12 +73,13 @@ public  class SpellScript : MonoBehaviour
         m_aPositions[5] = new Positions(6, m_positions_6);
         m_aPositions[6] = new Positions(7, m_positions_7);
 
-
+        m_spellAnimScript = GetComponent<SpellAnimationScript>();
         //am anfang alle spells draufzeichnnen und erstmal deaktivieren
         for (int i = 0; i < m_SpellPositions.Length; i++)
         {
             m_RunesOnSpell.Add(Instantiate(m_Rune, m_SpellPositions[i].transform) as GameObject);
             m_RunesOnSpell[i].SetActive(false);
+            
             //m_runeAnimators.Add(m_RunesOnSpell[i].gameObject.GetComponent<RuneAnimationScript>());
 
         }
@@ -80,13 +93,21 @@ public  class SpellScript : MonoBehaviour
             //Debug.Log("dragsrpit not found");
         }
         else
+        {
             m_dragScript.SpellCardDropped += FiringSpell;
+            m_dragScript.SpellCardDragged += SetRunesActive;
+        }
+        
 
     }
     private void OnDestroy()
     {
-        if(m_dragScript)
+        if (m_dragScript)
+        {
             m_dragScript.SpellCardDropped -= FiringSpell;
+            m_dragScript.SpellCardDragged -= SetRunesActive;
+
+        }
     }
     private void FiringSpell()
     {
@@ -134,9 +155,21 @@ public  class SpellScript : MonoBehaviour
             {
                 m_RunesOnSpell[i].SetActive(true);
                 m_runeAnimators.Add(m_RunesOnSpell[i].gameObject.GetComponent<RuneAnimationScript>());
+                //if (bunique)
+                //{
+                //    m_runeAnimators[m_runeAnimators.Count - 1].setUnique(bunique);
+
+                //}
             }
         }
     
+    }
+    void SetRunesActive()
+    {
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayActiveAnimation();
+        }
     }
     public void BindSpellSpentAction()
     {
@@ -165,6 +198,11 @@ public  class SpellScript : MonoBehaviour
         //failed: amount not found
         return null;
 
+    }
+
+    public void LetSpellDissolve()
+    {
+        m_spellAnimScript.PlayDissolveAnimation();
     }
 
     public int getDamage()

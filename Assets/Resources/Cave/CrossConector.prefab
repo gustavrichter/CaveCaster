@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2939543185931598718}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1513c7e3f8cf4e459ae017383299e37, type: 2}
+  - {fileID: 2100000, guid: 206184bb6e0b9b34b80498f57fb8f209, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,25 +166,25 @@ MonoBehaviour:
   - {x: -0.5, y: -0.5, z: 0.5}
   - {x: -0.5, y: -0.5, z: -0.5}
   m_Textures0:
-  - {x: 0, y: 0}
-  - {x: 0, y: 1}
-  - {x: 1, y: 1}
-  - {x: 1, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 1}
-  - {x: 1, y: 1}
-  - {x: 1, y: 0}
+  - {x: -0.20710677, y: 0.5}
+  - {x: 0.5, y: 1.2071068}
+  - {x: 1.2071068, y: 0.5}
+  - {x: 0.5, y: -0.20710677}
+  - {x: 0.49999994, y: 1.2071067}
+  - {x: 1.2071066, y: 0.5}
+  - {x: 0.49999982, y: -0.20710677}
+  - {x: -0.20710683, y: 0.5}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
-  - {x: -1, y: 0, z: 0, w: 1}
+  - {x: -0.7071068, y: 0, z: -0.7071068, w: 1}
+  - {x: -0.7071068, y: 0, z: -0.7071068, w: 1}
+  - {x: -0.7071068, y: 0, z: -0.7071068, w: 1}
+  - {x: -0.7071068, y: 0, z: -0.7071068, w: 1}
+  - {x: 0.7071068, y: 0, z: 0.7071068, w: 1}
+  - {x: 0.70710677, y: 0, z: 0.7071069, w: 1}
+  - {x: 0.7071068, y: 0, z: 0.7071068, w: 1}
+  - {x: 0.7071068, y: 0, z: 0.70710677, w: 1}
   m_Colors: []
   m_UnwrapParameters:
     m_HardAngle: 88
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 57
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

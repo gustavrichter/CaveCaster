@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: KurzUndFesselnd_Ltd
   productName: CaveCaster
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 1
-  bundleVersion: 1.0.2
+  bundleVersion: v1.0.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -155,14 +155,14 @@ PlayerSettings:
   androidSupportedAspectRatio: 2
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.CaveCaster
+    Android: com.KurzUndFesselnd_Ltd.CaveCaster
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 22
+  AndroidMinSdkVersion: 29
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -269,7 +269,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: ad9564809d0219840bc1d239fad7879b, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -818,8 +825,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template_3D
-  metroPackageVersion: 
+  metroPackageName: Template3D
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -827,7 +834,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Template_3D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: CaveCaster
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -866,7 +873,23 @@ PlayerSettings:
   XboxOneIsContentPackage: 0
   XboxOneEnhancedXboxCompatibilityMode: 0
   XboxOneEnableGPUVariability: 1
-  XboxOneSockets: {}
+  XboxOneSockets:
+    WwiseCommandSocket:
+      m_Name: WwiseCommandSocket
+      m_Port: 24025
+      m_Protocol: 0
+      m_Usages: 00000000010000000400000007000000
+      m_TemplateName: WwiseCommand
+      m_SessionRequirment: 0
+      m_DeviceUsages: 00000000
+    WwiseDiscoverySocket:
+      m_Name: WwiseDiscoverySocket
+      m_Port: 24024
+      m_Protocol: 1
+      m_Usages: 00000000010000000400000007000000
+      m_TemplateName: WwiseDiscovery
+      m_SessionRequirment: 0
+      m_DeviceUsages: 00000000
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0

@@ -17,6 +17,7 @@ public abstract class EnemyScript : MonoBehaviour
     protected int shock = 4;
     protected float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
     protected bool alive;
+    public bool animating;
     [SerializeField]
     private EnemyAnimationScript animationScript;
 
@@ -34,6 +35,7 @@ public abstract class EnemyScript : MonoBehaviour
         coolDown = UnityEngine.Random.Range(4.0f,10.0f);
         health = 100;
         alive = true;
+        animating = false;
 
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerScript>();
@@ -42,15 +44,31 @@ public abstract class EnemyScript : MonoBehaviour
     }
     protected virtual void Update()
     {
-        coolDown -= Time.deltaTime;
-        if(coolDown<= 0)
+        if(!alive)
         {
-            coolDown = UnityEngine.Random.Range(4.0f, 10.0f);
-            animationScript.PlayAttackAnimation();
+            LetEnemyDie();
         }
-     
+        else
+        {
+            coolDown -= Time.deltaTime;
+            if (coolDown <= 0 && !animating)
+            {
+                coolDown = UnityEngine.Random.Range(4.0f, 10.0f);
+                animationScript.PlayAttackAnimation();
+            }
+        }
+
+
+    }
+    private void LetEnemyDie()
+    {
+        if (!animating)
+        {
+            animationScript.PlayDefeatAnimation();
+        }
     }
     public void TakeDamage(int damage, int element) {
+        //AkSoundEngine.PostEvent("Combat_Enemy_damage", gameObject);
         health -= (damage/elementResistances[element]);
 
         //if (elementResistances[element] < 1)//if crit
@@ -60,22 +78,30 @@ public abstract class EnemyScript : MonoBehaviour
         //else//normal damage
         //    Debug.Log(gameObject.name + ": Outch! " + health);
 
-        if (health<= 0)
-        {
-            alive = false;
-            animationScript.PlayDefeatAnimation();
-        }
+        
+        if (elementResistances[element] < 1)//if crit
+            animationScript.PlayDamagedCritAnimation();
         else
-        {
             animationScript.PlayDamagedAnimation();
 
+        if (health <= 0)
+        {
+            alive = false;
         }
+
+
     }
     public abstract void Attack();
     public void EnemyDies()
     {
-        Debug.Log(transform.name + " has been slayn.");
+        //Debug.Log(transform.name + " has been slayn.");
         EnemyDeath(m_id);
     }
 
+    public void finishedAnimating()
+    {
+        //Debug.Log(transform.name + " finishedAnimating");
+        animating = false;
+    }
 }
+    

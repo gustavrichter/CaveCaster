@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void TakeDamage(float damage, int element)
     {
-        
+        //AkSoundEngine.PostEvent("Combat_Player_damage", gameObject);
         m_fhealth -= damage;
         //Debug.Log(gameObject.name + ": Ouchie! I have " + m_fhealth + " healt left.");
         //Debug.Log( m_fhealth + " health left.");

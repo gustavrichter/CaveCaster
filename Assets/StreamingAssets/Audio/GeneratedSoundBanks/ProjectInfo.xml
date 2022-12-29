@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="CaveCastersAudio1.0" GUID="{D5FEE6B5-867D-480E-B076-4A2EDECFB620}" Generator="2022.1.0.8070"/>
+	<CacheRoot>../../../../../../CaveCasterWwise/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Android" GUID="{F8246EA3-0E68-4D35-9188-A6B88575B9C5}" BasePlatform="Android" BasePlatformGUID="{A2D401DE-B8B6-4FEB-8142-137C34D507CA}" Path="../../../../../../CaveCasterWwise/GeneratedSoundBanks/Android"/>
+		<Platform Name="Windows" GUID="{E57A5D4B-1B78-41E5-90E3-11DE2AAB880F}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../../../CaveCasterWwise/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{13BF3738-4176-4D6C-97FE-141F0821BEA6}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{3E1BA3A2-C6CE-B1E2-67BB-15EB140FCA70}</FileHash>
+</ProjectInfo>

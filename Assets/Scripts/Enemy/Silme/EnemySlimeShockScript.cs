@@ -9,6 +9,6 @@ public class EnemySlimeShockScript : EnemySlimeScript
     {
         base.Init();
         elementResistances[shock] = 2;
-        elementResistances[water] = 0.5f;
+        elementResistances[nature] = 0.5f;
     }
 }
