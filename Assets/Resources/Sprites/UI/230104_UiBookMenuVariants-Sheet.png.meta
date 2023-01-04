@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc57b6c7e90481f48b2e8bac00a4de62
+guid: 01a9771f6ca4332429171a9f4b169726
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -155,8 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae2976c90b57b9248a841a0e698ec487
-      internalID: 1453405452
+      spriteID: 47b6e4dabdc5b7d4eb22017aebbda018
+      internalID: 1927769751
       vertices: []
       indices: 
       edges: []
@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e0cc998bfc48e44099f327c1dbeef1d
-      internalID: -1781405272
+      spriteID: 5e11651193d37a64b9314bcb93f3b033
+      internalID: 701971198
       vertices: []
       indices: 
       edges: []
@@ -197,8 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dbf6c643485eec44b44fde0d16cf399
-      internalID: -543558545
+      spriteID: 74c64c436179ec94fa406a19e69e30ef
+      internalID: 806210976
       vertices: []
       indices: 
       edges: []
@@ -206,7 +206,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: da2554151e506444aa07c18abd15c08d
+    spriteID: 937818cefd32b9443a1a9a6f8f5422a8
     internalID: 0
     vertices: []
     indices: 
@@ -214,9 +214,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      230104_UiBookMenuVariants-Sheet_0: 1453405452
-      230104_UiBookMenuVariants-Sheet_1: -1781405272
-      230104_UiBookMenuVariants-Sheet_2: -543558545
+      230104_UiBookMenuVariants-Sheet_0: 1927769751
+      230104_UiBookMenuVariants-Sheet_1: 701971198
+      230104_UiBookMenuVariants-Sheet_2: 806210976
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
