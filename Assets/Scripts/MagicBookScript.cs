@@ -34,7 +34,10 @@ public class MagicBookScript : MonoBehaviour
     {
         m_PageScript.ReadyNextPage -= TurnPage;
     }
-   
+   private void ClearPage()
+    {
+        m_PageScript.ClearPage();
+    }
     public void OpenBook()
     {
         //AkSoundEngine.PostEvent("Book_open", gameObject);
@@ -53,17 +56,19 @@ public class MagicBookScript : MonoBehaviour
     }
     public void TurnPage()
     {
+        ClearPage();
         //AkSoundEngine.PostEvent("Book_turn_page", gameObject);
-        m_PageScript.ClearPage();
         if (!m_bisClosed)
         {
-            //get a list with the spellvariants to put on the page
-            GameObject[] selectedSpellVariants = GetSpellVariants();
-            m_PageScript.NextPage(selectedSpellVariants);
-          
+            StartCoroutine(WaitTurnAnimation(1.0f));
         }
-       
-
+    }
+    IEnumerator WaitTurnAnimation(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        //get a list with the spellvariants to put on the page
+        GameObject[] selectedSpellVariants = GetSpellVariants();
+        m_PageScript.NextPage(selectedSpellVariants);
     }
 
 

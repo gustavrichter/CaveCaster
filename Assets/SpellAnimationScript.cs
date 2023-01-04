@@ -22,6 +22,6 @@ public class SpellAnimationScript : MonoBehaviour
    public void PlayDissolveAnimation()
     {
         //Debug.Log("Playing Dissolve Animation");
-        //anim.Play(dissolveName);
+        anim.Play(dissolveName);
     }
 }

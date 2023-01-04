@@ -40,6 +40,7 @@ public class PageScript : MonoBehaviour
     }
     public void NextPage(GameObject[] spellVariants)
     {
+
         for (int i = 0; i < spellVariants.Length; i++)
         {
             m_SpellVariants.Add(spellVariants[i]);
@@ -68,7 +69,7 @@ public class PageScript : MonoBehaviour
                     m_SpellScripts[SpellCardCounter].DrawRunes(m_SpellcardVariants[i].numberOfRunes);
                     m_SpellScripts[SpellCardCounter].m_index = SpellCardCounter;
                     m_SpellScripts[SpellCardCounter].m_variant = i;
-                    m_SpellScripts[SpellCardCounter].SpellFired += FireSpell;
+                    m_SpellScripts[SpellCardCounter].SpellSpent += FireSpell;
                     SpellCardCounter++;
                 }
                 else
@@ -82,10 +83,35 @@ public class PageScript : MonoBehaviour
     void RevealUnique()
     {
     }
+    void FireSpell()
+    {
+        //m_FiredSpellScript = m_SpellScripts[index].transform.GetChild(0).GetComponent<SpellScript>();
+        //if (m_FiredSpellScript)
+        //{
+        //    m_FiredSpellScript.BindSpellSpentAction();
+        //    m_FiredSpellScript.FadeOut();
+           
+        //}
+        //else
+        //{
+        //    Debug.Log("no fired spellscript");
+        //}
 
-    void FireSpell(int index)
+        for (int i = 0; i < m_SpellScripts.Count; i++)
+        {
+            m_SpellScripts[i].LetSpellDissolve();
+
+        }
+
+        ClearPage();
+        ReadyNextPage();
+        //StartCoroutine(WaitTurnPage());
+
+    }
+    void FireSpell1(int index)
     {
         int variant = m_SpellScripts[index].m_variant;
+
         m_FiredSpell = Instantiate(m_SpellVariants[variant]) as GameObject;
         
         m_FiredSpell.transform.SetParent(this.transform, false);
@@ -112,11 +138,11 @@ public class PageScript : MonoBehaviour
         //        break;
         //}
 
-        m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
-        m_FiredSpellScript.BindSpellSpentAction();
-        m_FiredSpellScript.SpellSpent += ClearFiredSpell;
+        //m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
+        //m_FiredSpellScript.BindSpellSpentAction();
+        //m_FiredSpellScript.SpellSpent += ClearFiredSpell;
 
-        m_FiredSpellScript.FadeOut();
+        //m_FiredSpellScript.FadeOut();
         for (int i = 0; i < m_SpellScripts.Count; i++)
         {
             m_SpellScripts[i].LetSpellDissolve();
@@ -132,7 +158,7 @@ public class PageScript : MonoBehaviour
         m_FiredSpellScript.SpellSpent -= ClearFiredSpell;
         Destroy(m_FiredSpell);
         m_FiredSpellScript = null;
-        m_FiredSpellAnimationScript = null;
+        //m_FiredSpellAnimationScript = null;
     }
     void CreateSpellcardVariants(GameObject[] spellVariants) {
 
@@ -248,6 +274,7 @@ public class PageScript : MonoBehaviour
     {
         //Debug.Log("Dissolve before yield.");
         yield return new WaitForSeconds(.8f);
+        ClearPage();
         ReadyNextPage();
        // Debug.Log("Dissolve after yield.");
     }
@@ -258,7 +285,7 @@ public class PageScript : MonoBehaviour
             for (int i = 0; i < m_SpellsOnPage.Count; i++)
             {
                 //Debug.Log("destroying SpellsOnPage[" + i + "]");
-                m_SpellScripts[i].SpellFired -= FireSpell;
+                m_SpellScripts[i].SpellSpent -= FireSpell;
                 Destroy(m_SpellsOnPage[i]);
                 
             }
