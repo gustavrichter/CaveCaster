@@ -17,11 +17,16 @@ public class MagicBookScript : MonoBehaviour
     private GameObject m_Page;
     private PageScript m_PageScript;
 
+    private Animator m_bookanim;
 
     // Start is called before the first frame update
     void Awake()
     {
-        
+        m_bookanim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        if (!m_bookanim)
+        {
+            Debug.Log("no book anim found");
+        }
         m_BookOpen.SetActive(false);
         m_BookClosed.SetActive(true);
         m_bisClosed = true;
@@ -41,6 +46,7 @@ public class MagicBookScript : MonoBehaviour
     public void OpenBook()
     {
         //AkSoundEngine.PostEvent("Book_open", gameObject);
+
         m_BookClosed.SetActive(false);
         m_BookOpen.SetActive(true);
         m_bisClosed = false;
@@ -52,7 +58,7 @@ public class MagicBookScript : MonoBehaviour
         m_BookClosed.SetActive(true);
         m_BookOpen.SetActive(false);
         m_bisClosed = true;
-        m_PageScript.ClearPage();
+        //m_PageScript.ClearPage();
     }
     public void TurnPage()
     {
@@ -60,15 +66,20 @@ public class MagicBookScript : MonoBehaviour
         //AkSoundEngine.PostEvent("Book_turn_page", gameObject);
         if (!m_bisClosed)
         {
-            StartCoroutine(WaitTurnAnimation(1.0f));
+            m_bookanim.Play("Base Layer.BookFlipping");
+            StartCoroutine(WaitTurnAnimation(.5f));
         }
     }
     IEnumerator WaitTurnAnimation(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         //get a list with the spellvariants to put on the page
-        GameObject[] selectedSpellVariants = GetSpellVariants();
-        m_PageScript.NextPage(selectedSpellVariants);
+        if (!m_bisClosed)
+        {
+            GameObject[] selectedSpellVariants = GetSpellVariants();
+            m_PageScript.NextPage(selectedSpellVariants);
+        }
+        
     }
 
 
