@@ -128,13 +128,37 @@ public  class SpellScript : MonoBehaviour
                 }
                 SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
             }
+            FadeOut();
+            //StartCoroutine(ResetSpellPosition(.9f));
         }
         else
         {
+            //StartCoroutine(ResetSpellPosition(0.0f));
+            ResetSpellPosition();
             Debug.Log("No target hit");
         }
+        
+    }
+    public void ResetSpellPosition()
+    {
 
+        Debug.Log("Resetting spell");
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayIdleAnimation();
+        }
         m_dragScript.ResetPosition();
+    }
+    IEnumerator  ResetSpellPosition(float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait);
+        Debug.Log("Resetting spell");
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayIdleAnimation();
+        }
+        m_dragScript.ResetPosition();
+
     }
     public void DrawRunes(int amount)
     {
@@ -162,7 +186,7 @@ public  class SpellScript : MonoBehaviour
                 //}
             }
         }
-    
+        BindSpellSpentAction();
     }
     void SetRunesActive()
     {
@@ -175,14 +199,16 @@ public  class SpellScript : MonoBehaviour
     {
       
         //Debug.Log("animation count " + m_runeAnimators.Count);
+        //set spell to receive an action delegate from an animator, which is fired when the animation of "spending the spell" finishes
         m_runeAnimators[0].SpellSpent += SpentSpell;
 
     }
     void SpentSpell()
     {
         //Debug.Log("SpendingSpell");
+        //this information has to be relayed to the script that actually manages  turning the page
+        m_dragScript.ResetPosition();
         SpellSpent();
-        m_runeAnimators[0].SpellSpent -= SpentSpell;
     }
 
     int[] GetPositionList()
@@ -203,6 +229,8 @@ public  class SpellScript : MonoBehaviour
     public void LetSpellDissolve()
     {
         m_spellAnimScript.PlayDissolveAnimation();
+        m_runeAnimators[0].SpellSpent -= SpentSpell;
+
     }
 
     public int getDamage()
@@ -229,7 +257,7 @@ public  class SpellScript : MonoBehaviour
         for (int i = 0; i < m_runeAnimators.Count; i++)
         {
             m_runeAnimators[i].PlayBlackenAnimation();
-            //m_runeAnimators[i].PlayActiveAnimation();
+            
         }
 
     }
