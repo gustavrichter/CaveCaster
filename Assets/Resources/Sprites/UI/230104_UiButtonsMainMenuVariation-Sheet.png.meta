@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 376576d2b9479134db41f418d1e3f87c
+guid: 770bf0557a993e542aab5c53c6d23d51
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 230103_UiBookVariants-Sheet_0
+      name: 230104_UiButtonsMainMenuVariation-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
-        width: 176
-        height: 112
+        y: 32
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,41 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b17970574575e174ba562563025c3ee0
-      internalID: 525063156
+      spriteID: fbd77a1a4d20b3145ab9961174a81405
+      internalID: 1249777985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 230103_UiBookVariants-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 176
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6aa0f83b876929a4487bfd9d358bf61f
-      internalID: -167863679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 230103_UiBookVariants-Sheet_2
+      name: 230104_UiButtonsMainMenuVariation-Sheet_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 176
-        height: 112
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a9b74e4670825b4788a87a9b6b3314f
-      internalID: -179284498
+      spriteID: 3f6bb26ec704a4d4aaaabb2ea2a1484a
+      internalID: 1287884139
       vertices: []
       indices: 
       edges: []
@@ -206,7 +185,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 686743e30912bb24da27ff74fd0fbfb1
+    spriteID: 9937d7b8a3338fa43bdf3967f4c82c5a
     internalID: 0
     vertices: []
     indices: 
@@ -214,9 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      230103_UiBookVariants-Sheet_2: -179284498
-      230103_UiBookVariants-Sheet_1: -167863679
-      230103_UiBookVariants-Sheet_0: 525063156
+      230104_UiButtonsMainMenuVariation-Sheet_1: 1287884139
+      230104_UiButtonsMainMenuVariation-Sheet_0: 1249777985
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
