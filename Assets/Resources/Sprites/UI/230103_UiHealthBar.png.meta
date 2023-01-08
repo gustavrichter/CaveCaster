@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b96ff1e08c3772445806a56192e0ffc9
+guid: 3e0e213c61442884aad091ccec86ac0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 230103_UiHealthBar-Sheet_0
+      name: 230103_UiHealthBar_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a6687ee2f7484e4da6caba6615e0efe
-      internalID: 1971490810
+      spriteID: 761d9d50acd7f824ca9fddb4405899a1
+      internalID: 1132799193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 230103_UiHealthBar-Sheet_1
+      name: 230103_UiHealthBar_1
       rect:
         serializedVersion: 2
         x: 0
@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb52a998b9252a74fa34f7e72075517f
-      internalID: 1809062076
+      spriteID: 918cd20ecb1e00949879c51a48fa497a
+      internalID: 926095032
       vertices: []
       indices: 
       edges: []
@@ -185,7 +185,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 020485caa502d8e48bb1842e14b900a1
+    spriteID: d313181445e9d26408f17dd0905f7976
     internalID: 0
     vertices: []
     indices: 
@@ -193,8 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      230103_UiHealthBar-Sheet_1: 1809062076
-      230103_UiHealthBar-Sheet_0: 1971490810
+      230103_UiHealthBar_0: 1132799193
+      230103_UiHealthBar_1: 926095032
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
