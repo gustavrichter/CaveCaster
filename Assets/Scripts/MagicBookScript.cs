@@ -43,6 +43,11 @@ public class MagicBookScript : MonoBehaviour
     {
         m_PageScript.ClearPage();
     }
+    public void InkReveal()
+    {
+
+        m_PageScript.RevealUnique();
+    }
     public void OpenBook()
     {
         //AkSoundEngine.PostEvent("Book_open", gameObject);

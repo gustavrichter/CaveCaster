@@ -7,15 +7,15 @@ public abstract class EnemyScript : MonoBehaviour
     public int m_id;
     protected GameObject player;
     protected PlayerScript playerScript;
-    protected float coolDown;
-    protected float health;
+    public float coolDown;
+    public float health;
     protected float damage;
     protected int fire = 0;
     protected int water = 1;
     protected int ice = 2;
     protected int nature = 3;
     protected int shock = 4;
-    protected float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
+    public float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
     protected bool alive;
     public bool animating;
     [SerializeField]
@@ -33,7 +33,7 @@ public abstract class EnemyScript : MonoBehaviour
     {
         damage = 10;
         coolDown = UnityEngine.Random.Range(4.0f,10.0f);
-        health = 100;
+        health = 150;
         alive = true;
         animating = false;
 
@@ -67,9 +67,9 @@ public abstract class EnemyScript : MonoBehaviour
             animationScript.PlayDefeatAnimation();
         }
     }
-    public void TakeDamage(int damage, int element) {
+    public void TakeDamage(float damage, int element) {
         //AkSoundEngine.PostEvent("Combat_Enemy_damage", gameObject);
-        health -= (damage/elementResistances[element]);
+        health -= (damage / elementResistances[element]);
 
         //if (elementResistances[element] < 1)//if crit
         //    Debug.Log(gameObject.name + ": Extra Outch! " + health);
@@ -78,7 +78,7 @@ public abstract class EnemyScript : MonoBehaviour
         //else//normal damage
         //    Debug.Log(gameObject.name + ": Outch! " + health);
 
-        
+
         if (elementResistances[element] < 1)//if crit
             animationScript.PlayDamagedCritAnimation();
         else
@@ -102,6 +102,17 @@ public abstract class EnemyScript : MonoBehaviour
     {
         //Debug.Log(transform.name + " finishedAnimating");
         animating = false;
+    }
+    public bool isAlive()
+    {
+        return alive;
+    }
+
+    public void addCooldown(float stunDuration)
+    {
+        Debug.Log("current CD = " + coolDown);
+        coolDown += stunDuration;
+        Debug.Log("new CD = " + coolDown);
     }
 }
     

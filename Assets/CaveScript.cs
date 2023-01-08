@@ -77,4 +77,9 @@ public class CaveScript : MonoBehaviour
         m_EnemiesOnFloor.Clear();
         StageComplete();
     }
+
+    public List<GameObject> getEnemies()
+    {
+        return m_EnemiesOnFloor;
+    }
 }
