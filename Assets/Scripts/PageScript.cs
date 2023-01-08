@@ -92,12 +92,13 @@ public class PageScript : MonoBehaviour
     }
     void WhenSpellWasFired(int index)
     {
+        m_SpellScripts[index].LetSpellDissolve();
+        //for (int i = 0; i < m_SpellScripts.Count; i++)
+        //{
+        //    m_SpellScripts[i].LetSpellDissolve();
 
-        for (int i = 0; i < m_SpellScripts.Count; i++)
-        {
-            m_SpellScripts[i].LetSpellDissolve();
-
-        }
+        //}
+        
     }
     void WhenSpellWasSpent()
     {

@@ -19,6 +19,8 @@ public class MagicBookScript : MonoBehaviour
 
     private Animator m_bookanim;
 
+    bool useInk;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,8 +34,10 @@ public class MagicBookScript : MonoBehaviour
         m_bisClosed = true;
         m_PageScript = m_Page.GetComponent<PageScript>();
         m_PageScript.ReadyNextPage += TurnPage;
+        useInk = false;
         
-        
+
+
     }
     private void OnDestroy()
     {
@@ -42,6 +46,10 @@ public class MagicBookScript : MonoBehaviour
    private void ClearPage()
     {
         m_PageScript.ClearPage();
+    }
+    public void SetUseInk()
+    {
+        useInk = true;
     }
     public void InkReveal()
     {
@@ -83,6 +91,11 @@ public class MagicBookScript : MonoBehaviour
         {
             GameObject[] selectedSpellVariants = GetSpellVariants();
             m_PageScript.NextPage(selectedSpellVariants);
+            if (useInk)
+            {
+                InkReveal();
+                useInk = false;
+            }
         }
         
     }
