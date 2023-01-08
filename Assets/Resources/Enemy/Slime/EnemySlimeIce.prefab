@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9184482530710073441}
   - component: {fileID: 9051552303462923218}
   - component: {fileID: 3807438598229863694}
+  - component: {fileID: 407093714403077606}
   m_Layer: 0
   m_Name: EnemySlimeIce
   m_TagString: Enemy
@@ -181,6 +182,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 0
+  coolDown: 0
+  health: 0
+  elementResistances:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  animating: 0
   animationScript: {fileID: 0}
 --- !u!114 &9051552303462923218
 MonoBehaviour:
@@ -218,3 +228,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &407093714403077606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc69e2f62a405564484f11c105b6ed96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myEnemyScript: {fileID: 9184482530710073441}

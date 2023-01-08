@@ -29,7 +29,7 @@ public class RuneAnimationScript : MonoBehaviour
     }
     public void PlayActiveAnimation()
     {
-        Debug.Log("Playing active animation");
+        //Debug.Log("Playing active animation");
         anim.Play(activeName);
     } 
     public void PlayBlackenAnimation()
@@ -49,12 +49,19 @@ public class RuneAnimationScript : MonoBehaviour
         if (iLoop == 1)
         {
             SpellSpent();
+            iLoop = 0;
         }
         else
         {
             iLoop++;
         }
         
+    }
+
+    public void PlayIdleAnimation()
+    {
+
+        anim.Play("Base Layer.Idle");
     }
 
   
