@@ -27,9 +27,13 @@ public  class SpellScript : MonoBehaviour
     public bool bunique = false;
     public int m_index;
     public int m_variant;
+    public Action SpellToActive = delegate { };
+    public Action SpellToIdle = delegate { };
     public Action<int> SpellFired = delegate { };
     public Action SpellSpent = delegate { };
     private SpellAnimationScript m_spellAnimScript;
+    [SerializeField]
+    private SpellAttackScript myAttackScript;
 
    
     [SerializeField] private GameObject[] m_SpellPositions;//size=7
@@ -124,12 +128,13 @@ public  class SpellScript : MonoBehaviour
                     Debug.Log("enemyscr not found");
                 else if (bunique)//only do damage if spell is unique
                 {
-                    enemyScript.TakeDamage(m_baseDamage, m_element);
+                    myAttackScript.AttackEnemy(m_baseDamage, rayHit.transform.gameObject);
+                    //enemyScript.TakeDamage(m_baseDamage, m_element);
                 }
                 SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
             }
-            FadeOut();
             //StartCoroutine(ResetSpellPosition(.9f));
+            FadeOut();
         }
         else
         {
@@ -143,23 +148,35 @@ public  class SpellScript : MonoBehaviour
     {
 
         Debug.Log("Resetting spell");
-        for (int i = 0; i < m_runeAnimators.Count; i++)
-        {
-            m_runeAnimators[i].PlayIdleAnimation();
-        }
+        SetRunesToIdle();
         m_dragScript.ResetPosition();
     }
-    IEnumerator  ResetSpellPosition(float timeToWait)
-    {
-        yield return new WaitForSeconds(timeToWait);
-        Debug.Log("Resetting spell");
-        for (int i = 0; i < m_runeAnimators.Count; i++)
-        {
-            m_runeAnimators[i].PlayIdleAnimation();
-        }
-        m_dragScript.ResetPosition();
 
+    public void SetRunesToIdle()
+    {
+        SpellToIdle();   
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayIdleAnimation();
+        }
+    } public void SetSpellIdle()
+    {
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayIdleAnimation();
+        }
     }
+    //IEnumerator  ResetSpellPosition(float timeToWait)
+    //{
+    //    yield return new WaitForSeconds(timeToWait);
+    //    Debug.Log("Resetting spell");
+    //    for (int i = 0; i < m_runeAnimators.Count; i++)
+    //    {
+    //        m_runeAnimators[i].PlayIdleAnimation();
+    //    }
+    //    m_dragScript.ResetPosition();
+
+    //}
     public void DrawRunes(int amount)
     {
         m_numberOfRunes = amount;
@@ -189,6 +206,14 @@ public  class SpellScript : MonoBehaviour
         BindSpellSpentAction();
     }
     void SetRunesActive()
+    {
+        SpellToActive();
+        for (int i = 0; i < m_runeAnimators.Count; i++)
+        {
+            m_runeAnimators[i].PlayActiveAnimation();
+        }
+    }
+    public void SetSpellActive()
     {
         for (int i = 0; i < m_runeAnimators.Count; i++)
         {
@@ -229,7 +254,7 @@ public  class SpellScript : MonoBehaviour
     public void LetSpellDissolve()
     {
         m_spellAnimScript.PlayDissolveAnimation();
-        m_runeAnimators[0].SpellSpent -= SpentSpell;
+        //m_runeAnimators[0].SpellSpent -= SpentSpell;
 
     }
 

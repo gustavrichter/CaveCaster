@@ -69,7 +69,10 @@ public class PageScript : MonoBehaviour
                     m_SpellScripts[SpellCardCounter].DrawRunes(m_SpellcardVariants[i].numberOfRunes);
                     m_SpellScripts[SpellCardCounter].m_index = SpellCardCounter;
                     m_SpellScripts[SpellCardCounter].m_variant = i;
-                    m_SpellScripts[SpellCardCounter].SpellSpent += FireSpell;
+                    m_SpellScripts[SpellCardCounter].SpellSpent += WhenSpellWasSpent;
+                    m_SpellScripts[SpellCardCounter].SpellFired += WhenSpellWasFired;
+                    m_SpellScripts[SpellCardCounter].SpellToActive += SetSpellsActive;
+                    m_SpellScripts[SpellCardCounter].SpellToIdle += SetSpellsIdle;
                     SpellCardCounter++;
                 }
                 else
@@ -80,10 +83,23 @@ public class PageScript : MonoBehaviour
             }
         }
     }
-    void RevealUnique()
+    public void RevealUnique()
     {
+        if(m_SpellScripts.Count > 0) {
+
+            m_SpellScripts[0].SetSpellActive();
+        }
     }
-    void FireSpell()
+    void WhenSpellWasFired(int index)
+    {
+
+        for (int i = 0; i < m_SpellScripts.Count; i++)
+        {
+            m_SpellScripts[i].LetSpellDissolve();
+
+        }
+    }
+    void WhenSpellWasSpent()
     {
         //m_FiredSpellScript = m_SpellScripts[index].transform.GetChild(0).GetComponent<SpellScript>();
         //if (m_FiredSpellScript)
@@ -97,69 +113,64 @@ public class PageScript : MonoBehaviour
         //    Debug.Log("no fired spellscript");
         //}
 
-        for (int i = 0; i < m_SpellScripts.Count; i++)
-        {
-            m_SpellScripts[i].LetSpellDissolve();
-
-        }
 
         ClearPage();
         ReadyNextPage();
         //StartCoroutine(WaitTurnPage());
 
     }
-    void FireSpell1(int index)
-    {
-        int variant = m_SpellScripts[index].m_variant;
+    //void FireSpell1(int index)
+    //{
+    //    int variant = m_SpellScripts[index].m_variant;
 
-        m_FiredSpell = Instantiate(m_SpellVariants[variant]) as GameObject;
+    //    m_FiredSpell = Instantiate(m_SpellVariants[variant]) as GameObject;
         
-        m_FiredSpell.transform.SetParent(this.transform, false);
-        m_FiredSpell.transform.position = m_SpellsOnPage[index].transform.position;
-        //Debug.Log("Firing Spell: #cards=" + m_SpellcardVariants[variant].numberOfSpellcards + ", element=" + m_SpellcardVariants[variant].element + ", #runes=" + ", numberOfSpellcards=" + m_SpellcardVariants[variant].numberOfRunes);
-        m_FiredSpellScript = m_FiredSpell.transform.GetChild(0).GetComponent<SpellScript>();
+    //    m_FiredSpell.transform.SetParent(this.transform, false);
+    //    m_FiredSpell.transform.position = m_SpellsOnPage[index].transform.position;
+    //    //Debug.Log("Firing Spell: #cards=" + m_SpellcardVariants[variant].numberOfSpellcards + ", element=" + m_SpellcardVariants[variant].element + ", #runes=" + ", numberOfSpellcards=" + m_SpellcardVariants[variant].numberOfRunes);
+    //    m_FiredSpellScript = m_FiredSpell.transform.GetChild(0).GetComponent<SpellScript>();
 
-        //switch (m_FiredSpellScript.getElement())
-        //{
-        //    case 0:
-        //        AkSoundEngine.PostEvent("Spell_Fire", gameObject);
-        //        break;
-        //    case 1:
-        //        AkSoundEngine.PostEvent("Spell_Water", gameObject);
-        //        break;
-        //    case 2:
-        //        AkSoundEngine.PostEvent("Spell_Ice", gameObject);
-        //        break;
-        //    case 3:
-        //        AkSoundEngine.PostEvent("Spell_Nature", gameObject);
-        //        break;
-        //    case 4:
-        //        AkSoundEngine.PostEvent("Spell_Lightning", gameObject);
-        //        break;
-        //}
+    //    //switch (m_FiredSpellScript.getElement())
+    //    //{
+    //    //    case 0:
+    //    //        AkSoundEngine.PostEvent("Spell_Fire", gameObject);
+    //    //        break;
+    //    //    case 1:
+    //    //        AkSoundEngine.PostEvent("Spell_Water", gameObject);
+    //    //        break;
+    //    //    case 2:
+    //    //        AkSoundEngine.PostEvent("Spell_Ice", gameObject);
+    //    //        break;
+    //    //    case 3:
+    //    //        AkSoundEngine.PostEvent("Spell_Nature", gameObject);
+    //    //        break;
+    //    //    case 4:
+    //    //        AkSoundEngine.PostEvent("Spell_Lightning", gameObject);
+    //    //        break;
+    //    //}
 
-        //m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
-        //m_FiredSpellScript.BindSpellSpentAction();
-        //m_FiredSpellScript.SpellSpent += ClearFiredSpell;
+    //    //m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
+    //    //m_FiredSpellScript.BindSpellSpentAction();
+    //    //m_FiredSpellScript.SpellSpent += ClearFiredSpell;
 
-        //m_FiredSpellScript.FadeOut();
-        for (int i = 0; i < m_SpellScripts.Count; i++)
-        {
-            m_SpellScripts[i].LetSpellDissolve();
+    //    //m_FiredSpellScript.FadeOut();
+    //    for (int i = 0; i < m_SpellScripts.Count; i++)
+    //    {
+    //        m_SpellScripts[i].LetSpellDissolve();
 
-        }
-        m_FiredSpellScript.LetSpellDissolve();
-        StartCoroutine(WaitTurnPage());
-    }
+    //    }
+    //    m_FiredSpellScript.LetSpellDissolve();
+    //    StartCoroutine(WaitTurnPage());
+    //}
 
-    void ClearFiredSpell()
-    {
-        //Debug.Log("ClearingFiredSpell");
-        m_FiredSpellScript.SpellSpent -= ClearFiredSpell;
-        Destroy(m_FiredSpell);
-        m_FiredSpellScript = null;
-        //m_FiredSpellAnimationScript = null;
-    }
+    //void ClearFiredSpell()
+    //{
+    //    //Debug.Log("ClearingFiredSpell");
+    //    m_FiredSpellScript.SpellSpent -= ClearFiredSpell;
+    //    Destroy(m_FiredSpell);
+    //    m_FiredSpellScript = null;
+    //    //m_FiredSpellAnimationScript = null;
+    //}
     void CreateSpellcardVariants(GameObject[] spellVariants) {
 
         m_SpellcardVariants.Clear();
@@ -270,14 +281,14 @@ public class PageScript : MonoBehaviour
         //}
     }
 
-    IEnumerator WaitTurnPage()
-    {
-        //Debug.Log("Dissolve before yield.");
-        yield return new WaitForSeconds(.8f);
-        ClearPage();
-        ReadyNextPage();
-       // Debug.Log("Dissolve after yield.");
-    }
+    //IEnumerator WaitTurnPage()
+    //{
+    //    //Debug.Log("Dissolve before yield.");
+    //    yield return new WaitForSeconds(.8f);
+    //    ClearPage();
+    //    ReadyNextPage();
+    //   // Debug.Log("Dissolve after yield.");
+    //}
     public void ClearPage()
     {
         if (m_SpellsOnPage.Count > 0)
@@ -285,7 +296,7 @@ public class PageScript : MonoBehaviour
             for (int i = 0; i < m_SpellsOnPage.Count; i++)
             {
                 //Debug.Log("destroying SpellsOnPage[" + i + "]");
-                m_SpellScripts[i].SpellSpent -= FireSpell;
+                m_SpellScripts[i].SpellSpent -= WhenSpellWasSpent;
                 Destroy(m_SpellsOnPage[i]);
                 
             }
@@ -317,5 +328,21 @@ public class PageScript : MonoBehaviour
             return m_SpellScripts;
         }
         return null;
+    }
+
+    private void SetSpellsActive()
+    {
+        for (int i = 0; i < m_SpellScripts.Count; i++)
+        {
+            m_SpellScripts[i].SetSpellActive();
+        }
+    }
+
+    private void SetSpellsIdle()
+    {
+        for (int i = 0; i < m_SpellScripts.Count; i++)
+        {
+            m_SpellScripts[i].SetSpellIdle();
+        }
     }
 }
