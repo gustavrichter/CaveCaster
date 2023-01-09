@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using AK.Wwise;
 
 
@@ -10,6 +11,7 @@ public class MagicBookScript : MonoBehaviour
 
     public GameObject m_BookOpen;
     public GameObject m_BookClosed;
+    public GameObject m_BookPause;
     [SerializeField]
     private GameObject[] m_Spells;//size=5
 
@@ -21,16 +23,19 @@ public class MagicBookScript : MonoBehaviour
 
     bool useInk;
 
+    public Action PageTurned = delegate { };
+
     // Start is called before the first frame update
     void Awake()
     {
-        m_bookanim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        m_bookanim = transform.GetChild(0).GetChild(1).GetComponent<Animator>();//on OpenBook prefab
         if (!m_bookanim)
         {
             Debug.Log("no book anim found");
         }
         m_BookOpen.SetActive(false);
         m_BookClosed.SetActive(true);
+        m_BookPause.SetActive(false);
         m_bisClosed = true;
         m_PageScript = m_Page.GetComponent<PageScript>();
         m_PageScript.ReadyNextPage += TurnPage;
@@ -71,7 +76,16 @@ public class MagicBookScript : MonoBehaviour
         m_BookClosed.SetActive(true);
         m_BookOpen.SetActive(false);
         m_bisClosed = true;
-        //m_PageScript.ClearPage();
+        m_PageScript.ClearPage();
+    }
+    public void ShowPausePage()
+    {
+        m_BookPause.SetActive(true);
+    }
+
+    public void HidePausePage()
+    {
+        m_BookPause.SetActive(false);
     }
     public void TurnPage()
     {
@@ -80,10 +94,10 @@ public class MagicBookScript : MonoBehaviour
         if (!m_bisClosed)
         {
             m_bookanim.Play("Base Layer.BookFlipping");
-            StartCoroutine(WaitTurnAnimation(.5f));
+            StartCoroutine(DelayedPageTurn(.5f));
         }
     }
-    IEnumerator WaitTurnAnimation(float waitTime)
+    IEnumerator DelayedPageTurn(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         //get a list with the spellvariants to put on the page
@@ -91,6 +105,7 @@ public class MagicBookScript : MonoBehaviour
         {
             GameObject[] selectedSpellVariants = GetSpellVariants();
             m_PageScript.NextPage(selectedSpellVariants);
+            PageTurned();
             if (useInk)
             {
                 InkReveal();
@@ -104,8 +119,8 @@ public class MagicBookScript : MonoBehaviour
     GameObject[] GetSpellVariants()
     {
         //select between 3 and 4 of the first spells in shuffledList
-        int numberOfSpells = Random.Range(2, 4); //[2,3]
-        int numberOfSpellcardVariants = Random.Range(4, 6);//[4,5]
+        int numberOfSpells = UnityEngine.Random.Range(2, 4); //[2,3]
+        int numberOfSpellcardVariants = UnityEngine.Random.Range(4, 6);//[4,5]
         //Debug.Log("Creating " + numberOfSpellcardVariants + " spell card variants");
 
         GameObject[] shuffledSpellList = (GameObject[])m_Spells.Clone();
@@ -140,13 +155,18 @@ public class MagicBookScript : MonoBehaviour
                 else
                 {
                     //ansonsten einen random spell aus selected spell list hinzufügen
-                    selectedSpellsVariantsList[i] = selectedSpellsList[Random.Range(0, numberOfSpells)];//not certain if all spells in selected spell list will be chosen
+                    selectedSpellsVariantsList[i] = selectedSpellsList[UnityEngine.Random.Range(0, numberOfSpells)];//not certain if all spells in selected spell list will be chosen
                 }
                 
             }
             //Debug.Log("SpellVarians[" + i + "]= " + selectedSpellsVariantsList[i].name);
         }
         return selectedSpellsVariantsList;
+    }
+
+    public PageScript getPageScript()
+    {
+        return m_PageScript;
     }
 
    
