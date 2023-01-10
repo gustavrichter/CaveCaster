@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8155593384683133959}
   - component: {fileID: -1050332401383236086}
   - component: {fileID: 3753115783972638711}
+  - component: {fileID: 690796693493088247}
   m_Layer: 0
   m_Name: EnemySlimeShock
   m_TagString: Enemy
@@ -241,3 +242,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myEnemyScript: {fileID: 1736621542441679686}
+--- !u!114 &690796693493088247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775174068746438093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a66464d865664448bb3be021cf3615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -36,6 +36,7 @@ public class CaveScript : MonoBehaviour
             CleanSpawn();
         }
         m_numberOfEnemies = UnityEngine.Random.Range(1, 4);
+        m_numberOfEnemies = 3;
         for (int i = 0; i < m_numberOfEnemies; i++)
         {
             m_EnemiesOnFloor.Add(Instantiate(m_Enemies[UnityEngine.Random.Range(0, m_Enemies.Length)]) as GameObject);
