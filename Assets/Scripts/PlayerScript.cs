@@ -38,13 +38,10 @@ public class PlayerScript : MonoBehaviour
         //m_MagicBook = Instantiate(m_MagicBook.gameObject);
         //m_Cave = Instantiate(m_Cave.gameObject);
         m_MagicBook = GameObject.Find("MagicBook");
-<<<<<<< HEAD
-        m_Cave = GameObject.Find("CaveMaxi");
-        //m_Cave = GameObject.Find("Cave");
-=======
+        //m_Cave = GameObject.Find("CaveMaxi");
         m_Cave = GameObject.FindGameObjectWithTag("Cave");
         
->>>>>>> main
+
     }
    
     void Start()

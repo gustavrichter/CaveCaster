@@ -5,9 +5,7 @@ using System;
 
 public class CaveScript : MonoBehaviour
 {
-    public GameObject enemy;
     public Transform[] spawnPoints; //size 3
-    private GameObject clonedEnemy;
     [SerializeField] private GameObject[] m_Enemies; //size 6
     private List<EnemyScript> m_EnemyScripts;
     private List<GameObject> m_EnemiesOnFloor;

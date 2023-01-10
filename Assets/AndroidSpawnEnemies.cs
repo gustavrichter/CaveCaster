@@ -10,7 +10,7 @@ public class AndroidSpawnEnemies : MonoBehaviour, IPointerDownHandler
     void Awake()
     {
         m_Cave = GameObject.Find("CaveMaxi");
-        //m_Cave = GameObject.Find("Cave");
+        m_Cave = GameObject.FindGameObjectWithTag("Cave");
         m_caveScript = m_Cave.GetComponent<CaveScript>();
         if (!m_caveScript)
         {
