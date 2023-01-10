@@ -10,8 +10,10 @@ public class ExamScript : MonoBehaviour
     public PlayerScript m_playerScript;
     public CaveScript m_caveScript;
 
+    private int m_gameCount;
     private void Start()
     {
+        m_gameCount = 0;
         m_magicBookScript = GameObject.FindGameObjectWithTag("MagicBook").GetComponent<MagicBookScript>();
         m_pageScript = m_magicBookScript.getPageScript();
         m_playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();

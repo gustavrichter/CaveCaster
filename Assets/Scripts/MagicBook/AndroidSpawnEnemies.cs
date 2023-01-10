@@ -20,6 +20,7 @@ public class AndroidSpawnEnemies : MonoBehaviour, IPointerDownHandler
         //m_caveScript.StartCoroutine("DelayedSpawnEnemies", 3.0f);
         if (!(m_caveScript.getEnemies().Count > 0))//if no enemies already exist
         {
+
             m_caveScript.SpawnEnemy();
 
         }

@@ -8551,12 +8551,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1522712912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8786221185637497177, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3849260734528975352}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1530343466
 Mesh:
   m_ObjectHideFlags: 0
@@ -12108,16 +12102,48 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3849260732866148501, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+    - target: {fileID: 1436367285, guid: 064c96b28ec1d9d4bb42b607eb54e3d1, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436367285, guid: 064c96b28ec1d9d4bb42b607eb54e3d1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 508490520501383543, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620869356450214659, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3849260732913964680, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+    - target: {fileID: 3304834623728113405, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
         type: 3}
-      propertyPath: m_BookPause
-      value: 
-      objectReference: {fileID: 1522712912}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796691529663832542, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_text
+      value: 'You have to select the spell that only exists once and drag it on an
+        the enemy.
+
+
+        Let''s have a test run..'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796691529663832542, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796691529663832542, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3849260732913964694, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
         type: 3}
       propertyPath: m_Name
@@ -12183,10 +12209,39 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 47975658}
+    - target: {fileID: 5559324301764221102, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_text
+      value: 'When you encounter those monsters, i will show you a number of spells
+        on my page.
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559324301764221102, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559324301764221102, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946593706410994590, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8786221185637497177, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961497617329478142, guid: 064c96b28ec1d9d4bb42b607eb54e3d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 064c96b28ec1d9d4bb42b607eb54e3d1, type: 3}

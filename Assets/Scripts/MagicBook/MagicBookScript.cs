@@ -12,6 +12,7 @@ public class MagicBookScript : MonoBehaviour
     public GameObject m_BookOpen;
     public GameObject m_BookClosed;
     public GameObject m_BookPause;
+    public GameObject m_TutorialPages;
     [SerializeField]
     private GameObject[] m_Spells;//size=5
 
@@ -43,6 +44,10 @@ public class MagicBookScript : MonoBehaviour
         
 
 
+    }
+    private void Start()
+    {
+        ShowTutorial();
     }
     private void OnDestroy()
     {
@@ -82,7 +87,11 @@ public class MagicBookScript : MonoBehaviour
     {
         m_BookPause.SetActive(true);
     }
-
+    public void ShowTutorial()
+    {
+        m_TutorialPages.SetActive(true);
+        m_TutorialPages.GetComponent<TutorialScript>().StartTutorial();
+    }
     public void HidePausePage()
     {
         m_BookPause.SetActive(false);
