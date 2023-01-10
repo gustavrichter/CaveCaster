@@ -18,6 +18,7 @@ public abstract class EnemyScript : MonoBehaviour
     public float[] elementResistances = {1, 1, 1, 1, 1};//fire, water, ice, nature, shock (no resistances)
     protected bool alive;
     public bool animating;
+    public bool paused;
     [SerializeField]
     private EnemyAnimationScript animationScript;
 
@@ -31,40 +32,43 @@ public abstract class EnemyScript : MonoBehaviour
     }
     protected virtual void Init()
     {
-        damage = 10;
-        coolDown = UnityEngine.Random.Range(4.0f,10.0f);
+        damage = 18;
+        coolDown = UnityEngine.Random.Range(2.0f,7.0f);
         health = 150;
         alive = true;
         animating = false;
+        paused = false;
 
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
         if (!playerScript)
             Debug.Log(transform.name + ": PlayerScript not found");
     }
     protected virtual void Update()
     {
-        if(!alive)
+        if (!paused)
         {
-            LetEnemyDie();
-        }
-        else
-        {
-            coolDown -= Time.deltaTime;
-            if (coolDown <= 0 && !animating)
+            if (!alive)
             {
-                coolDown = UnityEngine.Random.Range(4.0f, 10.0f);
-                animationScript.PlayAttackAnimation();
+                LetEnemyDie();
+            }
+            else
+            {
+                coolDown -= Time.deltaTime;
+                if (coolDown <= 0 && !animating)
+                {
+                    coolDown = UnityEngine.Random.Range(4.0f, 7.0f);
+                    animationScript.PlayAttackAnimation();
+                }
             }
         }
-
-
     }
     private void LetEnemyDie()
     {
         if (!animating)
         {
             animationScript.PlayDefeatAnimation();
+            animating = true;
         }
     }
     public void TakeDamage(float damage, int element) {
@@ -94,7 +98,7 @@ public abstract class EnemyScript : MonoBehaviour
     public abstract void Attack();
     public void EnemyDies()
     {
-        //Debug.Log(transform.name + " has been slayn.");
+        //Debug.Log(transform.name + " has been slain.");
         EnemyDeath(m_id);
     }
 
@@ -110,9 +114,9 @@ public abstract class EnemyScript : MonoBehaviour
 
     public void addCooldown(float stunDuration)
     {
-        Debug.Log("current CD = " + coolDown);
+        //Debug.Log("current CD = " + coolDown);
         coolDown += stunDuration;
-        Debug.Log("new CD = " + coolDown);
+        //Debug.Log("new CD = " + coolDown);
     }
 }
     
