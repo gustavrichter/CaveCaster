@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK;
 using System;
 using TMPro;
 
@@ -31,6 +32,9 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private UnityEngine.UI.Button m_restartButton;
 
+    [SerializeField]
+    AK.Wwise.State fightState;
+
     public Action PlayerDeath = delegate { };
     public Action RestartTheGame = delegate { };
 
@@ -60,6 +64,7 @@ public class PlayerScript : MonoBehaviour
         m_MagicBookScript = m_MagicBook.GetComponent<MagicBookScript>();
         m_caveScript = m_Cave.GetComponent<CaveScript>();
         m_caveScript.EnemiesAhead += OpenBook;
+        m_caveScript.EnemiesAhead += SetFightState;
         m_caveScript.StageComplete += CloseBook;
         m_healthSlider.value = m_fhealth / 100.0f;
 
@@ -73,7 +78,7 @@ public class PlayerScript : MonoBehaviour
 
     public void PauseGame()
     {
-
+        AkSoundEngine.PostEvent("Menu_back", gameObject);
         m_exitButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(true);
         m_resumeButton.gameObject.SetActive(true);
@@ -82,9 +87,14 @@ public class PlayerScript : MonoBehaviour
         m_caveScript.PauseEnemies();
 
     }
+    public void SetFightState()
+    {
+        fightState.SetValue();
+    }
 
     public void ResumeGame()
     {
+        AkSoundEngine.PostEvent("Menu_accept", gameObject);
         m_exitButton.gameObject.SetActive(false);
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
@@ -95,6 +105,7 @@ public class PlayerScript : MonoBehaviour
 
     public void RestartGame()
     {
+        AkSoundEngine.PostEvent("Menu_accept", gameObject);
         m_exitButton.gameObject.SetActive(false);
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
@@ -110,13 +121,14 @@ public class PlayerScript : MonoBehaviour
 
     public void ExitToMenu()
     {
+        AkSoundEngine.PostEvent("Menu_back", gameObject);
         //switch scene to Menu scene
         //or do menu overlay
     }
 
     public void TakeDamage(float damage, int element)
     {
-        //AkSoundEngine.PostEvent("Combat_Player_damage", gameObject);
+        AkSoundEngine.PostEvent("Player_damage", gameObject);
         m_fhealth -= damage;
         //Debug.Log(gameObject.name + ": Ouchie! I have " + m_fhealth + " healt left.");
         Debug.Log( m_fhealth + " health left.");

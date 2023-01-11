@@ -72,7 +72,7 @@ public abstract class EnemyScript : MonoBehaviour
         }
     }
     public void TakeDamage(float damage, int element) {
-        //AkSoundEngine.PostEvent("Combat_Enemy_damage", gameObject);
+        AkSoundEngine.PostEvent("Enemy_hit", gameObject);
         health -= (damage / elementResistances[element]);
 
         //if (elementResistances[element] < 1)//if crit

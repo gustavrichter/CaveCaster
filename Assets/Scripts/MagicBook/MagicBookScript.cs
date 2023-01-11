@@ -68,7 +68,7 @@ public class MagicBookScript : MonoBehaviour
     }
     public void OpenBook()
     {
-        //AkSoundEngine.PostEvent("Book_open", gameObject);
+        AkSoundEngine.PostEvent("Book_open", gameObject);
 
         m_BookClosed.SetActive(false);
         m_BookOpen.SetActive(true);
@@ -77,7 +77,7 @@ public class MagicBookScript : MonoBehaviour
     }
     public void CloseBook()
     {
-        //AkSoundEngine.PostEvent("Book_close", gameObject);
+        AkSoundEngine.PostEvent("Book_close", gameObject);
         m_BookClosed.SetActive(true);
         m_BookOpen.SetActive(false);
         m_bisClosed = true;
@@ -99,7 +99,7 @@ public class MagicBookScript : MonoBehaviour
     public void TurnPage()
     {
         ClearPage();
-        //AkSoundEngine.PostEvent("Book_turn_page", gameObject);
+        AkSoundEngine.PostEvent("Book_turn_page", gameObject);
         if (!m_bisClosed)
         {
             m_bookanim.Play("Base Layer.BookFlipping");
