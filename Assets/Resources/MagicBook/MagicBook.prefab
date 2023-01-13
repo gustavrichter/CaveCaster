@@ -328,6 +328,7 @@ MonoBehaviour:
   - {fileID: 8961497617329478142}
   - {fileID: 3304834623728113405}
   - {fileID: 508490520501383543}
+  m_magicBookScript: {fileID: 3849260732913964680}
 --- !u!1 &3304834623728113405
 GameObject:
   m_ObjectHideFlags: 0

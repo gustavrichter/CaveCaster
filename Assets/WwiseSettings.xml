@@ -11,7 +11,7 @@
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>C:\Program Files\Wwise 2022.1.0.8070</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../../CaveCasterAudio/CaveCastersAudio2.0.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../../../CaveCasterWwise/CaveCastersAudio2.0.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>

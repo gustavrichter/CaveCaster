@@ -31,6 +31,7 @@ public class ExamScoreScript : MonoBehaviour
         examScript.m_playerScript.PlayerDeath += FinishExam;
         examScript.m_playerScript.RestartTheGame += ResetScore;
        
+
     }
 
     private void Update()
@@ -70,19 +71,31 @@ public class ExamScoreScript : MonoBehaviour
 
     void calculateFinalGrade()
     {
+        int[] pointsList = { 20, 18, 14, 10, 5 };
+        float[] gradeList = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f };
+        
         if (m_bcountTime)
         {
             StopTimeCount();
         }
-        m_finalGrade = m_enemiesSlain / m_timeAverage;
+        for (int i = 0; i < 5; i++)
+        {
+            if(pointsList[i]>= m_enemiesSlain)
+            {
+                m_finalGrade = gradeList[i];
+            }
+        }
+       // m_finalGrade = m_enemiesSlain / m_timeAverage;
 
     }
+
+    
     void FinishExam()
     {
         examScript.m_magicBookScript.CloseBook();
         examScript.m_caveScript.StopStage();
         calculateFinalGrade();
-        
+        examScript.m_playerScript.PlayDeathMusic();
         //show end result screen
         m_timeText.text = "average cast time: " + m_timeAverage.ToString("F2") + " s";
         m_enemyText.text = "enemies slain: " + m_enemiesSlain.ToString();

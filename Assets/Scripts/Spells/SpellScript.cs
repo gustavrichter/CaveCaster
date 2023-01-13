@@ -131,10 +131,13 @@ public  class SpellScript : MonoBehaviour
                     myAttackScript.AttackEnemy(m_baseDamage, rayHit.transform.gameObject);
                     //enemyScript.TakeDamage(m_baseDamage, m_element);
                 }
-                SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
+                SpellFired(m_index); //always fire spell when an enemy is hit 
+                FadeOut(); //the fadeout animation will call LetSpellBeDeleted() on Runeanimationscript, which will fire action SpentSpell which in turn fires our action spellspent
+            }
+            else { 
+                ResetSpellPosition(); 
             }
             //StartCoroutine(ResetSpellPosition(.9f));
-            FadeOut();
         }
         else
         {

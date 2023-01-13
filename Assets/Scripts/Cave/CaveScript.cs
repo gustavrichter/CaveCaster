@@ -63,7 +63,7 @@ public class CaveScript : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if (m_numberOfEnemies > 0)
+        if (m_EnemiesOnFloor.Count > 0)
         {
             CleanSpawn();
         }
@@ -78,7 +78,18 @@ public class CaveScript : MonoBehaviour
         }
         EnemiesAhead();
     }
+    public void SpawnEnemyTutorial() {
 
+        m_EnemiesOnFloor.Add(Instantiate(m_Enemies[0]) as GameObject);//spawn fireslime
+        m_EnemiesOnFloor[0].transform.SetParent(spawnPoints[0].transform, false);
+        m_EnemyScripts.Add(m_EnemiesOnFloor[0].GetComponent<EnemyScript>());
+        m_EnemyScripts[0].m_id = 0;
+        m_EnemyScripts[0].EnemyDeath += RemoveEnemy;
+        m_EnemyScripts[0].addCooldown(100.0f);
+
+        EnemiesAhead();
+
+    }
     void CleanSpawn()
     {
         for (int i = 0; i < m_EnemiesOnFloor.Count; i++)
@@ -88,6 +99,7 @@ public class CaveScript : MonoBehaviour
     }
     private void RemoveEnemy(int id)
     {
+        Debug.Log("Removing Enemy: " + id);
         m_EnemyScripts[id].EnemyDeath -= RemoveEnemy;
         m_EnemiesOnFloor[id].gameObject.SetActive(false);
         m_numberOfEnemies--;

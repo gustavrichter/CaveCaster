@@ -47,7 +47,6 @@ public class MagicBookScript : MonoBehaviour
     }
     private void Start()
     {
-        ShowTutorial();
     }
     private void OnDestroy()
     {
@@ -91,6 +90,14 @@ public class MagicBookScript : MonoBehaviour
     {
         m_TutorialPages.SetActive(true);
         m_TutorialPages.GetComponent<TutorialScript>().StartTutorial();
+    }
+
+    public void ShowTutorialSpellPage()
+    {
+        GameObject[] spells = m_Spells;
+        m_PageScript.ShowTutorialSpells(spells);
+        InkReveal();
+
     }
     public void HidePausePage()
     {
@@ -140,7 +147,7 @@ public class MagicBookScript : MonoBehaviour
             Debug.Log("Book has not found PageScript");
         }
 
-        m_PageScript.ShuffleList(shuffledSpellList);
+        m_PageScript.ShuffleList(shuffledSpellList);//use the method in page script to shuffle the spell list
 
         for (int i = 0; i < numberOfSpells; i++)
         {

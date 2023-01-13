@@ -7,6 +7,8 @@ public class SpellShockAttackScript : SpellAttackScript
 
     public override void AttackEnemy(float baseDamage, GameObject enemy)
     {
+        AkSoundEngine.PostEvent("Spell_Lightning", gameObject);
+
         GameObject caveObject = GameObject.FindGameObjectWithTag("Cave");
         CaveScript caveScript = caveObject.GetComponent<CaveScript>();
         List<GameObject> enemyObjects= caveScript.getEnemies();
