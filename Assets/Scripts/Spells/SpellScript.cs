@@ -98,7 +98,7 @@ public  class SpellScript : MonoBehaviour
         }
         else
         {
-            m_dragScript.SpellCardDropped += FiringSpell;
+            m_dragScript.SpellCardDropped += FiringSpellWORayCast;
             m_dragScript.SpellCardDragged += SetRunesActive;
         }
         
@@ -108,45 +108,65 @@ public  class SpellScript : MonoBehaviour
     {
         if (m_dragScript)
         {
-            m_dragScript.SpellCardDropped -= FiringSpell;
+            m_dragScript.SpellCardDropped -= FiringSpellWORayCast;
             m_dragScript.SpellCardDragged -= SetRunesActive;
 
         }
     }
-    private void FiringSpell()
-    {
-        //do raycast
-        RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+    //private void FiringSpell()
+    //{
 
-        if (rayHit)//ray hit something
+    //    EnemyScript enemyScript = GameObject.FindGameObjectWithTag("Enemy").transform.gameObject.GetComponent<EnemyScript>();
+
+    //    //do raycast
+    //    RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+
+    //    if (rayHit)//ray hit something
+    //    {
+    //        Debug.Log("Hit: " + rayHit.transform.gameObject.name);
+    //        if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
+    //        {
+    //            //EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
+    //            EnemyScript enemyScript = GameObject.FindGameObjectWithTag("Enemy").transform.gameObject.GetComponent<EnemyScript>();
+    //            if (!enemyScript)
+    //                Debug.Log("enemyscr not found");
+    //            else if (bunique)//only do damage if spell is unique
+    //            {
+    //                myAttackScript.AttackEnemy(m_baseDamage, rayHit.transform.gameObject);
+    //                //enemyScript.TakeDamage(m_baseDamage, m_element);
+    //            }
+    //            SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
+    //        }
+    //        //StartCoroutine(ResetSpellPosition(.9f));
+    //        FadeOut();
+    //    }
+    //    else
+    //    {
+    //        //StartCoroutine(ResetSpellPosition(0.0f));
+    //        ResetSpellPosition();
+    //        Debug.Log("No target hit");
+    //    }
+
+    //}
+
+    private void FiringSpellWORayCast()
+    {
+
+        EnemyScript enemyScript = GameObject.FindGameObjectWithTag("Enemy").transform.gameObject.GetComponent<EnemyScript>();
+
+
+        if (bunique)//only do damage if spell is unique
         {
-            //Debug.Log("Hit: " + rayHit.transform.gameObject.name);
-            if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
-            {
-                EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
-                if (!enemyScript)
-                    Debug.Log("enemyscr not found");
-                else if (bunique)//only do damage if spell is unique
-                {
-                    myAttackScript.AttackEnemy(m_baseDamage, rayHit.transform.gameObject);
-                    //enemyScript.TakeDamage(m_baseDamage, m_element);
-                }
-                SpellFired(m_index); //always fire spell when an enemy is hit 
-                FadeOut(); //the fadeout animation will call LetSpellBeDeleted() on Runeanimationscript, which will fire action SpentSpell which in turn fires our action spellspent
-            }
-            else { 
-                ResetSpellPosition(); 
-            }
-            //StartCoroutine(ResetSpellPosition(.9f));
+
+            myAttackScript.AttackEnemy(m_baseDamage, GameObject.FindGameObjectWithTag("Enemy").transform.gameObject);
+            //enemyScript.TakeDamage(m_baseDamage, m_element);
         }
-        else
-        {
-            //StartCoroutine(ResetSpellPosition(0.0f));
-            ResetSpellPosition();
-            Debug.Log("No target hit");
-        }
-        
+        SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
+
+        //StartCoroutine(ResetSpellPosition(.9f));
+        FadeOut();
     }
+
     public void ResetSpellPosition()
     {
 
