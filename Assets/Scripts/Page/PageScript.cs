@@ -26,10 +26,11 @@ public class PageScript : MonoBehaviour
     private List<GameObject> m_SpellVariants; //dynamic size
     private List<SpellScript> m_SpellScripts; //dynamic size
     private List<SpellcardVariant> m_SpellcardVariants;
-    private GameObject m_FiredSpell;
-    private SpellScript m_FiredSpellScript;
-    private RuneAnimationScript m_FiredSpellAnimationScript;
+    //private GameObject m_FiredSpell;
+    //private SpellScript m_FiredSpellScript;
+    //private RuneAnimationScript m_FiredSpellAnimationScript;
     public Action ReadyNextPage = delegate { };
+    public Action SpellWasFired = delegate { };
     private void Awake()
     {
         m_SpellsOnPage = new List<GameObject>();
@@ -92,12 +93,14 @@ public class PageScript : MonoBehaviour
     }
     void WhenSpellWasFired(int index)
     {
+        m_SpellScripts[index].LetSpellDissolve();
+        SpellWasFired();
+        //for (int i = 0; i < m_SpellScripts.Count; i++)
+        //{
+        //    m_SpellScripts[i].LetSpellDissolve();
 
-        for (int i = 0; i < m_SpellScripts.Count; i++)
-        {
-            m_SpellScripts[i].LetSpellDissolve();
-
-        }
+        //}
+        
     }
     void WhenSpellWasSpent()
     {

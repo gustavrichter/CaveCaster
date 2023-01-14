@@ -9,7 +9,7 @@ public class EnemyTakeDamageScript : MonoBehaviour
     private EnemyScript myEnemyScript;
     public void TakeNormalDamage(float basedmg,  int element)
     {
-        Debug.Log("TakeNormalDamage: element = " + element);
+        //Debug.Log("TakeNormalDamage: element = " + element);
         //take damage based on spell element and resistances
         myEnemyScript.TakeDamage(basedmg, element);
 
@@ -28,7 +28,7 @@ public class EnemyTakeDamageScript : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             if (myEnemyScript.isAlive())
             {
-                Debug.Log("Doing Fire Tick Damage");
+                //Debug.Log("Doing Fire Tick Damage");
                 ticks--;
                 TakeNormalDamage(tickdamage, element);
                 StartCoroutine(FireTickDamage(ticks, tickdamage, element));
