@@ -10,7 +10,8 @@ public class SpellNatureAttackScript : SpellAttackScript
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         PlayerScript playerScript = playerObj.GetComponent<PlayerScript>();
-        playerScript.AddHealthPotion();
+        //playerScript.AddHealthPotion();
+        playerScript.HealPlayer(10.0f);
 
         GetEnemyScripts(enemy);
         m_enemyDamageScript.TakeNatureDamage(basedamage, m_element);

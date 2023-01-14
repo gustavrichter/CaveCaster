@@ -14,6 +14,7 @@ public class CaveScript : MonoBehaviour
     private int m_numberOfEnemies;
     public Action StageComplete = delegate { };
     public Action EnemiesAhead = delegate { };
+    public Action EnemyHasBeenSlain = delegate { };
     // Start is called before the first frame update
     private void Awake()
     {
@@ -22,7 +23,31 @@ public class CaveScript : MonoBehaviour
     }
     void Start()
     {
+        //StartCoroutine(DelayedSpawnEnemies(3.0f));
+    }
+
+    public void StopStage()
+    {
+        FinishStage();
+    }
+
+    public void PauseEnemies()
+    {
+        for (int i = 0; i < m_EnemiesOnFloor.Count; i++)
+        {
+            m_EnemyScripts[i].paused = true;
+        }
+
+        //StopAllCoroutines();
         
+    }
+
+    public void ResumeEnemies()
+    {
+        for (int i = 0; i < m_EnemiesOnFloor.Count; i++)
+        {
+            m_EnemyScripts[i].paused = false;
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +55,11 @@ public class CaveScript : MonoBehaviour
     {
         
     }
+    //IEnumerator DelayedSpawnEnemies(float waitTime)
+    //{
+    //    yield return new WaitForSeconds(waitTime);
+    //    SpawnEnemy();
+    //}
 
     public void SpawnEnemy()
     {
@@ -61,6 +91,7 @@ public class CaveScript : MonoBehaviour
         m_EnemyScripts[id].EnemyDeath -= RemoveEnemy;
         m_EnemiesOnFloor[id].gameObject.SetActive(false);
         m_numberOfEnemies--;
+        EnemyHasBeenSlain();
         if(m_numberOfEnemies <= 0)
         {
             FinishStage();
