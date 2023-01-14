@@ -35,5 +35,8 @@ public class ExamScript : MonoBehaviour
         {
             Debug.Log("CaveScript not found");
         }
+
+        
     }
+
 }

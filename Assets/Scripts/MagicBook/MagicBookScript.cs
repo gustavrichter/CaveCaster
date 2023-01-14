@@ -20,6 +20,7 @@ public class MagicBookScript : MonoBehaviour
     private GameObject m_Page;
     private PageScript m_PageScript;
 
+    public int m_enemyCountOnSpawn;
     private Animator m_bookanim;
 
     bool useInk;
@@ -47,7 +48,6 @@ public class MagicBookScript : MonoBehaviour
     }
     private void Start()
     {
-        ShowTutorial();
     }
     private void OnDestroy()
     {
@@ -68,16 +68,17 @@ public class MagicBookScript : MonoBehaviour
     }
     public void OpenBook()
     {
-        //AkSoundEngine.PostEvent("Book_open", gameObject);
+        AkSoundEngine.PostEvent("Book_open", gameObject);
 
         m_BookClosed.SetActive(false);
         m_BookOpen.SetActive(true);
         m_bisClosed = false;
+        m_PageScript.m_enemyCountOnSpawn = m_enemyCountOnSpawn;
         TurnPage();
     }
     public void CloseBook()
     {
-        //AkSoundEngine.PostEvent("Book_close", gameObject);
+        AkSoundEngine.PostEvent("Book_close", gameObject);
         m_BookClosed.SetActive(true);
         m_BookOpen.SetActive(false);
         m_bisClosed = true;
@@ -92,6 +93,14 @@ public class MagicBookScript : MonoBehaviour
         m_TutorialPages.SetActive(true);
         m_TutorialPages.GetComponent<TutorialScript>().StartTutorial();
     }
+
+    public void ShowTutorialSpellPage()
+    {
+        GameObject[] spells = m_Spells;
+        m_PageScript.ShowTutorialSpells(spells);
+        InkReveal();
+
+    }
     public void HidePausePage()
     {
         m_BookPause.SetActive(false);
@@ -99,7 +108,7 @@ public class MagicBookScript : MonoBehaviour
     public void TurnPage()
     {
         ClearPage();
-        //AkSoundEngine.PostEvent("Book_turn_page", gameObject);
+        AkSoundEngine.PostEvent("Book_turn_page", gameObject);
         if (!m_bisClosed)
         {
             m_bookanim.Play("Base Layer.BookFlipping");
@@ -140,7 +149,7 @@ public class MagicBookScript : MonoBehaviour
             Debug.Log("Book has not found PageScript");
         }
 
-        m_PageScript.ShuffleList(shuffledSpellList);
+        m_PageScript.ShuffleList(shuffledSpellList);//use the method in page script to shuffle the spell list
 
         for (int i = 0; i < numberOfSpells; i++)
         {

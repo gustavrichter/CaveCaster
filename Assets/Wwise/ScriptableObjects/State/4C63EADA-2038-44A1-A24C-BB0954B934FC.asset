@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fbb199da7000b45acd4494bde13124, type: 3}
+  m_Name: 4C63EADA-2038-44A1-A24C-BB0954B934FC
+  m_EditorClassIdentifier: 
+  objectName: Fight
+  id: 514064485
+  guid: 4C63EADA-2038-44A1-A24C-BB0954B934FC
+  WwiseStateGroupReference: {fileID: 11400000, guid: 028202227c6a7ea43a12161f81ad70af,
+    type: 2}

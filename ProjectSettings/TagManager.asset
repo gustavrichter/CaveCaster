@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Cave
   - MagicBook
+  - Level
   layers:
   - Default
   - TransparentFX

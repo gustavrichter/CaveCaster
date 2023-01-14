@@ -1431,6 +1431,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &303911434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1688258015923829689, guid: 59bbffb4b5029ea449eab3b06ed3adc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1044173848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &325113729
 Mesh:
   m_ObjectHideFlags: 0
@@ -4453,6 +4459,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1044173848}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &745147661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303911434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38524afe86e78314cb44574690bc59ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &745147662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303911434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b29fae26d9c7d44da358010f22f32b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &745147667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303911434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de475ca52bacbe4d9f7371459e8ed86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7cc0fe5a376562048aa05a25368b6912,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!43 &764669242
 Mesh:
   m_ObjectHideFlags: 0
@@ -4689,6 +4756,37 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &890101334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3022776683419136334, guid: 551e9f8914b27ef4289ffe5019674632,
+    type: 3}
+  m_PrefabInstance: {fileID: 3022776682125856795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &890101337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890101334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de475ca52bacbe4d9f7371459e8ed86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1a92bd9450eb9fa4a9c8a8c6e38c883b,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 1
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!43 &911262840
 Mesh:
   m_ObjectHideFlags: 0
@@ -5985,7 +6083,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2D Orthographic Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1688258015923829687, guid: 59bbffb4b5029ea449eab3b06ed3adc7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59bbffb4b5029ea449eab3b06ed3adc7, type: 3}
 --- !u!43 &1045161017
 Mesh:
@@ -11671,7 +11770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100730720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38524afe86e78314cb44574690bc59ec, type: 3}
   m_Name: 
@@ -11685,7 +11784,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100730720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b29fae26d9c7d44da358010f22f32b0, type: 3}
   m_Name: 
@@ -12130,6 +12229,18 @@ PrefabInstance:
       propertyPath: m_MagicBook
       value: 
       objectReference: {fileID: 1615275886}
+    - target: {fileID: 3022776683419136332, guid: 551e9f8914b27ef4289ffe5019674632,
+        type: 3}
+      propertyPath: event_menu.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: b4c7450e08d1af540b9f795eefaa080c,
+        type: 2}
+    - target: {fileID: 3022776683419136332, guid: 551e9f8914b27ef4289ffe5019674632,
+        type: 3}
+      propertyPath: fightState.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8234418f7d1b6d241a8e0d0a45356d92,
+        type: 2}
     - target: {fileID: 3022776683419136334, guid: 551e9f8914b27ef4289ffe5019674632,
         type: 3}
       propertyPath: m_Name

@@ -26,6 +26,7 @@ public class PageScript : MonoBehaviour
     private List<GameObject> m_SpellVariants; //dynamic size
     private List<SpellScript> m_SpellScripts; //dynamic size
     private List<SpellcardVariant> m_SpellcardVariants;
+    public int m_enemyCountOnSpawn;
     //private GameObject m_FiredSpell;
     //private SpellScript m_FiredSpellScript;
     //private RuneAnimationScript m_FiredSpellAnimationScript;
@@ -74,6 +75,7 @@ public class PageScript : MonoBehaviour
                     m_SpellScripts[SpellCardCounter].SpellFired += WhenSpellWasFired;
                     m_SpellScripts[SpellCardCounter].SpellToActive += SetSpellsActive;
                     m_SpellScripts[SpellCardCounter].SpellToIdle += SetSpellsIdle;
+                    m_SpellScripts[SpellCardCounter].m_EnemyCountOnSpawn = m_enemyCountOnSpawn;
                     SpellCardCounter++;
                 }
                 else
@@ -84,6 +86,42 @@ public class PageScript : MonoBehaviour
             }
         }
     }
+    public void ShowTutorialSpells(GameObject[] spells)
+    {
+        //all spell elements
+        m_SpellcardVariants.Clear();
+        m_SpellcardVariants[0] = new SpellcardVariant(0, 4, 1);//ele, numRunes, numSpellcards
+        m_SpellcardVariants[1] = new SpellcardVariant(1, 1, 2);
+        m_SpellcardVariants[2] = new SpellcardVariant(2, 7, 2);
+        m_SpellcardVariants[3] = new SpellcardVariant(3, 3, 2);
+        m_SpellcardVariants[4] = new SpellcardVariant(4, 6, 2);
+
+        int SpellCardCounter = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < m_SpellcardVariants[i].numberOfSpellcards; j++)
+            {
+                m_SpellsOnPage.Add(Instantiate(spells[i]));
+                m_SpellsOnPage[SpellCardCounter].transform.SetParent(m_SpellPositions[SpellCardCounter].transform, false);
+                m_SpellScripts.Add(m_SpellsOnPage[SpellCardCounter].transform.GetChild(0).GetComponent<SpellScript>());//SpellPrefab->Spell<SpellScript>
+
+                if(i == 0)
+                {
+                    m_SpellScripts[SpellCardCounter].bunique = true;
+                }
+                m_SpellScripts[SpellCardCounter].DrawRunes(m_SpellcardVariants[i].numberOfRunes);
+                m_SpellScripts[SpellCardCounter].m_index = SpellCardCounter;
+                m_SpellScripts[SpellCardCounter].m_variant = i;
+                m_SpellScripts[SpellCardCounter].SpellSpent += WhenSpellWasSpent;
+                m_SpellScripts[SpellCardCounter].SpellFired += WhenSpellWasFired;
+                m_SpellScripts[SpellCardCounter].SpellToActive += SetSpellsActive;
+                m_SpellScripts[SpellCardCounter].SpellToIdle += SetSpellsIdle;
+                SpellCardCounter++;
+            }
+        }
+       
+
+    }
     public void RevealUnique()
     {
         if(m_SpellScripts.Count > 0) {
@@ -93,6 +131,7 @@ public class PageScript : MonoBehaviour
     }
     void WhenSpellWasFired(int index)
     {
+  
         m_SpellScripts[index].LetSpellDissolve();
         SpellWasFired();
         //for (int i = 0; i < m_SpellScripts.Count; i++)
@@ -133,24 +172,7 @@ public class PageScript : MonoBehaviour
     //    //Debug.Log("Firing Spell: #cards=" + m_SpellcardVariants[variant].numberOfSpellcards + ", element=" + m_SpellcardVariants[variant].element + ", #runes=" + ", numberOfSpellcards=" + m_SpellcardVariants[variant].numberOfRunes);
     //    m_FiredSpellScript = m_FiredSpell.transform.GetChild(0).GetComponent<SpellScript>();
 
-    //    //switch (m_FiredSpellScript.getElement())
-    //    //{
-    //    //    case 0:
-    //    //        AkSoundEngine.PostEvent("Spell_Fire", gameObject);
-    //    //        break;
-    //    //    case 1:
-    //    //        AkSoundEngine.PostEvent("Spell_Water", gameObject);
-    //    //        break;
-    //    //    case 2:
-    //    //        AkSoundEngine.PostEvent("Spell_Ice", gameObject);
-    //    //        break;
-    //    //    case 3:
-    //    //        AkSoundEngine.PostEvent("Spell_Nature", gameObject);
-    //    //        break;
-    //    //    case 4:
-    //    //        AkSoundEngine.PostEvent("Spell_Lightning", gameObject);
-    //    //        break;
-    //    //}
+
 
     //    //m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
     //    //m_FiredSpellScript.BindSpellSpentAction();
@@ -174,6 +196,7 @@ public class PageScript : MonoBehaviour
     //    m_FiredSpellScript = null;
     //    //m_FiredSpellAnimationScript = null;
     //}
+    
     void CreateSpellcardVariants(GameObject[] spellVariants) {
 
         m_SpellcardVariants.Clear();
@@ -194,7 +217,7 @@ public class PageScript : MonoBehaviour
         //numberOfSpellcards
         int maxNumberOfSpellcards = UnityEngine.Random.Range(8, 11);//[8,10]
         temp = m_SpellcardVariants[0];
-        temp.numberOfSpellcards = 1;//set amount of spellcards for first spellcarcvariant in the list, which will be the most unique
+        temp.numberOfSpellcards = 1;//set amount of spellcards for first spellcarcvariant in the list, which will be the unique
         m_SpellcardVariants[0] = temp;
         int spellcardCount = 1;
 

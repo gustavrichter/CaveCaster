@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK;
 using System;
 using TMPro;
 
@@ -31,6 +32,12 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private UnityEngine.UI.Button m_restartButton;
 
+    //[SerializeField]
+    //AK.Wwise.State fightState;
+    //[SerializeField]
+    //AK.Wwise.Event event_menu;
+
+
     public Action PlayerDeath = delegate { };
     public Action RestartTheGame = delegate { };
 
@@ -41,6 +48,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Awake()
     {
+        //fightState.SetValue();
         //m_amountHealthPotions = 3;
         //m_amountInkBottles = 3;
         //healthAmountText.text = m_amountHealthPotions.ToString();
@@ -51,7 +59,7 @@ public class PlayerScript : MonoBehaviour
         //m_Cave = Instantiate(m_Cave.gameObject);
         m_MagicBook = GameObject.FindGameObjectWithTag("MagicBook");
         m_Cave = GameObject.FindGameObjectWithTag("Cave");
-        
+       
     }
    
     void Start()
@@ -60,7 +68,10 @@ public class PlayerScript : MonoBehaviour
         m_MagicBookScript = m_MagicBook.GetComponent<MagicBookScript>();
         m_caveScript = m_Cave.GetComponent<CaveScript>();
         m_caveScript.EnemiesAhead += OpenBook;
+        m_caveScript.EnemiesAhead += PlayFightMusic;
+        //m_caveScript.EnemiesAhead += SetFightState;
         m_caveScript.StageComplete += CloseBook;
+        m_caveScript.StageComplete += PlayExploreMusic;
         m_healthSlider.value = m_fhealth / 100.0f;
 
         m_hurtScreen.gameObject.SetActive(false);
@@ -68,12 +79,30 @@ public class PlayerScript : MonoBehaviour
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
         m_resumeButton.gameObject.SetActive(false);
+        //fightState.SetValue();
+        //event_menu.Post(gameObject);
+        PlayExploreMusic();
 
     }
 
     public void PauseGame()
     {
+        AkSoundEngine.PostEvent("Menu_back", gameObject);
+        ////these are not found
+        //Debug.Log("Posting State_Death. ID:2837885159");
+        //AkSoundEngine.PostEvent("State_Death", gameObject);//2837885159
 
+        //Debug.Log("Posting State_Menu. ID:3900992838");
+        //AkSoundEngine.PostEvent("State_Menu", gameObject);//3900992838
+        //Debug.Log("Posting Music_Menu. ID:1598298728");
+        //AkSoundEngine.PostEvent("Music_Menu", gameObject);//1598298728
+
+        //Debug.Log("Posting State_Fight. ID:1496372043");
+        //AkSoundEngine.PostEvent("State_Fight", gameObject);//1496372043
+
+        //Debug.Log("Posting State_Explore. ID:571235964");
+        //AkSoundEngine.PostEvent("State_Explore", gameObject);//571235964
+        //PlayMenuExploreMusic();
         m_exitButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(true);
         m_resumeButton.gameObject.SetActive(true);
@@ -82,9 +111,15 @@ public class PlayerScript : MonoBehaviour
         m_caveScript.PauseEnemies();
 
     }
+    //public void SetFightState()
+    //{
+    //    fightState.SetValue();
+    //}
 
     public void ResumeGame()
     {
+        AkSoundEngine.PostEvent("Menu_accept", gameObject);
+        //PlayExploreMusic();
         m_exitButton.gameObject.SetActive(false);
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
@@ -95,6 +130,8 @@ public class PlayerScript : MonoBehaviour
 
     public void RestartGame()
     {
+        AkSoundEngine.PostEvent("Menu_accept", gameObject);
+        PlayExploreMusic();
         m_exitButton.gameObject.SetActive(false);
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
@@ -110,23 +147,27 @@ public class PlayerScript : MonoBehaviour
 
     public void ExitToMenu()
     {
+        AkSoundEngine.PostEvent("Menu_back", gameObject);
+        PlayMenuExploreMusic();
+        GameObject.FindGameObjectWithTag("Level").transform.GetComponent<SceneSwitcher>().returnToMenu();
         //switch scene to Menu scene
         //or do menu overlay
     }
 
     public void TakeDamage(float damage, int element)
     {
-        //AkSoundEngine.PostEvent("Combat_Player_damage", gameObject);
+        AkSoundEngine.PostEvent("Player_damage", gameObject);
         m_fhealth -= damage;
         //Debug.Log(gameObject.name + ": Ouchie! I have " + m_fhealth + " healt left.");
-        Debug.Log( m_fhealth + " health left.");
+        //Debug.Log( m_fhealth + " health left.");
         m_hurtScreen.gameObject.SetActive(true);
         m_hurtScreen.CrossFadeAlpha(0.0f, .2f, false);
         StartCoroutine(ShowHurtScreen());
         m_healthSlider.value = m_fhealth/100.0f;
-        if(m_fhealth<= 0)
+        if(m_fhealth <= 0.5f)
         {
             isAlive = false;
+            PlayDeathMusic();
             PlayerDeath();
             //Debug.Log("Game Over.");
         }
@@ -178,6 +219,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OpenBook()
     {
+        m_MagicBookScript.m_enemyCountOnSpawn = m_caveScript.getEnemies().Count;
         m_MagicBookScript.OpenBook();
     } 
     private void CloseBook()
@@ -188,7 +230,30 @@ public class PlayerScript : MonoBehaviour
         //    m_caveScript.StartCoroutine("DelayedSpawnEnemies", 3.0f);
         //}
     }
+    private void PlayFightMusic()
+    {
+        AkSoundEngine.PostEvent("Music_Fight", gameObject);
+    }
 
+    private void PlayExploreMusic()
+    {
+        Debug.Log("Playing Explore Music");
+        AkSoundEngine.PostEvent("Music_Explore", gameObject);
+    }
 
+    private void PlayMenuExploreMusic()
+    {
+        AkSoundEngine.PostEvent("Music_Menu", gameObject);
+    }
+
+    //private void PlayMenuExploreMusic()
+    //{
+    //    AkSoundEngine.PostEvent("Menu_Effect", gameObject);
+    //}
+
+    public void PlayDeathMusic()
+    {
+        AkSoundEngine.PostEvent("Music_Death", gameObject);
+    }
 }
 

@@ -9,6 +9,8 @@ public class TutorialScript : MonoBehaviour
 
     [SerializeField]
     GameObject[] m_tutorialTexts = new GameObject[3];
+    [SerializeField]
+    MagicBookScript m_magicBookScript;
     //List<GameObject> m_tutorialTexts = new List<GameObject>();
 
     //List<TextMeshProUGUI> m_textMessages = new List<TextMeshProUGUI>();
@@ -20,7 +22,7 @@ public class TutorialScript : MonoBehaviour
         m_pageCounter = 0;
         for (int i = 0; i < m_tutorialTexts.Length; i++)
         {
-            Debug.Log("Setting texts inactive");
+            //Debug.Log("Setting texts inactive");
             m_tutorialTexts[i].SetActive(false);
         }
     }
@@ -31,7 +33,7 @@ public class TutorialScript : MonoBehaviour
         {
             m_tutorialTexts[i].SetActive(false);
         }
-        Debug.Log("Setting start text active");
+        //Debug.Log("Setting start text active");
         m_tutorialTexts[0].SetActive(true);
         m_pageCounter++;
     }
@@ -40,6 +42,7 @@ public class TutorialScript : MonoBehaviour
     {
         if (m_pageCounter == m_tutorialTexts.Length)
         {
+            m_magicBookScript.ShowTutorialSpellPage();
             gameObject.SetActive(false);
         }
         else

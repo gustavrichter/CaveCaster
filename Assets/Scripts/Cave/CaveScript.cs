@@ -5,7 +5,6 @@ using System;
 
 public class CaveScript : MonoBehaviour
 {
-    public GameObject enemy;
     public Transform[] spawnPoints; //size 3
     private GameObject clonedEnemy;
     [SerializeField] private GameObject[] m_Enemies; //size 6
@@ -61,16 +60,27 @@ public class CaveScript : MonoBehaviour
     //    SpawnEnemy();
     //}
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(int numberofenemy)
     {
-        if (m_numberOfEnemies > 0)
+        if(numberofenemy > 1)
+        {
+            Debug.Log("Multiple Enemies spawned.");
+        }
+        else
+        {
+            Debug.Log("Single Enemy spawned.");
+        }
+        if (m_EnemiesOnFloor.Count > 0)
         {
             CleanSpawn();
         }
         m_numberOfEnemies = UnityEngine.Random.Range(1, 4);
+        m_numberOfEnemies = 1;
+        m_numberOfEnemies = numberofenemy;
         for (int i = 0; i < m_numberOfEnemies; i++)
         {
             m_EnemiesOnFloor.Add(Instantiate(m_Enemies[UnityEngine.Random.Range(0, m_Enemies.Length)]) as GameObject);
+            //m_EnemiesOnFloor.Add(Instantiate(m_Enemies[0]) as GameObject);
             m_EnemiesOnFloor[i].transform.SetParent(spawnPoints[i].transform, false);
             m_EnemyScripts.Add(m_EnemiesOnFloor[i].GetComponent<EnemyScript>());
             m_EnemyScripts[i].m_id = i;
@@ -78,7 +88,18 @@ public class CaveScript : MonoBehaviour
         }
         EnemiesAhead();
     }
+    public void SpawnEnemyTutorial() {
 
+        m_EnemiesOnFloor.Add(Instantiate(m_Enemies[0]) as GameObject);//spawn fireslime
+        m_EnemiesOnFloor[0].transform.SetParent(spawnPoints[0].transform, false);
+        m_EnemyScripts.Add(m_EnemiesOnFloor[0].GetComponent<EnemyScript>());
+        m_EnemyScripts[0].m_id = 0;
+        m_EnemyScripts[0].EnemyDeath += RemoveEnemy;
+        m_EnemyScripts[0].addCooldown(100.0f);
+
+        EnemiesAhead();
+
+    }
     void CleanSpawn()
     {
         for (int i = 0; i < m_EnemiesOnFloor.Count; i++)
@@ -88,6 +109,7 @@ public class CaveScript : MonoBehaviour
     }
     private void RemoveEnemy(int id)
     {
+        Debug.Log("Removing Enemy: " + id);
         m_EnemyScripts[id].EnemyDeath -= RemoveEnemy;
         m_EnemiesOnFloor[id].gameObject.SetActive(false);
         m_numberOfEnemies--;
