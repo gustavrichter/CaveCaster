@@ -37,7 +37,7 @@ public abstract class EnemyScript : MonoBehaviour
         alive = true;
         animating = false;
 
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
         if (!playerScript)
             Debug.Log(transform.name + ": PlayerScript not found");
