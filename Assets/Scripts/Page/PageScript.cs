@@ -26,6 +26,7 @@ public class PageScript : MonoBehaviour
     private List<GameObject> m_SpellVariants; //dynamic size
     private List<SpellScript> m_SpellScripts; //dynamic size
     private List<SpellcardVariant> m_SpellcardVariants;
+    public int m_enemyCountOnSpawn;
     //private GameObject m_FiredSpell;
     //private SpellScript m_FiredSpellScript;
     //private RuneAnimationScript m_FiredSpellAnimationScript;
@@ -74,6 +75,7 @@ public class PageScript : MonoBehaviour
                     m_SpellScripts[SpellCardCounter].SpellFired += WhenSpellWasFired;
                     m_SpellScripts[SpellCardCounter].SpellToActive += SetSpellsActive;
                     m_SpellScripts[SpellCardCounter].SpellToIdle += SetSpellsIdle;
+                    m_SpellScripts[SpellCardCounter].m_EnemyCountOnSpawn = m_enemyCountOnSpawn;
                     SpellCardCounter++;
                 }
                 else

@@ -119,7 +119,7 @@ public class PlayerScript : MonoBehaviour
     public void ResumeGame()
     {
         AkSoundEngine.PostEvent("Menu_accept", gameObject);
-        PlayExploreMusic();
+        //PlayExploreMusic();
         m_exitButton.gameObject.SetActive(false);
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
@@ -149,6 +149,7 @@ public class PlayerScript : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Menu_back", gameObject);
         PlayMenuExploreMusic();
+        GameObject.FindGameObjectWithTag("Level").transform.GetComponent<SceneSwitcher>().returnToMenu();
         //switch scene to Menu scene
         //or do menu overlay
     }
@@ -158,12 +159,12 @@ public class PlayerScript : MonoBehaviour
         AkSoundEngine.PostEvent("Player_damage", gameObject);
         m_fhealth -= damage;
         //Debug.Log(gameObject.name + ": Ouchie! I have " + m_fhealth + " healt left.");
-        Debug.Log( m_fhealth + " health left.");
+        //Debug.Log( m_fhealth + " health left.");
         m_hurtScreen.gameObject.SetActive(true);
         m_hurtScreen.CrossFadeAlpha(0.0f, .2f, false);
         StartCoroutine(ShowHurtScreen());
         m_healthSlider.value = m_fhealth/100.0f;
-        if(m_fhealth<= 0)
+        if(m_fhealth <= 0.5f)
         {
             isAlive = false;
             PlayDeathMusic();
@@ -218,6 +219,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OpenBook()
     {
+        m_MagicBookScript.m_enemyCountOnSpawn = m_caveScript.getEnemies().Count;
         m_MagicBookScript.OpenBook();
     } 
     private void CloseBook()
@@ -235,6 +237,7 @@ public class PlayerScript : MonoBehaviour
 
     private void PlayExploreMusic()
     {
+        Debug.Log("Playing Explore Music");
         AkSoundEngine.PostEvent("Music_Explore", gameObject);
     }
 

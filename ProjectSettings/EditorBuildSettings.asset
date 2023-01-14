@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 89125f64b1c1305459cceb025589bc61
   - enabled: 1
-    path: Assets/Scenes/CaveCasterMaxi.unity
-    guid: ec18c29ec1f9eb04ebc0ff77fa08b70a
+    path: Assets/Scenes/GamePlayScene.unity
+    guid: e13889e436aca144abd20c6114ac35ea
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1cde0df294e55354cb695f41301b2190,
       type: 2}

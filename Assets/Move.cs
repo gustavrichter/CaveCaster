@@ -5,6 +5,18 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    private CaveScript m_caveScript;
+    [SerializeField]
+    private Transform playerTransform;
+
+    private void Start()
+    {
+        m_caveScript = GameObject.FindGameObjectWithTag("Cave").transform.GetComponent<CaveScript>();
+        if (!m_caveScript)
+        {
+            Debug.Log(gameObject.name + " cavescript not found");
+        }
+    }
     IEnumerator MoveRightAni()
     {
         for(int i = 0; i<25; i++) 
@@ -17,8 +29,8 @@ public class Move : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             transform.Rotate(Vector3.up, 1f);
         }
-
-            //transform.localRotation = Quaternion.Euler(0f, j, 0f);
+        LetCaveSpawnEnemies();
+        //transform.localRotation = Quaternion.Euler(0f, j, 0f);
     }
     IEnumerator MoveLeftAni()
     {
@@ -32,6 +44,7 @@ public class Move : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             transform.Rotate(Vector3.up, -1f);
         }
+        LetCaveSpawnEnemies();
 
         //transform.localRotation = Quaternion.Euler(0f, j, 0f);
     }
@@ -42,6 +55,8 @@ public class Move : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             transform.Translate(0f, 0f, 4f);
         }
+        LetCaveSpawnEnemies();
+
         //transform.localRotation = Quaternion.Euler(0f, j, 0f);
     }
     public void MoveRight()
@@ -63,6 +78,37 @@ public class Move : MonoBehaviour
     {
         StartCoroutine(MoveLeftAni());
         StopCoroutine(MoveLeftAni());
+    }
+
+    private void LetCaveSpawnEnemies()
+    {
+        if(UnityEngine.Random.Range(1,3) == 1)
+        {
+            if (checkIfOnStraightLine())
+            {
+                m_caveScript.SpawnEnemy(UnityEngine.Random.Range(2, 3));
+            }
+            else
+            {
+                m_caveScript.SpawnEnemy(1);
+            }
+        }
+    }
+
+    private bool checkIfOnStraightLine()
+    {
+        float angle =Math.Abs(playerTransform.rotation.eulerAngles.y);// * 180.0f / MathF.PI;
+        Debug.Log("spawn enemies, angle: " + angle);
+
+        if (angle > 359.0f && angle < 1.0f)
+        {
+            return true;
+        }
+        else if(angle > 179.0f && angle < 181.0f)
+        {
+            return true;
+        }
+        else return false;
     }
 
 

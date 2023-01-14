@@ -5,7 +5,6 @@ using System;
 
 public class CaveScript : MonoBehaviour
 {
-    public GameObject enemy;
     public Transform[] spawnPoints; //size 3
     private GameObject clonedEnemy;
     [SerializeField] private GameObject[] m_Enemies; //size 6
@@ -61,14 +60,23 @@ public class CaveScript : MonoBehaviour
     //    SpawnEnemy();
     //}
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(int numberofenemy)
     {
+        if(numberofenemy > 1)
+        {
+            Debug.Log("Multiple Enemies spawned.");
+        }
+        else
+        {
+            Debug.Log("Single Enemy spawned.");
+        }
         if (m_EnemiesOnFloor.Count > 0)
         {
             CleanSpawn();
         }
         m_numberOfEnemies = UnityEngine.Random.Range(1, 4);
         m_numberOfEnemies = 1;
+        m_numberOfEnemies = numberofenemy;
         for (int i = 0; i < m_numberOfEnemies; i++)
         {
             m_EnemiesOnFloor.Add(Instantiate(m_Enemies[UnityEngine.Random.Range(0, m_Enemies.Length)]) as GameObject);

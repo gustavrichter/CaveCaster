@@ -20,6 +20,7 @@ public class MagicBookScript : MonoBehaviour
     private GameObject m_Page;
     private PageScript m_PageScript;
 
+    public int m_enemyCountOnSpawn;
     private Animator m_bookanim;
 
     bool useInk;
@@ -72,6 +73,7 @@ public class MagicBookScript : MonoBehaviour
         m_BookClosed.SetActive(false);
         m_BookOpen.SetActive(true);
         m_bisClosed = false;
+        m_PageScript.m_enemyCountOnSpawn = m_enemyCountOnSpawn;
         TurnPage();
     }
     public void CloseBook()

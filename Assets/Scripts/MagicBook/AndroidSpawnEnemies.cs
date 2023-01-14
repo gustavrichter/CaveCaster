@@ -21,7 +21,7 @@ public class AndroidSpawnEnemies : MonoBehaviour, IPointerDownHandler
         if (!(m_caveScript.getEnemies().Count > 0))//if no enemies already exist
         {
 
-            m_caveScript.SpawnEnemy();
+            //m_caveScript.SpawnEnemy(1);
 
         }
     }

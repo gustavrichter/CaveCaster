@@ -27,6 +27,7 @@ public  class SpellScript : MonoBehaviour
     public bool bunique = false;
     public int m_index;
     public int m_variant;
+    public int m_EnemyCountOnSpawn;
     public Action SpellToActive = delegate { };
     public Action SpellToIdle = delegate { };
     public Action<int> SpellFired = delegate { };
@@ -98,7 +99,7 @@ public  class SpellScript : MonoBehaviour
         }
         else
         {
-            m_dragScript.SpellCardDropped += FiringSpellWORayCast;
+            m_dragScript.SpellCardDropped += FiringSpell;
             m_dragScript.SpellCardDragged += SetRunesActive;
         }
         
@@ -108,46 +109,51 @@ public  class SpellScript : MonoBehaviour
     {
         if (m_dragScript)
         {
-            m_dragScript.SpellCardDropped -= FiringSpellWORayCast;
+            m_dragScript.SpellCardDropped -= FiringSpell;
             m_dragScript.SpellCardDragged -= SetRunesActive;
 
         }
     }
-    //private void FiringSpell()
-    //{
+    private void FiringSpell()
+    {
+        Debug.Log("EnemiesOnSpawn = " + m_EnemyCountOnSpawn);
+        //do raycast
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+        if(m_EnemyCountOnSpawn > 1)
+        {
+            
+            if (rayHit)//ray hit something
+            {
+                //Debug.Log("Hit: " + rayHit.transform.gameObject.name);
+                if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
+                {
+                    EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
+                    if (!enemyScript)
+                        Debug.Log("enemyscr not found");
+                    else if (bunique)//only do damage if spell is unique
+                    {
+                        myAttackScript.AttackEnemy(m_baseDamage, rayHit.transform.gameObject);
+                        //enemyScript.TakeDamage(m_baseDamage, m_element);
+                    }
+                    SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
+                }
+                //StartCoroutine(ResetSpellPosition(.9f));
+                FadeOut();
+            }
+            else
+            {
+                //StartCoroutine(ResetSpellPosition(0.0f));
+                ResetSpellPosition();
+                //Debug.Log("No target hit");
+            }
+        }
+        else
+        {
+            FiringSpellWORayCast();
+        }
+       
 
-    //    EnemyScript enemyScript = GameObject.FindGameObjectWithTag("Enemy").transform.gameObject.GetComponent<EnemyScript>();
-
-    //    //do raycast
-    //    RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-
-    //    if (rayHit)//ray hit something
-    //    {
-    //        Debug.Log("Hit: " + rayHit.transform.gameObject.name);
-    //        if (rayHit.transform.gameObject.tag == "Enemy") //if it hit enemy
-    //        {
-    //            //EnemyScript enemyScript = rayHit.transform.gameObject.GetComponent<EnemyScript>();
-    //            EnemyScript enemyScript = GameObject.FindGameObjectWithTag("Enemy").transform.gameObject.GetComponent<EnemyScript>();
-    //            if (!enemyScript)
-    //                Debug.Log("enemyscr not found");
-    //            else if (bunique)//only do damage if spell is unique
-    //            {
-    //                myAttackScript.AttackEnemy(m_baseDamage, rayHit.transform.gameObject);
-    //                //enemyScript.TakeDamage(m_baseDamage, m_element);
-    //            }
-    //            SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
-    //        }
-    //        //StartCoroutine(ResetSpellPosition(.9f));
-    //        FadeOut();
-    //    }
-    //    else
-    //    {
-    //        //StartCoroutine(ResetSpellPosition(0.0f));
-    //        ResetSpellPosition();
-    //        Debug.Log("No target hit");
-    //    }
-
-    //}
+    }
 
     private void FiringSpellWORayCast()
     {
@@ -159,18 +165,16 @@ public  class SpellScript : MonoBehaviour
         {
 
             myAttackScript.AttackEnemy(m_baseDamage, GameObject.FindGameObjectWithTag("Enemy").transform.gameObject);
-            //enemyScript.TakeDamage(m_baseDamage, m_element);
         }
         SpellFired(m_index); //always fire spell when enemy is hit to make the page turn
 
-        //StartCoroutine(ResetSpellPosition(.9f));
         FadeOut();
     }
 
     public void ResetSpellPosition()
     {
 
-        Debug.Log("Resetting spell");
+        //Debug.Log("Resetting spell");
         SetRunesToIdle();
         m_dragScript.ResetPosition();
     }

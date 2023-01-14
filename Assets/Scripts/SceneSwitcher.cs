@@ -46,6 +46,10 @@ public class SceneSwitcher : MonoBehaviour
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
+    public void returnToMenu()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
+    }
     public void Back()
     {
 #if UNITY_STANDALONE
