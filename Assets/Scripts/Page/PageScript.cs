@@ -90,11 +90,11 @@ public class PageScript : MonoBehaviour
     {
         //all spell elements
         m_SpellcardVariants.Clear();
-        m_SpellcardVariants[0] = new SpellcardVariant(0, 4, 1);//ele, numRunes, numSpellcards
-        m_SpellcardVariants[1] = new SpellcardVariant(1, 1, 2);
-        m_SpellcardVariants[2] = new SpellcardVariant(2, 7, 2);
-        m_SpellcardVariants[3] = new SpellcardVariant(3, 3, 2);
-        m_SpellcardVariants[4] = new SpellcardVariant(4, 6, 2);
+        m_SpellcardVariants.Add( new SpellcardVariant(0, 4, 1));//ele, numRunes, numSpellcards
+        m_SpellcardVariants.Add(new SpellcardVariant(1, 1, 2));
+        m_SpellcardVariants.Add(new SpellcardVariant(2, 7, 2));
+        m_SpellcardVariants.Add(new SpellcardVariant(3, 3, 2));
+        m_SpellcardVariants.Add(new SpellcardVariant(4, 6, 2));
 
         int SpellCardCounter = 0;
         for (int i = 0; i < 5; i++)

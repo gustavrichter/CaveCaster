@@ -373,7 +373,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 1f4e51be0334ed4baecfc7ff43a8475a
     GuidInternal: 
-    m_lastTime: -8585279820327724349
+    m_lastTime: -8585278249703575475
     List:
     - name: Book_close
       guid: 2b29658cc06bdb48a4e3e1e7854cba86
@@ -610,6 +610,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 3bf2309b043af443b96c15f44bb94fa4
       Path: Events\Default Work Unit\Player_walk
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player_walk_stop
+      guid: b6c9198b22b7a64fbbf1fac361346e68
+      id: 2115476505
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1f4e51be0334ed4baecfc7ff43a8475a
+      - ElementName: Player_walk_stop
+        ObjectType: 3
+        guid: b6c9198b22b7a64fbbf1fac361346e68
+      Path: Events\Default Work Unit\Player_walk_stop
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -938,7 +955,7 @@ MonoBehaviour:
     m_lastTime: -8585279870610195681
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 050000000600000007000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

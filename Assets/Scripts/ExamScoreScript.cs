@@ -8,6 +8,7 @@ public class ExamScoreScript : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private ExamScript examScript;
+    List<float> m_castTimes;
     float m_timeAverage;
     int m_enemiesSlain;
     float m_finalGrade;
@@ -22,6 +23,7 @@ public class ExamScoreScript : MonoBehaviour
     TextMeshProUGUI m_gradeText;
     private void Start()
     {
+        m_castTimes = new List<float>();
         m_timeText.text = "";
         m_enemyText.text = "";
         m_gradeText.text = "";
@@ -49,17 +51,20 @@ public class ExamScoreScript : MonoBehaviour
 
     void StopTimeCount()
     {
-        if(m_timeAverage > 0.0f)
-        {
-            //after first time
-            m_timeAverage += m_currentTime;
-            m_timeAverage /= 2;
-        }
-        else
-        {
-            //first time 
-            m_timeAverage = m_currentTime;
-        }
+        //if(m_timeAverage > 0.0f)
+        //{
+        //    //after first time
+        //    m_timeAverage += m_currentTime;
+        //    m_timeAverage /= 2;
+        //}
+        //else
+        //{
+        //    //first time 
+        //    m_timeAverage = m_currentTime;
+        //}
+        //m_bcountTime = false;
+
+        m_castTimes.Add(m_currentTime);
         m_bcountTime = false;
     }
 
@@ -74,10 +79,7 @@ public class ExamScoreScript : MonoBehaviour
         int[] pointsList = { 20, 18, 14, 10, 5 };
         float[] gradeList = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f };
         
-        if (m_bcountTime)
-        {
-            StopTimeCount();
-        }
+        
         for (int i = 0; i < 5; i++)
         {
             if(pointsList[i]>= m_enemiesSlain)
@@ -85,7 +87,17 @@ public class ExamScoreScript : MonoBehaviour
                 m_finalGrade = gradeList[i];
             }
         }
-       // m_finalGrade = m_enemiesSlain / m_timeAverage;
+        for (int i = 0; i < m_castTimes.Count; i++)
+        {
+            m_timeAverage += m_castTimes[i];
+        }
+        m_timeAverage /= m_castTimes.Count;
+        m_castTimes.Clear();
+        if (m_bcountTime)
+        {
+            StopTimeCount();
+        }
+        // m_finalGrade = m_enemiesSlain / m_timeAverage;
 
     }
 
@@ -100,10 +112,7 @@ public class ExamScoreScript : MonoBehaviour
         m_timeText.text = "Average cast time: " + m_timeAverage.ToString("F2") + " s";
         m_enemyText.text = "Enemies slain: " + m_enemiesSlain.ToString();
         m_gradeText.text = "Final grade: " + m_finalGrade.ToString("F1");
-        if (m_enemiesSlain < 5)
-        {
-            m_gradeText.text = "Final grade: n.a.";
-        }
+      
     }
     void ResetScore()
     {

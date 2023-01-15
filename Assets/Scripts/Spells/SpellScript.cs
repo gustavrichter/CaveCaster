@@ -116,7 +116,7 @@ public  class SpellScript : MonoBehaviour
     }
     private void FiringSpell()
     {
-        Debug.Log("EnemiesOnSpawn = " + m_EnemyCountOnSpawn);
+        //Debug.Log("EnemiesOnSpawn = " + m_EnemyCountOnSpawn);
         //do raycast
         RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
         if(m_EnemyCountOnSpawn > 1)

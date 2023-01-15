@@ -48,6 +48,7 @@ public class MagicBookScript : MonoBehaviour
     }
     private void Start()
     {
+        //m_TutorialPages.GetComponent<TutorialScript>().StartTutorial();
     }
     private void OnDestroy()
     {
@@ -96,6 +97,12 @@ public class MagicBookScript : MonoBehaviour
 
     public void ShowTutorialSpellPage()
     {
+        AkSoundEngine.PostEvent("Book_open", gameObject);
+
+        m_BookClosed.SetActive(false);
+        m_BookOpen.SetActive(true);
+        m_bisClosed = false;
+        m_PageScript.m_enemyCountOnSpawn = m_enemyCountOnSpawn;
         GameObject[] spells = m_Spells;
         m_PageScript.ShowTutorialSpells(spells);
         InkReveal();

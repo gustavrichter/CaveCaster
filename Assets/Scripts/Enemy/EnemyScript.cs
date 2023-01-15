@@ -32,9 +32,9 @@ public abstract class EnemyScript : MonoBehaviour
     }
     protected virtual void Init()
     {
-        damage = 13;
-        coolDown = UnityEngine.Random.Range(5.0f,7.0f);
-        health = 115;
+        damage = 15;
+        coolDown = UnityEngine.Random.Range(2.5f, 7.0f);
+        health = 100;
         alive = true;
         animating = false;
         paused = false;
@@ -57,7 +57,7 @@ public abstract class EnemyScript : MonoBehaviour
                 coolDown -= Time.deltaTime;
                 if (coolDown <= 0 && !animating)
                 {
-                    coolDown = UnityEngine.Random.Range(4.0f, 7.0f);
+                    coolDown = UnityEngine.Random.Range(2.5f, 7.0f);
                     animationScript.PlayAttackAnimation();
                 }
             }
