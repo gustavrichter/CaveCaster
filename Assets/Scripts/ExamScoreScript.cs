@@ -20,8 +20,11 @@ public class ExamScoreScript : MonoBehaviour
     TextMeshProUGUI m_enemyText;
     [SerializeField]
     TextMeshProUGUI m_gradeText;
+    [SerializeField]
+    TextMeshProUGUI m_gameOverText;
     private void Start()
     {
+        m_gameOverText.text = "";
         m_timeText.text = "";
         m_enemyText.text = "";
         m_gradeText.text = "";
@@ -97,6 +100,7 @@ public class ExamScoreScript : MonoBehaviour
         calculateFinalGrade();
         examScript.m_playerScript.PlayDeathMusic();
         //show end result screen
+        m_gameOverText.text = "GAME OVER";
         m_timeText.text = "Average cast time: " + m_timeAverage.ToString("F2") + " s";
         m_enemyText.text = "Enemies slain: " + m_enemiesSlain.ToString();
         m_gradeText.text = "Final grade: " + m_finalGrade.ToString("F1");
@@ -107,6 +111,7 @@ public class ExamScoreScript : MonoBehaviour
     }
     void ResetScore()
     {
+        m_gameOverText.text = "";
         m_timeText.text = "";
         m_enemyText.text = "";
         m_gradeText.text = "";

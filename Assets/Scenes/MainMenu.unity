@@ -6038,7 +6038,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 729fe39a56798a2479338f6be1308639, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16603,6 +16603,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 241893298, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 241893298, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.45000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 567205912, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 567205912, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.45000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 567205913, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 567205913, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135021806, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135021807, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135021807, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.45000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135021808, guid: 606a01b6390e67048a9c20127006b7b5, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 4042119598024627309, guid: 606a01b6390e67048a9c20127006b7b5,
         type: 3}
       propertyPath: m_Name
