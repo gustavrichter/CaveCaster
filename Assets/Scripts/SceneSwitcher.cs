@@ -44,11 +44,13 @@ public class SceneSwitcher : MonoBehaviour
 
     private void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0){
+        //Debug.Log("buildInd: " + SceneManager.GetActiveScene().buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex == 0){
             AkSoundEngine.PostEvent("Music_Menu", gameObject);
         }
         else
         {
+            //Debug.Log(gameObject.name + "playing Explore Music");
             playerScript.PlayExploreMusic();
         }
     }

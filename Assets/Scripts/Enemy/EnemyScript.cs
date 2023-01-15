@@ -98,7 +98,7 @@ public abstract class EnemyScript : MonoBehaviour
     public abstract void Attack();
     public void EnemyDies()
     {
-        Debug.Log(transform.name + " has been slain.");
+        //Debug.Log(transform.name + " has been slain.");
         EnemyDeath(m_id);
     }
 
