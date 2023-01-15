@@ -24,7 +24,7 @@ public class Move : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             transform.Translate(0f, 0f, 4f);
         }
-        for(int j = 1; j <= 90; j++)
+        for (int j = 1; j <= 90; j++)
         {
             yield return new WaitForSeconds(0.01f);
             transform.Rotate(Vector3.up, 1f);
@@ -62,11 +62,13 @@ public class Move : MonoBehaviour
     public void MoveRight()
     {
         //transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
+        AkSoundEngine.PostEvent("Player_walk", gameObject);
         StartCoroutine(MoveRightAni());
         StopCoroutine(MoveRightAni());
     }
     public void MoveForward()
     {
+        AkSoundEngine.PostEvent("Player_walk", gameObject);
         //transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
         StartCoroutine(MoveForwardAni());
         StopCoroutine(MoveForwardAni());
@@ -76,17 +78,20 @@ public class Move : MonoBehaviour
 
     public void MoveLeft()
     {
+        AkSoundEngine.PostEvent("Player_walk", gameObject);
         StartCoroutine(MoveLeftAni());
         StopCoroutine(MoveLeftAni());
     }
 
     private void LetCaveSpawnEnemies()
     {
-        if(UnityEngine.Random.Range(1,3) == 1)
+        int compareInt = UnityEngine.Random.Range(1, 3);
+        //Debug.Log("compareInt = " + compareInt);
+        if (compareInt == 1)
         {
             if (checkIfOnStraightLine())
             {
-                m_caveScript.SpawnEnemy(UnityEngine.Random.Range(2, 3));
+                m_caveScript.SpawnEnemy(UnityEngine.Random.Range(2, 4));
             }
             else
             {
@@ -98,17 +103,20 @@ public class Move : MonoBehaviour
     private bool checkIfOnStraightLine()
     {
         float angle =Math.Abs(playerTransform.rotation.eulerAngles.y);// * 180.0f / MathF.PI;
-        Debug.Log("spawn enemies, angle: " + angle);
+        //Debug.Log("spawn enemies, angle: " + angle);
 
         if (angle > 359.0f && angle < 1.0f)
         {
             return true;
         }
-        else if(angle > 179.0f && angle < 181.0f)
+        else if (angle > 179.0f && angle < 181.0f)
         {
             return true;
         }
-        else return false;
+        else
+        {
+            return false;
+        }
     }
 
 

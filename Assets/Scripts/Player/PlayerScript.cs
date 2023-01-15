@@ -18,6 +18,10 @@ public class PlayerScript : MonoBehaviour
     private UnityEngine.UI.Slider m_healthSlider;
     [SerializeField]
     private UnityEngine.UI.Image m_hurtScreen;
+    //[SerializeField]
+    //private UnityEngine.UI.Image m_inkScreen;
+    //[SerializeField]
+    //private UnityEngine.UI.Image m_healScreen;
     [SerializeField]
     private TextMeshProUGUI healthAmountText;
     [SerializeField]
@@ -75,14 +79,24 @@ public class PlayerScript : MonoBehaviour
         m_healthSlider.value = m_fhealth / 100.0f;
 
         m_hurtScreen.gameObject.SetActive(false);
+        //m_healScreen.gameObject.SetActive(false);
+        //m_inkScreen.gameObject.SetActive(false);
         m_exitButton.gameObject.SetActive(false);
         m_pauseButton.gameObject.SetActive(true);
         m_restartButton.gameObject.SetActive(false);
         m_resumeButton.gameObject.SetActive(false);
         //fightState.SetValue();
         //event_menu.Post(gameObject);
-        PlayExploreMusic();
+        //PlayExploreMusic();
 
+    }
+    private void OnDestroy()
+    {
+        m_caveScript.EnemiesAhead -= OpenBook;
+        m_caveScript.EnemiesAhead -= PlayFightMusic;
+        //m_caveScript.EnemiesAhead -= SetFightState;
+        m_caveScript.StageComplete -= CloseBook;
+        m_caveScript.StageComplete -= PlayExploreMusic;
     }
 
     public void PauseGame()
@@ -148,12 +162,14 @@ public class PlayerScript : MonoBehaviour
     public void ExitToMenu()
     {
         AkSoundEngine.PostEvent("Menu_back", gameObject);
-        PlayMenuExploreMusic();
         GameObject.FindGameObjectWithTag("Level").transform.GetComponent<SceneSwitcher>().returnToMenu();
         //switch scene to Menu scene
         //or do menu overlay
     }
-
+    public void StopAllAudio()
+    {
+        AkSoundEngine.StopAll();
+    }
     public void TakeDamage(float damage, int element)
     {
         AkSoundEngine.PostEvent("Player_damage", gameObject);
@@ -162,13 +178,15 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log( m_fhealth + " health left.");
         m_hurtScreen.gameObject.SetActive(true);
         m_hurtScreen.CrossFadeAlpha(0.0f, .2f, false);
-        StartCoroutine(ShowHurtScreen());
+        //StartCoroutine(ShowHurtScreen());
+        StartCoroutine(ShowEffectScreen(m_hurtScreen));
         m_healthSlider.value = m_fhealth/100.0f;
         if(m_fhealth <= 0.5f)
         {
             isAlive = false;
             PlayDeathMusic();
             PlayerDeath();
+            PauseGame();
             //Debug.Log("Game Over.");
         }
     }
@@ -183,6 +201,14 @@ public class PlayerScript : MonoBehaviour
 
     //    }
     //}
+
+    public void UseMagicInk()
+    {
+        //StartCoroutine(ShowEffectScreen(m_inkScreen));
+        m_MagicBookScript.SetUseInk();
+    }
+
+    
 
     //public void AddHealthPotion()
     //{
@@ -199,12 +225,14 @@ public class PlayerScript : MonoBehaviour
     {
         //if (m_amountHealthPotions > 0)
         //{
+        //StartCoroutine(ShowEffectScreen(m_healScreen));
             m_fhealth += healAmount;
             if (m_fhealth > 100.0f)
             {
                 m_fhealth = 100.0f;
             }
             m_healthSlider.value = m_fhealth / 100.0f;
+
             //m_amountHealthPotions--;
             //healthAmountText.text = m_amountHealthPotions.ToString();
         //}
@@ -215,6 +243,12 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log("Showing HurtScreen");
         m_hurtScreen.CrossFadeAlpha(.2f, .0f, false);
         m_hurtScreen.gameObject.SetActive(false);
+    }IEnumerator ShowEffectScreen(UnityEngine.UI.Image effectScreen)
+    {
+        yield return new WaitForSeconds(.2f);
+        //Debug.Log("Showing effectScreen");
+        effectScreen.CrossFadeAlpha(.2f, .0f, false);
+        effectScreen.gameObject.SetActive(false);
     }
 
     private void OpenBook()
@@ -235,9 +269,9 @@ public class PlayerScript : MonoBehaviour
         AkSoundEngine.PostEvent("Music_Fight", gameObject);
     }
 
-    private void PlayExploreMusic()
+    public void PlayExploreMusic()
     {
-        Debug.Log("Playing Explore Music");
+        //Debug.Log("Playing Explore Music");
         AkSoundEngine.PostEvent("Music_Explore", gameObject);
     }
 

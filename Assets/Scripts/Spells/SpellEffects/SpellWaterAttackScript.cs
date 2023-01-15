@@ -12,9 +12,10 @@ public class SpellWaterAttackScript :SpellAttackScript
         //playerScript.AddInkBottle();
         AkSoundEngine.PostEvent("Spell_Water", gameObject);
 
-        GameObject bookObject = GameObject.FindGameObjectWithTag("MagicBook");
-        MagicBookScript bookScript = bookObject.GetComponent<MagicBookScript>();
-        bookScript.SetUseInk();
+        //GameObject bookObject = GameObject.FindGameObjectWithTag("MagicBook");
+        //MagicBookScript bookScript = bookObject.GetComponent<MagicBookScript>();
+        //bookScript.SetUseInk();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().UseMagicInk();
 
         GetEnemyScripts(enemy);
         m_enemyDamageScript.TakeWaterDamage(baseDamage, m_element);

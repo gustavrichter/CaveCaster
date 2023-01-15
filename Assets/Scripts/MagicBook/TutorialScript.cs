@@ -8,18 +8,20 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    GameObject[] m_tutorialTexts = new GameObject[3];
+    GameObject[] m_tutorialTexts = new GameObject[5];
     [SerializeField]
     MagicBookScript m_magicBookScript;
+    [SerializeField]
+    CaveScript m_caveScript;
     //List<GameObject> m_tutorialTexts = new List<GameObject>();
 
     //List<TextMeshProUGUI> m_textMessages = new List<TextMeshProUGUI>();
 
-    private int m_pageCounter;
+    private int m_pageIndex;
 
     private void Awake()
     {
-        m_pageCounter = 0;
+        m_pageIndex = 0;
         for (int i = 0; i < m_tutorialTexts.Length; i++)
         {
             //Debug.Log("Setting texts inactive");
@@ -29,28 +31,29 @@ public class TutorialScript : MonoBehaviour
     
     public void StartTutorial()
     {
-        for (int i = 0; i < m_tutorialTexts.Length; i++)
-        {
-            m_tutorialTexts[i].SetActive(false);
-        }
+        m_magicBookScript.m_BookClosed.SetActive(false);
+        m_magicBookScript.m_BookPause.SetActive(false);
         //Debug.Log("Setting start text active");
-        m_tutorialTexts[0].SetActive(true);
-        m_pageCounter++;
+        m_tutorialTexts[m_pageIndex].SetActive(true);
     }
 
     public void NextPage()
     {
-        if (m_pageCounter == m_tutorialTexts.Length)
-        {
-            m_magicBookScript.ShowTutorialSpellPage();
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            m_tutorialTexts[m_pageCounter - 1].SetActive(false);
-            m_tutorialTexts[m_pageCounter].SetActive(true);
-            m_pageCounter++;
+        m_tutorialTexts[m_pageIndex].SetActive(false);
+        m_pageIndex++;
+        m_tutorialTexts[m_pageIndex].SetActive(true);
+    }
 
-        }
+    public void DoPracticeFight()
+    {
+        m_tutorialTexts[m_pageIndex].SetActive(false);
+        m_caveScript.SpawnEnemyTutorial();
+        m_magicBookScript.ShowTutorialSpellPage();
+    }
+
+    public void EndTutorial()
+    {
+        m_magicBookScript.m_BookClosed.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
