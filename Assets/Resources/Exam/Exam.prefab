@@ -54,7 +54,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -75,10 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 180, y: 320}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -138,8 +138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: 420}
-  m_SizeDelta: {x: 559.0769, y: 111.4115}
+  m_AnchoredPosition: {x: -1, y: 79.5}
+  m_SizeDelta: {x: 164, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &775916629
 CanvasRenderer:
@@ -169,10 +169,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'final grade:'
+  m_text: 'Final grade:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc5f915cbbe25af40bb87696ed49cdfe, type: 2}
-  m_sharedMaterial: {fileID: -3012355823969222538, guid: bc5f915cbbe25af40bb87696ed49cdfe,
+  m_fontAsset: {fileID: 11400000, guid: 916083361e3094c48a371f62554dfa75, type: 2}
+  m_sharedMaterial: {fileID: 411408360324802945, guid: 916083361e3094c48a371f62554dfa75,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -197,8 +197,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -274,8 +274,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.574, y: 678}
-  m_SizeDelta: {x: 983.0792, y: 60.0155}
+  m_AnchoredPosition: {x: -1, y: 109.5}
+  m_SizeDelta: {x: 164, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &883221143
 CanvasRenderer:
@@ -305,10 +305,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'average cast time:'
+  m_text: 'Average cast time:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc5f915cbbe25af40bb87696ed49cdfe, type: 2}
-  m_sharedMaterial: {fileID: -3012355823969222538, guid: bc5f915cbbe25af40bb87696ed49cdfe,
+  m_fontAsset: {fileID: 11400000, guid: 916083361e3094c48a371f62554dfa75, type: 2}
+  m_sharedMaterial: {fileID: 411408360324802945, guid: 916083361e3094c48a371f62554dfa75,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -333,8 +333,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.8773, y: 550.3303}
-  m_SizeDelta: {x: 983.69, y: 91.3394}
+  m_AnchoredPosition: {x: -1, y: 94.5}
+  m_SizeDelta: {x: 164, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1727462988
 CanvasRenderer:
@@ -441,10 +441,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'enemies slain:'
+  m_text: 'Enemies slain:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc5f915cbbe25af40bb87696ed49cdfe, type: 2}
-  m_sharedMaterial: {fileID: -3012355823969222538, guid: bc5f915cbbe25af40bb87696ed49cdfe,
+  m_fontAsset: {fileID: 11400000, guid: 916083361e3094c48a371f62554dfa75, type: 2}
+  m_sharedMaterial: {fileID: 411408360324802945, guid: 916083361e3094c48a371f62554dfa75,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -469,8 +469,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

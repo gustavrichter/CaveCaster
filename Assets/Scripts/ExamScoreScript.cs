@@ -97,12 +97,12 @@ public class ExamScoreScript : MonoBehaviour
         calculateFinalGrade();
         examScript.m_playerScript.PlayDeathMusic();
         //show end result screen
-        m_timeText.text = "average cast time: " + m_timeAverage.ToString("F2") + " s";
-        m_enemyText.text = "enemies slain: " + m_enemiesSlain.ToString();
-        m_gradeText.text = "final grade: " + m_finalGrade.ToString("F1");
+        m_timeText.text = "Average cast time: " + m_timeAverage.ToString("F2") + " s";
+        m_enemyText.text = "Enemies slain: " + m_enemiesSlain.ToString();
+        m_gradeText.text = "Final grade: " + m_finalGrade.ToString("F1");
         if (m_enemiesSlain < 5)
         {
-            m_gradeText.text = "final grade: n.a.";
+            m_gradeText.text = "Final grade: n.a.";
         }
     }
     void ResetScore()
