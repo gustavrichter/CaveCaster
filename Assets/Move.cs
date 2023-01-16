@@ -9,6 +9,9 @@ public class Move : MonoBehaviour
     [SerializeField]
     private Transform playerTransform;
 
+    [SerializeField]
+    private float playerRotationY;
+
     private void Start()
     {
         m_caveScript = GameObject.FindGameObjectWithTag("Cave").transform.GetComponent<CaveScript>();
@@ -16,6 +19,11 @@ public class Move : MonoBehaviour
         {
             Debug.Log(gameObject.name + " cavescript not found");
         }
+
+    }
+    private void Update()
+    {
+        playerRotationY = Math.Abs(playerTransform.rotation.eulerAngles.y);
     }
     IEnumerator MoveRightAni()
     {
@@ -85,9 +93,9 @@ public class Move : MonoBehaviour
 
     private void LetCaveSpawnEnemies()
     {
-        int compareInt = UnityEngine.Random.Range(1, 3);
+        int compareInt = UnityEngine.Random.Range(0, 10);
         //Debug.Log("compareInt = " + compareInt);
-        if (compareInt == 1)
+        if (compareInt < 9 )
         {
             if (checkIfOnStraightLine())
             {
@@ -99,17 +107,16 @@ public class Move : MonoBehaviour
             }
         }
     }
-
+    
     private bool checkIfOnStraightLine()
     {
-        float angle =Math.Abs(playerTransform.rotation.eulerAngles.y);// * 180.0f / MathF.PI;
-        //Debug.Log("spawn enemies, angle: " + angle);
+        Debug.Log("spawn enemies, angle: " + playerRotationY);
 
-        if (angle > 359.0f && angle < 1.0f)
+        if (playerRotationY > 359.0f && playerRotationY < 1.0f)
         {
             return true;
         }
-        else if (angle > 179.0f && angle < 181.0f)
+        else if (playerRotationY > 179.0f && playerRotationY < 181.0f)
         {
             return true;
         }

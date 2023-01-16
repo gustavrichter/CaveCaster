@@ -74,7 +74,7 @@ public class ExamScoreScript : MonoBehaviour
 
     void calculateFinalGrade()
     {
-        int[] pointsList = { 20, 18, 14, 10, 5 };
+        int[] pointsList = { 30, 25, 20, 15, 12 };
         float[] gradeList = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f };
         
         if (m_bcountTime)
@@ -104,9 +104,9 @@ public class ExamScoreScript : MonoBehaviour
         m_timeText.text = "Average cast time: " + m_timeAverage.ToString("F2") + " s";
         m_enemyText.text = "Enemies slain: " + m_enemiesSlain.ToString();
         m_gradeText.text = "Final grade: " + m_finalGrade.ToString("F1");
-        if (m_enemiesSlain < 5)
+        if(m_finalGrade <= 4.0f)
         {
-            m_gradeText.text = "Final grade: n.a.";
+            m_gameOverText.text = "YOU PASSED";
         }
     }
     void ResetScore()

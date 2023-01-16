@@ -55,11 +55,7 @@ public class CaveScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     //IEnumerator DelayedSpawnEnemies(float waitTime)
     //{
     //    yield return new WaitForSeconds(waitTime);
@@ -68,7 +64,7 @@ public class CaveScript : MonoBehaviour
 
     public void SpawnEnemy(int numberofenemy)
     {
-        //if(numberofenemy > 1)
+        //if (numberofenemy > 1)
         //{
         //    Debug.Log("Multiple Enemies spawned.");
         //}
@@ -102,8 +98,7 @@ public class CaveScript : MonoBehaviour
         m_EnemyScripts[0].m_id = 0;
         m_EnemyScripts[0].EnemyDeath += RemoveEnemy;
         m_EnemyScripts[0].addCooldown(100.0f);
-
-
+        EnemiesAhead();
     }
     void CleanSpawn()
     {

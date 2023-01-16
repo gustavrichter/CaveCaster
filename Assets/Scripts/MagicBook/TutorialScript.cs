@@ -8,7 +8,7 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    GameObject[] m_tutorialTexts = new GameObject[5];
+    GameObject[] m_tutorialTexts = new GameObject[3];
     [SerializeField]
     MagicBookScript m_magicBookScript;
     [SerializeField]
@@ -27,12 +27,13 @@ public class TutorialScript : MonoBehaviour
             //Debug.Log("Setting texts inactive");
             m_tutorialTexts[i].SetActive(false);
         }
+        StartTutorial();
     }
     
     public void StartTutorial()
     {
-        m_magicBookScript.m_BookClosed.SetActive(false);
-        m_magicBookScript.m_BookPause.SetActive(false);
+        //m_magicBookScript.m_BookClosed.SetActive(false);
+        //m_magicBookScript.m_BookPause.SetActive(false);
         //Debug.Log("Setting start text active");
         m_tutorialTexts[m_pageIndex].SetActive(true);
     }
@@ -46,14 +47,16 @@ public class TutorialScript : MonoBehaviour
 
     public void DoPracticeFight()
     {
-        m_tutorialTexts[m_pageIndex].SetActive(false);
+        //Debug.Log("DoingPracticeFight");
+        //m_tutorialTexts[m_pageIndex].SetActive(false);
         m_caveScript.SpawnEnemyTutorial();
-        m_magicBookScript.ShowTutorialSpellPage();
+        m_magicBookScript.SetUseInk();
+        EndTutorial();
     }
 
     public void EndTutorial()
     {
-        m_magicBookScript.m_BookClosed.SetActive(true);
         gameObject.SetActive(false);
+        GameKnowledge.m_bplayTutorial = false;
     }
 }

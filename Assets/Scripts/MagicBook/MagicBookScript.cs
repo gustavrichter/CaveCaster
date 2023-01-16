@@ -46,10 +46,20 @@ public class MagicBookScript : MonoBehaviour
 
 
     }
+
     private void Start()
     {
-        //m_TutorialPages.GetComponent<TutorialScript>().StartTutorial();
+        if (GameKnowledge.m_bplayTutorial)
+        {
+            m_TutorialPages.SetActive(true);
+        }
+        else
+        {
+            //Debug.Log("not activating tutorial");
+        }
+
     }
+
     private void OnDestroy()
     {
         m_PageScript.ReadyNextPage -= TurnPage;
@@ -119,10 +129,10 @@ public class MagicBookScript : MonoBehaviour
         if (!m_bisClosed)
         {
             m_bookanim.Play("Base Layer.BookFlipping");
-            StartCoroutine(DelayedPageTurn(.5f));
+            StartCoroutine(ShowSpellsAfterAnimation(.5f));
         }
     }
-    IEnumerator DelayedPageTurn(float waitTime)
+    IEnumerator ShowSpellsAfterAnimation(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         //get a list with the spellvariants to put on the page

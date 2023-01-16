@@ -70,6 +70,14 @@ public class SceneSwitcher : MonoBehaviour
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
+
+    public void playTutorial()
+    {
+
+        GameKnowledge.m_bplayTutorial = true;
+        playGame();
+
+    }
     public void returnToMenu()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));

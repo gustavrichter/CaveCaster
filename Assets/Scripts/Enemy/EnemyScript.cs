@@ -30,6 +30,8 @@ public abstract class EnemyScript : MonoBehaviour
         Init();
         animationScript = GetComponent<EnemyAnimationScript>();
     }
+  
+
     protected virtual void Init()
     {
         damage = 15;
