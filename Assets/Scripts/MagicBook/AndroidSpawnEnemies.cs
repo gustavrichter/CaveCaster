@@ -18,11 +18,11 @@ public class AndroidSpawnEnemies : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         //m_caveScript.StartCoroutine("DelayedSpawnEnemies", 3.0f);
-        if (!(m_caveScript.getEnemies().Count > 0))//if no enemies already exist
-        {
+    //    if (!(m_caveScript.getEnemies().Count > 0))//if no enemies already exist
+    //    {
 
-            //m_caveScript.SpawnEnemy(1);
+    //        m_caveScript.SpawnEnemy(Random.Range(2,3));
 
-        }
+    //    }
     }
 }

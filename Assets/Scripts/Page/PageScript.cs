@@ -14,7 +14,6 @@ struct SpellcardVariant
         numberOfRunes = numRunes;
         numberOfSpellcards = numSpellcards;
     }
-
 }
 
 public class PageScript : MonoBehaviour
@@ -27,9 +26,6 @@ public class PageScript : MonoBehaviour
     private List<SpellScript> m_SpellScripts; //dynamic size
     private List<SpellcardVariant> m_SpellcardVariants;
     public int m_enemyCountOnSpawn;
-    //private GameObject m_FiredSpell;
-    //private SpellScript m_FiredSpellScript;
-    //private RuneAnimationScript m_FiredSpellAnimationScript;
     public Action ReadyNextPage = delegate { };
     public Action SpellWasFired = delegate { };
     private void Awake()
@@ -134,78 +130,23 @@ public class PageScript : MonoBehaviour
   
         m_SpellScripts[index].LetSpellDissolve();
         SpellWasFired();
-        //for (int i = 0; i < m_SpellScripts.Count; i++)
-        //{
-        //    m_SpellScripts[i].LetSpellDissolve();
-
-        //}
-        
     }
     void WhenSpellWasSpent()
     {
-        //m_FiredSpellScript = m_SpellScripts[index].transform.GetChild(0).GetComponent<SpellScript>();
-        //if (m_FiredSpellScript)
-        //{
-        //    m_FiredSpellScript.BindSpellSpentAction();
-        //    m_FiredSpellScript.FadeOut();
-           
-        //}
-        //else
-        //{
-        //    Debug.Log("no fired spellscript");
-        //}
-
-
         ClearPage();
         ReadyNextPage();
-        //StartCoroutine(WaitTurnPage());
-
     }
-    //void FireSpell1(int index)
-    //{
-    //    int variant = m_SpellScripts[index].m_variant;
-
-    //    m_FiredSpell = Instantiate(m_SpellVariants[variant]) as GameObject;
-        
-    //    m_FiredSpell.transform.SetParent(this.transform, false);
-    //    m_FiredSpell.transform.position = m_SpellsOnPage[index].transform.position;
-    //    //Debug.Log("Firing Spell: #cards=" + m_SpellcardVariants[variant].numberOfSpellcards + ", element=" + m_SpellcardVariants[variant].element + ", #runes=" + ", numberOfSpellcards=" + m_SpellcardVariants[variant].numberOfRunes);
-    //    m_FiredSpellScript = m_FiredSpell.transform.GetChild(0).GetComponent<SpellScript>();
-
-
-
-    //    //m_FiredSpellScript.DrawRunes(m_SpellcardVariants[variant].numberOfRunes);
-    //    //m_FiredSpellScript.BindSpellSpentAction();
-    //    //m_FiredSpellScript.SpellSpent += ClearFiredSpell;
-
-    //    //m_FiredSpellScript.FadeOut();
-    //    for (int i = 0; i < m_SpellScripts.Count; i++)
-    //    {
-    //        m_SpellScripts[i].LetSpellDissolve();
-
-    //    }
-    //    m_FiredSpellScript.LetSpellDissolve();
-    //    StartCoroutine(WaitTurnPage());
-    //}
-
-    //void ClearFiredSpell()
-    //{
-    //    //Debug.Log("ClearingFiredSpell");
-    //    m_FiredSpellScript.SpellSpent -= ClearFiredSpell;
-    //    Destroy(m_FiredSpell);
-    //    m_FiredSpellScript = null;
-    //    //m_FiredSpellAnimationScript = null;
-    //}
     
     void CreateSpellcardVariants(GameObject[] spellVariants) {
 
+        Debug.Log("Spellvariants length: " + spellVariants.Length);
         m_SpellcardVariants.Clear();
         SpellcardVariant temp = new SpellcardVariant();
 
         //element
         for (int i = 0; i < spellVariants.Length; i++)
         {
-            m_SpellcardVariants.Add(new SpellcardVariant(0, 0, 0));
+            m_SpellcardVariants.Add(new SpellcardVariant(0, 0, 0));//element, numRunes, numCards
             SpellScript sp = spellVariants[i].transform.GetChild(0).GetComponent<SpellScript>();
             if (!sp)
                 Debug.Log("spellscript not found");
@@ -243,9 +184,9 @@ public class PageScript : MonoBehaviour
                 spellcardCount++;
             }
             index++;
-            if (index >= m_SpellcardVariants.Count)
+            if (index >= m_SpellcardVariants.Count)//reset index and keep iterating
                 index = 1;
-        } while (spellcardCount < maxNumberOfSpellcards); //until all spellcard positions are filled
+        } while (spellcardCount < maxNumberOfSpellcards); //until max spellcard positions are filled
 
         //numberOfRunes
         int numberOfRuneVariants = 3; //always have 3 different rune patterns
@@ -301,20 +242,12 @@ public class PageScript : MonoBehaviour
                 m_SpellcardVariants[i] = temp;
             }
         }
-        //for (int i = 0; i < m_SpellcardVariants.Count; i++)
-        //{
-        //    Debug.Log("SpellcardVariant_" + i + ",: #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ". element = " + m_SpellcardVariants[i].element + ". #runes = " + m_SpellcardVariants[i].numberOfRunes);
-        //}
+        for (int i = 0; i < m_SpellcardVariants.Count; i++)
+        {
+            Debug.Log("SpellcardVariant_" + i + ",: #cards = " + m_SpellcardVariants[i].numberOfSpellcards + ". element = " + m_SpellcardVariants[i].element + ". #runes = " + m_SpellcardVariants[i].numberOfRunes);
+        }
     }
 
-    //IEnumerator WaitTurnPage()
-    //{
-    //    //Debug.Log("Dissolve before yield.");
-    //    yield return new WaitForSeconds(.8f);
-    //    ClearPage();
-    //    ReadyNextPage();
-    //   // Debug.Log("Dissolve after yield.");
-    //}
     public void ClearPage()
     {
         if (m_SpellsOnPage.Count > 0)

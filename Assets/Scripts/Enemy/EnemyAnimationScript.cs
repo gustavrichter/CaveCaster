@@ -58,11 +58,6 @@ public class EnemyAnimationScript : MonoBehaviour
         anim.Play(defeatName);
 
     }
-    //public void PlayIdleAnimation()
-    //{
-    //    //Debug.Log(transform.name + ": Playing Idle Animation");
-    //    //anim.Play("Base Layer.Idle");
-    //}
 
 }
 

@@ -16,6 +16,7 @@ public class MagicBookScript : MonoBehaviour
     [SerializeField]
     private GameObject[] m_Spells;//size=5
 
+
     [SerializeField]
     private GameObject m_Page;
     private PageScript m_PageScript;
@@ -139,6 +140,8 @@ public class MagicBookScript : MonoBehaviour
         if (!m_bisClosed)
         {
             GameObject[] selectedSpellVariants = GetSpellVariants();
+
+            //m_PageScript.NextPage(selectedSpellVariants);
             m_PageScript.NextPage(selectedSpellVariants);
             PageTurned();
             if (useInk)
@@ -153,7 +156,7 @@ public class MagicBookScript : MonoBehaviour
 
     GameObject[] GetSpellVariants()
     {
-        //select between 3 and 4 of the first spells in shuffledList
+        //select between 2 and 3 of the first spells in shuffledList
         int numberOfSpells = UnityEngine.Random.Range(2, 4); //[2,3]
         int numberOfSpellcardVariants = UnityEngine.Random.Range(4, 6);//[4,5]
         //Debug.Log("Creating " + numberOfSpellcardVariants + " spell card variants");
@@ -172,7 +175,6 @@ public class MagicBookScript : MonoBehaviour
         {
             //select the first 2 or 3 spells from the shuffled spell list
             selectedSpellsList[i] = shuffledSpellList[i];
-            //selectedSpellsList[i] = m_Spells[Random.Range(0, m_Spells.Length - 1)];
         }
         for (int i = 0; i < numberOfSpellcardVariants; i++)//create a list with 4-5 spell variants on a page
         {

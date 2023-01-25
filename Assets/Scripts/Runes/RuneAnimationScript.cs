@@ -39,13 +39,7 @@ public class RuneAnimationScript : MonoBehaviour
     }
     public void LetSpellBeDeleted()
     {
-        //if (!isunique)
-        //{
-
-        //    iLoop = 4;
-        //}
-        //Debug.Log("is unique: " + isunique);
-        //Debug.Log("Looping: " + iLoop);
+ //MODIFIED BY JAKE [
         if (iLoop == 1)
         {
             SpellSpent();
@@ -55,7 +49,7 @@ public class RuneAnimationScript : MonoBehaviour
         {
             iLoop++;
         }
-        
+  //]
     }
 
     public void PlayIdleAnimation()

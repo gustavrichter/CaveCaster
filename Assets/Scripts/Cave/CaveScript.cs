@@ -20,11 +20,6 @@ public class CaveScript : MonoBehaviour
         m_EnemiesOnFloor = new List<GameObject>();
         m_EnemyScripts = new List<EnemyScript>();
     }
-    void Start()
-    {
-        //StartCoroutine(DelayedSpawnEnemies(3.0f));
-    }
-
     public void StopStage()
     {
         for (int i = 0; i < m_EnemiesOnFloor.Count; i++)
@@ -130,6 +125,7 @@ public class CaveScript : MonoBehaviour
         m_EnemyScripts.Clear();
         m_EnemiesOnFloor.Clear();
         StageComplete();
+        Debug.Log("Stage complete");
     }
 
     public List<GameObject> getEnemies()

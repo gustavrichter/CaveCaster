@@ -91,6 +91,7 @@ public class Move : MonoBehaviour
         StopCoroutine(MoveLeftAni());
     }
 
+  //MODIFIED BY GUSTAV[
     private void LetCaveSpawnEnemies()
     {
         int compareInt = UnityEngine.Random.Range(0, 10);
@@ -101,7 +102,7 @@ public class Move : MonoBehaviour
             {
                 m_caveScript.SpawnEnemy(UnityEngine.Random.Range(2, 4));
             }
-            else
+            else //when we're not oriented parallel to the y axis we can't use raycasts and have to hard code one enemy to be able to do combat
             {
                 m_caveScript.SpawnEnemy(1);
             }
@@ -125,6 +126,6 @@ public class Move : MonoBehaviour
             return false;
         }
     }
-
+ //]
 
 }
